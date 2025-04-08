@@ -1,0 +1,33 @@
+
+# Archivos generados por Unity que pueden regenerarse automáticamente
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+
+# Configuración de IDEs como Visual Studio y JetBrains Rider
+.vscode/
+.idea/
+*.sln
+*.csproj
+*.unityproj
+*.pidb
+*.suo
+*.user
+*.booproj
+*.svd
+*.pdb
+
+# Paquetes de Unity que pueden descargarse de nuevo
+Packages/packages-lock.json
+
+# Archivos específicos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos de caché y empaquetados de Unity
+*.meta
+*.unitypackage
