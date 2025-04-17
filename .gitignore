@@ -21,13 +21,18 @@
 *.svd
 *.pdb
 
-# Paquetes de Unity que pueden descargarse de nuevo
-Packages/packages-lock.json
-
 # Archivos específicos del sistema operativo
 .DS_Store
 Thumbs.db
 
-# Archivos de caché y empaquetados de Unity
-*.meta
-*.unitypackage
+# Asegura que estas carpetas y archivos estén SIEMPRE versionados
+!Assets/
+!Packages/
+!Packages/manifest.json
+!Packages/packages-lock.json
+!ProjectSettings/
+!ProjectSettings/GraphicsSettings.asset
+
+# Incluye los assets del Render Pipeline
+!Assets/Settings/*.asset
+
