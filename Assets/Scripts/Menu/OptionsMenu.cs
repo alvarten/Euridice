@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using UnityEngine.Audio;
+using System.Collections.Generic;
 
 public class OptionsMenu : MonoBehaviour
 {
@@ -11,9 +13,18 @@ public class OptionsMenu : MonoBehaviour
     public Slider sfxSlider;
     public AudioMixer audioMixer;
 
+    public TMP_Dropdown resolutionDropdown;
+    public Toggle fullscreenToggle;
+
+    private List<Vector2Int> allowedResolutions;
+
     void Start()
     {
-        // Cargar valores guardados o establecer por defecto
+        // OPCIONAL: Descomenta esto una vez para reiniciar preferencias si algo falla
+         //PlayerPrefs.DeleteAll();
+         //PlayerPrefs.Save();
+
+        // Volumen
         float master = PlayerPrefs.GetFloat("MasterVolume", 1f);
         float music = PlayerPrefs.GetFloat("MusicVolume", 1f);
         float sfx = PlayerPrefs.GetFloat("SFXVolume", 1f);
@@ -26,39 +37,95 @@ public class OptionsMenu : MonoBehaviour
         SetMusicVolume(music);
         SetSFXVolume(sfx);
 
-        // Listeners
         masterSlider.onValueChanged.AddListener(SetMasterVolume);
         musicSlider.onValueChanged.AddListener(SetMusicVolume);
         sfxSlider.onValueChanged.AddListener(SetSFXVolume);
+
+        // Pantalla completa
+        bool isFullscreen = PlayerPrefs.GetInt("Fullscreen", 1) == 1;
+        fullscreenToggle.isOn = isFullscreen;
+        SetFullscreen(isFullscreen);
+        fullscreenToggle.onValueChanged.AddListener(SetFullscreen);
+
+        // Resoluciones 16:9 específicas
+        allowedResolutions = new List<Vector2Int>
+        {
+            new Vector2Int(3840, 2160), // 4K
+            new Vector2Int(2560, 1440), // 2K
+            new Vector2Int(1920, 1080), // Full HD
+            new Vector2Int(1280, 720)   // HD
+        };
+
+        resolutionDropdown.ClearOptions();
+        List<string> options = new List<string>();
+        int currentResolutionIndex = 0;
+
+        for (int i = 0; i < allowedResolutions.Count; i++)
+        {
+            Vector2Int res = allowedResolutions[i];
+            string option = res.x + " x " + res.y;
+            options.Add(option);
+
+            if (Screen.currentResolution.width == res.x && Screen.currentResolution.height == res.y)
+            {
+                currentResolutionIndex = i;
+            }
+        }
+
+        resolutionDropdown.AddOptions(options);
+
+        int savedIndex = PlayerPrefs.GetInt("ResolutionIndex", currentResolutionIndex);
+        savedIndex = Mathf.Clamp(savedIndex, 0, allowedResolutions.Count - 1);
+
+        resolutionDropdown.value = savedIndex;
+        resolutionDropdown.RefreshShownValue();
+        SetResolution(savedIndex);
+
+        resolutionDropdown.onValueChanged.AddListener(SetResolution);
     }
+
     public void OpenOptions()
     {
         optionsPanel.SetActive(true);
-        mainMenuPanel.SetActive(false); // Ocultar el menú principal
+        mainMenuPanel.SetActive(false);
     }
 
     public void CloseOptions()
     {
         optionsPanel.SetActive(false);
-        mainMenuPanel.SetActive(true); // Mostrar el menú principal
+        mainMenuPanel.SetActive(true);
     }
 
     public void SetMasterVolume(float value)
     {
-        audioMixer.SetFloat("MasterVolume", Mathf.Log10(value) * 20);
+        audioMixer.SetFloat("MasterVolume", Mathf.Log10(Mathf.Clamp(value, 0.0001f, 1f)) * 20);
         PlayerPrefs.SetFloat("MasterVolume", value);
     }
 
     public void SetMusicVolume(float value)
     {
-        audioMixer.SetFloat("MusicVolume", Mathf.Log10(value) * 20);
+        audioMixer.SetFloat("MusicVolume", Mathf.Log10(Mathf.Clamp(value, 0.0001f, 1f)) * 20);
         PlayerPrefs.SetFloat("MusicVolume", value);
     }
 
     public void SetSFXVolume(float value)
     {
-        audioMixer.SetFloat("SFXVolume", Mathf.Log10(value) * 20);
+        audioMixer.SetFloat("SFXVolume", Mathf.Log10(Mathf.Clamp(value, 0.0001f, 1f)) * 20);
         PlayerPrefs.SetFloat("SFXVolume", value);
     }
 
+    public void SetFullscreen(bool isFullscreen)
+    {
+        Screen.fullScreen = isFullscreen;
+        PlayerPrefs.SetInt("Fullscreen", isFullscreen ? 1 : 0);
+    }
+
+    public void SetResolution(int index)
+    {
+        if (index < 0 || index >= allowedResolutions.Count) return;
+
+        Vector2Int res = allowedResolutions[index];
+        Screen.SetResolution(res.x, res.y, Screen.fullScreenMode);
+        PlayerPrefs.SetInt("ResolutionIndex", index);
+    }
 }

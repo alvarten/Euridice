@@ -5,7 +5,7 @@ public class MainMenuManager : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene("Escena1");
+        SceneManager.LoadScene("Tutorial");
     }
 
     public void OpenOptions()

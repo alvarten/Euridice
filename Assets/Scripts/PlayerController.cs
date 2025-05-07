@@ -4,10 +4,13 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5f;
+    public float gravity = -9.81f;
+
+    private float verticalVelocity = 0f;
     private CharacterController controller;
     private Camera cam;
 
-    [SerializeField] private Transform spriteTransform; // Asigna aquí el objeto hijo con el sprite
+    [SerializeField] private Transform spriteTransform;
 
     void Start()
     {
@@ -32,10 +35,23 @@ public class PlayerController : MonoBehaviour
         camRight.Normalize();
 
         Vector3 move = inputDir.z * camForward + inputDir.x * camRight;
+        move *= moveSpeed;
 
-        controller.SimpleMove(move * moveSpeed);
+        // Gravedad
+        if (controller.isGrounded)
+        {
+            verticalVelocity = -1f; // Mantiene el personaje pegado al suelo
+        }
+        else
+        {
+            verticalVelocity += gravity * Time.deltaTime;
+        }
 
-        // Flip del sprite en X según la dirección horizontal del input
+        move.y = verticalVelocity;
+
+        controller.Move(move * Time.deltaTime);
+
+        // Flip del sprite
         if (h > 0.1f)
             spriteTransform.localScale = new Vector3(1, 1, 1);
         else if (h < -0.1f)
