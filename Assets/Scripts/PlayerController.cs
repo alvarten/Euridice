@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
         float v = Input.GetAxis("Vertical");
 
         Vector3 inputDir = new Vector3(h, 0, v);
+        inputDir.Normalize();
 
         // Dirección de la cámara
         Vector3 camForward = cam.transform.forward;
