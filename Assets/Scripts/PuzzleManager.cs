@@ -7,6 +7,7 @@ public class PuzzleManager : MonoBehaviour
     public GameObject puzzleCompletedPanel; // Panel que se muestra cuando el puzzle es completado
     public GameObject resolvingPuzzle; // Cuadro del puzzle resolviendo (vacío)
     public GameObject solvedPuzzle; // Cuadro del puzzle resuelto (vacío)
+    
 
     void Start()
     {
@@ -92,5 +93,10 @@ public class PuzzleManager : MonoBehaviour
         // También puede desbloquear o bloquear el cursor si es necesario:
         //Cursor.visible = panel.activeSelf;
         //Cursor.lockState = panel.activeSelf ? CursorLockMode.None : CursorLockMode.Locked;
+    }
+    public void ActivarPanelResuelto(GameObject panelAntes, GameObject panelDespues)
+    {
+        if (panelAntes != null) panelAntes.SetActive(false);
+        if (panelDespues != null) panelDespues.SetActive(true);
     }
 }

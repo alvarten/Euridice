@@ -12,21 +12,37 @@ public class InventoryItemUI : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 
     private void Awake()
     {
-        image = GetComponentInChildren<Image>();
+        // Busca el componente Image en este objeto o en sus hijos
+        image = GetComponent<Image>();
+        if (image == null)
+            image = GetComponentInChildren<Image>();
+
+        // Asegura que haya un CanvasGroup
         canvasGroup = GetComponent<CanvasGroup>();
+        if (canvasGroup == null)
+            canvasGroup = gameObject.AddComponent<CanvasGroup>();
     }
 
     public void Setup(Sprite sprite, string id)
     {
-        image.sprite = sprite;
         itemId = id;
+
+        if (image != null && sprite != null)
+        {
+            image.sprite = sprite;
+            image.preserveAspect = true;
+        }
+        else
+        {
+            Debug.LogWarning($"No se pudo asignar sprite al objeto del inventario: {itemId}");
+        }
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
         originalParent = transform.parent;
         originalPosition = transform.position;
-        transform.SetParent(transform.root); // Mover al canvas raíz para no estar limitado por layout
+        transform.SetParent(transform.root); // Mover al canvas raíz para evitar restricciones de layout
         canvasGroup.blocksRaycasts = false;
     }
 
