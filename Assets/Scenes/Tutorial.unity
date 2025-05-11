@@ -11217,7 +11217,7 @@ MonoBehaviour:
   - {fileID: 431549460}
   - {fileID: 1075228173}
   - {fileID: 1414230838}
-  correctCombination: 08000000050000000400000006000000
+  correctCombination: 07000000050000000400000006000000
   lockPanel: {fileID: 1846162267}
   unlockedPanel: {fileID: 1913978208}
   sfxPlayer: {fileID: 858709396}
