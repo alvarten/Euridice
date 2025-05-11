@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 public class CollectiblePiece : MonoBehaviour
 {
+    public SFXPlayer sfxPlayer;
     [Header("Datos del coleccionable")]
     public string itemId = "PiezaEspada"; // Clave única
     public Sprite itemIcon;              // Icono a mostrar en el inventario
@@ -31,10 +32,11 @@ public class CollectiblePiece : MonoBehaviour
 
         // Añadir al inventario
         InventoryManager.Instance.AddItem(itemIcon, itemId);
-        Debug.Log("¡Va a destruirse!");
+        sfxPlayer.PlayPick();
+        //Debug.Log("¡Va a destruirse!");
         // Ocultar objeto recogido
         if (destroyOnCollect) {
-            Debug.Log("¡Se destruye!");
+            //Debug.Log("¡Se destruye!");
             Destroy(gameObject);
         }
         else

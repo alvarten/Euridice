@@ -10,6 +10,7 @@ public class LockManager : MonoBehaviour
     public GameObject lockPanel;       // Panel que contiene el candado
     public GameObject unlockedPanel;   // Panel que aparece al desbloquear
 
+    public SFXPlayer sfxPlayer;
     void Awake()
     {
         Instance = this;
@@ -24,6 +25,7 @@ public class LockManager : MonoBehaviour
         }
 
         Debug.Log("¡Candado desbloqueado!");
+        sfxPlayer.PlayDoor();
         if (lockPanel != null) lockPanel.SetActive(false);
         if (unlockedPanel != null) unlockedPanel.SetActive(true);
         

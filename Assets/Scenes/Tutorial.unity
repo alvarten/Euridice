@@ -604,7 +604,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2115664902, guid: 9cd0b138070964d4d8c5a52e0431ff6d, type: 3}
+  m_Sprite: {fileID: 539893554, guid: 9cd0b138070964d4d8c5a52e0431ff6d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1684,6 +1684,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   acceptedItemId: Llave
   puzzleManager: {fileID: 1530061974}
+  sfxPlayer: {fileID: 858709396}
   panelAntes: {fileID: 728140572}
   panelDespues: {fileID: 1849387075}
 --- !u!114 &248105591
@@ -2599,6 +2600,7 @@ MonoBehaviour:
   - {fileID: 1448117246, guid: 9cd0b138070964d4d8c5a52e0431ff6d, type: 3}
   - {fileID: -635135045, guid: 9cd0b138070964d4d8c5a52e0431ff6d, type: 3}
   - {fileID: 114879574, guid: 9cd0b138070964d4d8c5a52e0431ff6d, type: 3}
+  sfxPlayer: {fileID: 858709396}
 --- !u!1 &431939828
 GameObject:
   m_ObjectHideFlags: 0
@@ -4382,7 +4384,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1447158628, guid: 2618f3b92c70f4c43a0b27bb50e85480, type: 3}
+  m_Sprite: {fileID: 1885978226, guid: 02ed3a94ac3280f45ada324c30c047c4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4556,6 +4558,10 @@ PrefabInstance:
       propertyPath: itemIcon
       value: 
       objectReference: {fileID: 21300000, guid: 18c3c6d5626d66641b28eb59b7c9d18b, type: 3}
+    - target: {fileID: 4776313238802193974, guid: 9fcb397b3e8f60845a33e2c5d61c2556, type: 3}
+      propertyPath: sfxPlayer
+      value: 
+      objectReference: {fileID: 858709396}
     - target: {fileID: 4933066414450076994, guid: 9fcb397b3e8f60845a33e2c5d61c2556, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5729,6 +5735,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5526618258183034916, guid: 2b12dfd4e4dad4447ac8ada5b7680709, type: 3}
+      propertyPath: doorClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 679359cf844b264489c731c4d94e2214, type: 3}
+    - target: {fileID: 5526618258183034916, guid: 2b12dfd4e4dad4447ac8ada5b7680709, type: 3}
+      propertyPath: lockClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 01476ffb05b063e43949bcaab8d649a3, type: 3}
+    - target: {fileID: 5526618258183034916, guid: 2b12dfd4e4dad4447ac8ada5b7680709, type: 3}
+      propertyPath: pickClip
+      value: 
+      objectReference: {fileID: 8300000, guid: fc600438aa690a741b89285c7813dfb7, type: 3}
+    - target: {fileID: 5526618258183034916, guid: 2b12dfd4e4dad4447ac8ada5b7680709, type: 3}
+      propertyPath: chestClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 8588ea78bdd1ec04eb12c171284dfe12, type: 3}
+    - target: {fileID: 5526618258183034916, guid: 2b12dfd4e4dad4447ac8ada5b7680709, type: 3}
+      propertyPath: slideClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 566cfb01b97a188419ce2c5df328c93b, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6050,6 +6076,7 @@ MonoBehaviour:
   - {fileID: 1448117246, guid: 9cd0b138070964d4d8c5a52e0431ff6d, type: 3}
   - {fileID: -635135045, guid: 9cd0b138070964d4d8c5a52e0431ff6d, type: 3}
   - {fileID: 114879574, guid: 9cd0b138070964d4d8c5a52e0431ff6d, type: 3}
+  sfxPlayer: {fileID: 858709396}
 --- !u!1001 &1088079848
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6282,6 +6309,7 @@ MonoBehaviour:
   - {fileID: 1448117246, guid: 9cd0b138070964d4d8c5a52e0431ff6d, type: 3}
   - {fileID: -635135045, guid: 9cd0b138070964d4d8c5a52e0431ff6d, type: 3}
   - {fileID: 114879574, guid: 9cd0b138070964d4d8c5a52e0431ff6d, type: 3}
+  sfxPlayer: {fileID: 858709396}
 --- !u!1 &1192869517
 GameObject:
   m_ObjectHideFlags: 0
@@ -6510,12 +6538,16 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 18c3c6d5626d66641b28eb59b7c9d18b, type: 3}
     - target: {fileID: 4776313238802193974, guid: 9fcb397b3e8f60845a33e2c5d61c2556, type: 3}
       propertyPath: itemId
-      value: Llave
+      value: OrdenColor
       objectReference: {fileID: 0}
     - target: {fileID: 4776313238802193974, guid: 9fcb397b3e8f60845a33e2c5d61c2556, type: 3}
       propertyPath: itemIcon
       value: 
       objectReference: {fileID: 21300000, guid: 18c3c6d5626d66641b28eb59b7c9d18b, type: 3}
+    - target: {fileID: 4776313238802193974, guid: 9fcb397b3e8f60845a33e2c5d61c2556, type: 3}
+      propertyPath: sfxPlayer
+      value: 
+      objectReference: {fileID: 858709396}
     - target: {fileID: 4933066414450076994, guid: 9fcb397b3e8f60845a33e2c5d61c2556, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -6590,11 +6622,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4933066414450076994, guid: 9fcb397b3e8f60845a33e2c5d61c2556, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 84.4
+      value: -69.1
       objectReference: {fileID: 0}
     - target: {fileID: 4933066414450076994, guid: 9fcb397b3e8f60845a33e2c5d61c2556, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.7
+      value: 44.4
       objectReference: {fileID: 0}
     - target: {fileID: 4933066414450076994, guid: 9fcb397b3e8f60845a33e2c5d61c2556, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -7298,6 +7330,7 @@ MonoBehaviour:
   - {fileID: 1448117246, guid: 9cd0b138070964d4d8c5a52e0431ff6d, type: 3}
   - {fileID: -635135045, guid: 9cd0b138070964d4d8c5a52e0431ff6d, type: 3}
   - {fileID: 114879574, guid: 9cd0b138070964d4d8c5a52e0431ff6d, type: 3}
+  sfxPlayer: {fileID: 858709396}
 --- !u!1001 &1434302811
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7576,7 +7609,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2115664902, guid: 9cd0b138070964d4d8c5a52e0431ff6d, type: 3}
+  m_Sprite: {fileID: 539893554, guid: 9cd0b138070964d4d8c5a52e0431ff6d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9707,6 +9740,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   acceptedItemId: PiezaEspada
   puzzleManager: {fileID: 1530061974}
+  sfxPlayer: {fileID: 858709396}
   panelAntes: {fileID: 1859694788}
   panelDespues: {fileID: 743891228}
 --- !u!114 &1800907583
@@ -10076,7 +10110,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1719636199, guid: 4340dc67c178b33458062bf7bebad99b, type: 3}
+  m_Sprite: {fileID: 604183340, guid: a0ec2327af5d85542b8b6bd59f8793d3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10822,7 +10856,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2115664902, guid: 9cd0b138070964d4d8c5a52e0431ff6d, type: 3}
+  m_Sprite: {fileID: 539893554, guid: 9cd0b138070964d4d8c5a52e0431ff6d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11370,6 +11404,7 @@ MonoBehaviour:
   correctCombination: 03000000050000000400000007000000
   lockPanel: {fileID: 1846162267}
   unlockedPanel: {fileID: 1913978208}
+  sfxPlayer: {fileID: 858709396}
 --- !u!1 &2052358622
 GameObject:
   m_ObjectHideFlags: 0
@@ -11897,7 +11932,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2115664902, guid: 9cd0b138070964d4d8c5a52e0431ff6d, type: 3}
+  m_Sprite: {fileID: 539893554, guid: 9cd0b138070964d4d8c5a52e0431ff6d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -12179,17 +12214,17 @@ SceneRoots:
   - {fileID: 220077893}
   - {fileID: 474924336}
   - {fileID: 435411903}
+  - {fileID: 156973692}
   - {fileID: 1939925323}
   - {fileID: 434849304}
   - {fileID: 973739363}
   - {fileID: 236298152}
   - {fileID: 1623711195}
-  - {fileID: 156973692}
   - {fileID: 1688357234}
+  - {fileID: 1530061975}
+  - {fileID: 974416208}
   - {fileID: 441644919}
   - {fileID: 855389002}
   - {fileID: 1546318315}
   - {fileID: 1741955241}
   - {fileID: 1870182611}
-  - {fileID: 1530061975}
-  - {fileID: 974416208}

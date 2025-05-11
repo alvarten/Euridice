@@ -5,7 +5,7 @@ public class LockDigit : MonoBehaviour
 {
     public Image digitImage; // La imagen que representa el número
     public Sprite[] digitSprites; // 10 sprites, uno por cada número del 0 al 9
-
+    public SFXPlayer sfxPlayer;
     private int currentValue = 0;
 
     public void Increase()
@@ -13,6 +13,7 @@ public class LockDigit : MonoBehaviour
         currentValue = (currentValue + 1) % 10;
         UpdateImage();
         LockManager.Instance.CheckCombination();
+        sfxPlayer.PlayLock();
     }
 
     public void Decrease()
@@ -20,6 +21,7 @@ public class LockDigit : MonoBehaviour
         currentValue = (currentValue - 1 + 10) % 10; // wrap-around hacia atrás
         UpdateImage();
         LockManager.Instance.CheckCombination();
+        sfxPlayer.PlayLock();
     }
 
     void UpdateImage()

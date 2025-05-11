@@ -5,6 +5,7 @@ public class ItemReceiver : MonoBehaviour, IDropHandler
 {
     public string acceptedItemId;
     public PuzzleManager puzzleManager;
+    public SFXPlayer sfxPlayer;
 
     public GameObject panelAntes;    // Asigna en el Inspector
     public GameObject panelDespues;  // Asigna en el Inspector
@@ -15,6 +16,7 @@ public class ItemReceiver : MonoBehaviour, IDropHandler
         if (droppedItem != null && droppedItem.itemId == acceptedItemId)
         {
             Debug.Log("¡Ítem correcto usado!");
+            sfxPlayer.PlayChest();
             Destroy(droppedItem.gameObject);
 
             if (puzzleManager != null)

@@ -5,7 +5,8 @@ public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public float gravity = -9.81f;
-
+    public SFXPlayer sfxPlayer;
+    private bool isWalkingSoundPlaying = false;
     private float verticalVelocity = 0f;
     private CharacterController controller;
     private Camera cam;
@@ -52,10 +53,29 @@ public class PlayerController : MonoBehaviour
 
         controller.Move(move * Time.deltaTime);
 
+        //Logica para el sonido de pasos
+        bool isMoving = inputDir.magnitude > 0.1f;
+
+        if (isMoving && !isWalkingSoundPlaying && controller.isGrounded)
+        {
+            sfxPlayer.PlayLooping(sfxPlayer.stepsClip, 0.2f, 0.40f);
+            isWalkingSoundPlaying = true;
+        }
+        else if (!isMoving && isWalkingSoundPlaying)
+        {
+            sfxPlayer.StopLooping();
+            isWalkingSoundPlaying = false;
+        }
         // Flip del sprite
         if (h > 0.1f)
             spriteTransform.localScale = new Vector3(1, 1, 1);
         else if (h < -0.1f)
+        {
             spriteTransform.localScale = new Vector3(-1, 1, 1);
+        }
+        //spriteTransform.localScale = new Vector3(-1, 1, 1);
+
+        
+
     }
 }
