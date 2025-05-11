@@ -85,8 +85,8 @@ public class PuzzleManager : MonoBehaviour
         {
             var controller = player.GetComponent<PlayerController>();
             if (controller != null)
-            {
-                controller.enabled = !panel.activeSelf;
+            {                
+                controller.canMove = !panel.activeSelf;
             }
         }
 

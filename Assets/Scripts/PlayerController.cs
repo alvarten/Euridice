@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     private float verticalVelocity = 0f;
     private CharacterController controller;
     private Camera cam;
+    public bool canMove = true;
 
     [SerializeField] private Transform spriteTransform;
 
@@ -21,6 +22,18 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        //Para gestionar el sonido de pasos
+        if (!canMove)
+        {
+            // Si no puede moverse, detener sonido de pasos si estaba activo
+            if (isWalkingSoundPlaying)
+            {
+                sfxPlayer.StopLooping();
+                isWalkingSoundPlaying = false;
+            }
+            return;
+        }
+
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
 

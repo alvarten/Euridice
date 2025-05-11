@@ -7,11 +7,12 @@ public class Interactuable : MonoBehaviour
     public UnityEvent onInteract;
 
     private bool isPlayerInside = false;
+    
 
     void Start()
     {
         if (visualIndicator != null)
-            visualIndicator.SetActive(false);
+            visualIndicator.SetActive(false);        
     }
 
     void Update()
@@ -44,7 +45,8 @@ public class Interactuable : MonoBehaviour
 
     private void Interact()
     {
-        if (onInteract != null)
+        if (onInteract != null) { 
             onInteract.Invoke();
+        }            
     }
 }
