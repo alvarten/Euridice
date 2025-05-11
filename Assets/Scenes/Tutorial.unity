@@ -4540,7 +4540,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 02ed3a94ac3280f45ada324c30c047c4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: df0afca4737b8a247979483a346b0194, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6703,7 +6703,7 @@ PrefabInstance:
     - target: {fileID: 4776313238802193974, guid: 9fcb397b3e8f60845a33e2c5d61c2556, type: 3}
       propertyPath: itemIcon
       value: 
-      objectReference: {fileID: 21300000, guid: 18c3c6d5626d66641b28eb59b7c9d18b, type: 3}
+      objectReference: {fileID: 21300000, guid: 3c76600a5424c76459e19eb0c91bae51, type: 3}
     - target: {fileID: 4776313238802193974, guid: 9fcb397b3e8f60845a33e2c5d61c2556, type: 3}
       propertyPath: sfxPlayer
       value: 
@@ -6782,11 +6782,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4933066414450076994, guid: 9fcb397b3e8f60845a33e2c5d61c2556, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1.199997
+      value: 1.2000122
       objectReference: {fileID: 0}
     - target: {fileID: 4933066414450076994, guid: 9fcb397b3e8f60845a33e2c5d61c2556, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.9000015
+      value: 0.8999939
       objectReference: {fileID: 0}
     - target: {fileID: 4933066414450076994, guid: 9fcb397b3e8f60845a33e2c5d61c2556, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -10270,7 +10270,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a0ec2327af5d85542b8b6bd59f8793d3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f3c281d3d01ffcc4a9e4e60c552a8b8b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11561,7 +11561,7 @@ MonoBehaviour:
   - {fileID: 431549460}
   - {fileID: 1075228173}
   - {fileID: 1414230838}
-  correctCombination: 03000000050000000400000007000000
+  correctCombination: 08000000050000000400000006000000
   lockPanel: {fileID: 1846162267}
   unlockedPanel: {fileID: 1913978208}
   sfxPlayer: {fileID: 858709396}
