@@ -1,25 +1,43 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CollectiblePiece : MonoBehaviour
 {
-    public string pieceKey = "PiezaEspada";
+    [Header("Datos del coleccionable")]
+    public string itemId = "PiezaEspada"; // Clave única
+    public Sprite itemIcon;              // Icono a mostrar en el inventario
+    public bool usePlayerPrefs = true;   // ¿Guardar como recogido?
 
-    // Esta función se asigna al botón desde el Inspector
-    public void OnClickCollect()
-    {
-        PlayerPrefs.SetInt(pieceKey, 1);
-        PlayerPrefs.Save();
-
-        gameObject.SetActive(false); // O Destroy(gameObject);
-    }
+    [Header("Opciones visuales")]
+    public bool destroyOnCollect = true; // O usar SetActive(false)
 
     void Start()
+    {        
+        // Si ya se recogió anteriormente y queremos recordar eso
+        //if (usePlayerPrefs && PlayerPrefs.GetInt(itemId, 0) == 1)
+        //{
+        //    gameObject.SetActive(false);
+        //}
+    }
+
+    // Llama esto desde un botón, o al hacer clic, trigger, etc.
+    public void OnClickCollect()
     {
-        // Si la pieza ya fue recogida, volverla a mostrar
-        if (PlayerPrefs.GetInt(pieceKey, 0) == 1)
+        if (usePlayerPrefs)
         {
-            PlayerPrefs.SetInt(pieceKey, 0);
-            gameObject.SetActive(true);
+            PlayerPrefs.SetInt(itemId, 1);
+            PlayerPrefs.Save();
         }
+
+        // Añadir al inventario
+        InventoryManager.Instance.AddItem(itemIcon, itemId);
+        Debug.Log("¡Va a destruirse!");
+        // Ocultar objeto recogido
+        if (destroyOnCollect) {
+            Debug.Log("¡Se destruye!");
+            Destroy(gameObject);
+        }
+        else
+            gameObject.SetActive(false);
     }
 }
