@@ -7,8 +7,8 @@ public class ItemReceiver : MonoBehaviour, IDropHandler
     public PuzzleManager puzzleManager;
     public SFXPlayer sfxPlayer;
 
-    public GameObject panelAntes;    // Asigna en el Inspector
-    public GameObject panelDespues;  // Asigna en el Inspector
+    public GameObject panelAntes;    
+    public GameObject panelDespues;  
 
     public void OnDrop(PointerEventData eventData)
     {

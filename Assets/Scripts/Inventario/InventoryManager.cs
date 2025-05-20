@@ -20,4 +20,29 @@ public class InventoryManager : MonoBehaviour
         InventoryItemUI itemUI = newItem.GetComponent<InventoryItemUI>();
         itemUI.Setup(itemSprite, itemId);
     }
+    public bool HasItem(string itemId)
+    {
+        foreach (Transform child in inventoryPanel)
+        {
+            InventoryItemUI item = child.GetComponent<InventoryItemUI>();
+            if (item != null && item.itemId == itemId)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void RemoveItem(string itemId)
+    {
+        foreach (Transform child in inventoryPanel)
+        {
+            InventoryItemUI item = child.GetComponent<InventoryItemUI>();
+            if (item != null && item.itemId == itemId)
+            {
+                Destroy(child.gameObject);
+                return;
+            }
+        }
+    }
 }
