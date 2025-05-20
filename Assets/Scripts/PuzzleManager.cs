@@ -7,21 +7,29 @@ public class PuzzleManager : MonoBehaviour
     public GameObject puzzleCompletedPanel; // Panel que se muestra cuando el puzzle es completado
     public GameObject resolvingPuzzle; // Cuadro del puzzle resolviendo (vacío)
     public GameObject solvedPuzzle; // Cuadro del puzzle resuelto (vacío)
-    
 
     void Start()
     {
-        // Al inicio de la escena, randomizamos las piezas
-        RandomizePuzzle();
+        // Solo randomizar si hay piezas
+        if (puzzlePieces != null && puzzlePieces.Length > 0)
+        {
+            RandomizePuzzle();
+        }
     }
 
     // Método para comprobar si el puzzle está completado
     public void CheckIfSolved()
     {
+        if (puzzlePieces == null || puzzlePieces.Length == 0)
+        {
+            Debug.LogWarning("No hay piezas de puzzle asignadas.");
+            return;
+        }
+
         bool isSolved = true;
         foreach (PuzzlePiece piece in puzzlePieces)
         {
-            if (!piece.IsInCorrectPosition()) // Si alguna pieza no está en su lugar
+            if (piece == null || !piece.IsInCorrectPosition())
             {
                 isSolved = false;
                 break;
@@ -30,15 +38,16 @@ public class PuzzleManager : MonoBehaviour
 
         if (isSolved)
         {
-            // Si todas las piezas están en su lugar, mostramos el panel de "completado"
             Debug.Log("Puzzle completado!");
 
-            // Mostrar el panel de completado
-            //puzzleCompletedPanel.SetActive(true);
+            if (puzzleCompletedPanel != null)
+                puzzleCompletedPanel.SetActive(true);
 
-            // Desactivar el cuadro de "resolviendo" y activar el cuadro de "resuelto"
-            resolvingPuzzle.SetActive(false);
-            solvedPuzzle.SetActive(true);
+            if (resolvingPuzzle != null)
+                resolvingPuzzle.SetActive(false);
+
+            if (solvedPuzzle != null)
+                solvedPuzzle.SetActive(true);
         }
         else
         {
@@ -49,26 +58,28 @@ public class PuzzleManager : MonoBehaviour
     // Método para randomizar las piezas al inicio de la escena
     public void RandomizePuzzle()
     {
-        // Asegúrate de que todas las piezas del puzzle estén desordenadas al inicio
+        if (puzzlePieces == null || puzzlePieces.Length == 0)
+            return;
+
         for (int i = 0; i < puzzlePieces.Length; i++)
         {
             int randomIndex = Random.Range(0, puzzlePieces.Length);
-            SwapPieces(puzzlePieces[i], puzzlePieces[randomIndex]);
+            if (puzzlePieces[i] != null && puzzlePieces[randomIndex] != null)
+            {
+                SwapPieces(puzzlePieces[i], puzzlePieces[randomIndex]);
+            }
         }
 
-        // Llamar a CheckIfSolved para asegurarse de que el puzzle no esté completado por error
         CheckIfSolved();
     }
 
     // Método para intercambiar dos piezas sin modificar el `correctId`
     private void SwapPieces(PuzzlePiece pieceA, PuzzlePiece pieceB)
     {
-        // Guardamos el correctId de cada pieza antes de intercambiar
         string tempId = pieceA.correctId;
         pieceA.correctId = pieceB.correctId;
         pieceB.correctId = tempId;
 
-        // Intercambiar los índices en el GridLayout
         int tempIndex = pieceA.transform.GetSiblingIndex();
         pieceA.transform.SetSiblingIndex(pieceB.transform.GetSiblingIndex());
         pieceB.transform.SetSiblingIndex(tempIndex);
@@ -85,15 +96,15 @@ public class PuzzleManager : MonoBehaviour
         {
             var controller = player.GetComponent<PlayerController>();
             if (controller != null)
-            {                
+            {
                 controller.canMove = !panel.activeSelf;
             }
         }
 
-        // También puede desbloquear o bloquear el cursor si es necesario:
         //Cursor.visible = panel.activeSelf;
         //Cursor.lockState = panel.activeSelf ? CursorLockMode.None : CursorLockMode.Locked;
     }
+
     public void ActivarPanelResuelto(GameObject panelAntes, GameObject panelDespues)
     {
         if (panelAntes != null) panelAntes.SetActive(false);
