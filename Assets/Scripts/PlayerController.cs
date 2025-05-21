@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public bool canMove = true;
 
     [SerializeField] private Transform spriteTransform;
+    [SerializeField] private Animator animator;
 
     void Start()
     {
@@ -22,15 +23,15 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        //Para gestionar el sonido de pasos
+
         if (!canMove)
         {
-            // Si no puede moverse, detener sonido de pasos si estaba activo
             if (isWalkingSoundPlaying)
             {
                 sfxPlayer.StopLooping();
                 isWalkingSoundPlaying = false;
             }
+            animator.SetBool("isMoving", false);
             return;
         }
 
@@ -55,7 +56,7 @@ public class PlayerController : MonoBehaviour
         // Gravedad
         if (controller.isGrounded)
         {
-            verticalVelocity = -1f; // Mantiene el personaje pegado al suelo
+            verticalVelocity = -1f;
         }
         else
         {
@@ -66,7 +67,7 @@ public class PlayerController : MonoBehaviour
 
         controller.Move(move * Time.deltaTime);
 
-        //Logica para el sonido de pasos
+        // Lógica de sonido de pasos
         bool isMoving = inputDir.magnitude > 0.1f;
 
         if (isMoving && !isWalkingSoundPlaying && controller.isGrounded)
@@ -79,16 +80,14 @@ public class PlayerController : MonoBehaviour
             sfxPlayer.StopLooping();
             isWalkingSoundPlaying = false;
         }
+
         // Flip del sprite
         if (h > 0.1f)
             spriteTransform.localScale = new Vector3(1, 1, 1);
         else if (h < -0.1f)
-        {
             spriteTransform.localScale = new Vector3(-1, 1, 1);
-        }
-        //spriteTransform.localScale = new Vector3(-1, 1, 1);
 
-        
-
+        //ANIMACIONES
+        animator.SetBool("isMoving", isMoving && controller.isGrounded);
     }
 }
