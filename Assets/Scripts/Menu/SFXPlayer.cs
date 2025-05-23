@@ -1,10 +1,13 @@
 using UnityEngine;
 using System.Collections;
-using UnityEngine.Rendering;
+using System.Collections.Generic;
 
 public class SFXPlayer : MonoBehaviour
 {
+    [Header("Fuente base de sonido")]
     public AudioSource sfxSource;
+
+    [Header("Clips")]
     public AudioClip clickClip;
     public AudioClip lockClip;
     public AudioClip chestClip;
@@ -14,68 +17,53 @@ public class SFXPlayer : MonoBehaviour
     public AudioClip stepsClip;
 
     private Coroutine loopingCoroutine;
-    public void PlayClick()
+
+    private List<AudioSource> activeSources = new List<AudioSource>();
+
+    // --- Métodos de reproducción pública ---
+    public void PlayClick() => PlayOneShot(clickClip);
+    public void PlayLock() => PlayOneShot(lockClip);
+    public void PlayChest() => PlayFromTime(chestClip, 0.7f);
+    public void PlayDoor() => PlayClipSegment(doorClip, 0.1f, 1.9f, 0.15f);
+    public void PlaySlide() => PlayOneShot(slideClip);
+    public void PlayPick() => PlayOneShot(pickClip);
+
+    // --- Reproduce múltiples sonidos simultáneamente ---
+    public void PlayOneShot(AudioClip clip, float volume = 1f)
     {
-        sfxSource.PlayOneShot(clickClip);
-    }
-    public void PlayLock()
-    {
-        sfxSource.PlayOneShot(lockClip);
+        if (clip == null) return;
+
+        AudioSource source = CreateTempSource(volume);
+        source.PlayOneShot(clip);
+        StartCoroutine(DestroyAfter(source, clip.length));
     }
 
-    public void PlayChest()
+    public void PlayFromTime(AudioClip clip, float startTime, float volume = 1f)
     {
-        PlayFromTime(chestClip, 0.7f);
-        //sfxSource.PlayOneShot(chestClip);
-    }
-    public void PlayDoor()
-    {
-        PlayClipSegment(doorClip, 0.1f,2.0f ,0.15f);
-    }
-    public void PlaySlide()
-    {
-        sfxSource.PlayOneShot(slideClip);
-    }
-    public void PlayPick()
-    {
-        sfxSource.PlayOneShot(pickClip);
-    }
-    public void PlayFromTime(AudioClip clip, float startTime)
-    {
-        sfxSource.clip = clip;
-        sfxSource.time = startTime;
-        sfxSource.Play();
+        if (clip == null) return;
+
+        AudioSource source = CreateTempSource(volume);
+        source.clip = clip;
+        source.time = startTime;
+        source.Play();
+        StartCoroutine(DestroyAfter(source, clip.length - startTime));
     }
 
-    // Método para reproducir desde un punto hasta otro con volumen personalizado
     public void PlayClipSegment(AudioClip clip, float startTime, float endTime, float volume = 1f)
     {
-        if (clip == null || startTime >= clip.length || endTime <= startTime)
-        {
-            Debug.LogWarning("Parámetros inválidos para reproducir el clip.");
-            return;
-        }
+        if (clip == null || startTime >= clip.length || endTime <= startTime) return;
 
-        StartCoroutine(PlayClipSegmentCoroutine(clip, startTime, endTime, volume));
+        AudioSource source = CreateTempSource(volume);
+        source.clip = clip;
+        source.time = startTime;
+        source.Play();
+        StartCoroutine(StopAt(source, endTime - startTime));
     }
-    private IEnumerator PlayClipSegmentCoroutine(AudioClip clip, float startTime, float endTime, float volume)
-    {
-        float originalVolume = sfxSource.volume;
 
-        sfxSource.clip = clip;
-        sfxSource.time = startTime;
-        sfxSource.volume = volume;
-        sfxSource.Play();
-
-        yield return new WaitForSeconds(endTime - startTime);
-
-        sfxSource.Stop();
-        sfxSource.volume = originalVolume; // Restaurar volumen original
-    }
-    
+    // --- Looping manual ---
     public void PlayLooping(AudioClip clip, float delayBetweenLoops, float volume)
     {
-        StopLooping(); // detener si ya se está reproduciendo algo
+        StopLooping();
         loopingCoroutine = StartCoroutine(LoopClipWithDelay(clip, delayBetweenLoops, volume));
     }
 
@@ -86,17 +74,46 @@ public class SFXPlayer : MonoBehaviour
             StopCoroutine(loopingCoroutine);
             loopingCoroutine = null;
         }
-        sfxSource.Stop();
-        sfxSource.volume = 1f;
+    }
+
+    // --- Internos ---
+    private AudioSource CreateTempSource(float volume)
+    {
+        AudioSource newSource = gameObject.AddComponent<AudioSource>();
+        newSource.spatialBlend = sfxSource != null ? sfxSource.spatialBlend : 0f;
+        newSource.volume = volume;
+        newSource.playOnAwake = false;
+        activeSources.Add(newSource);
+        return newSource;
+    }
+
+    private IEnumerator DestroyAfter(AudioSource source, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        if (source != null)
+        {
+            activeSources.Remove(source);
+            Destroy(source);
+        }
+    }
+
+    private IEnumerator StopAt(AudioSource source, float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        if (source != null)
+        {
+            source.Stop();
+            activeSources.Remove(source);
+            Destroy(source);
+        }
     }
 
     private IEnumerator LoopClipWithDelay(AudioClip clip, float delay, float volume)
     {
         while (true)
         {
-            sfxSource.PlayOneShot(clip, volume);
+            PlayOneShot(clip, volume);
             yield return new WaitForSeconds(clip.length + delay);
         }
     }
-
 }

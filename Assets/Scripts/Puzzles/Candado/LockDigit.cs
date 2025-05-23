@@ -13,6 +13,7 @@ public class LockDigit : MonoBehaviour
         currentValue = (currentValue + 1) % 10;
         UpdateImage();
         LockManager.Instance.CheckCombination();
+        
         sfxPlayer.PlayLock();
     }
 

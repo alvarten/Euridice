@@ -45,9 +45,8 @@ public class CameraZoomEffect : MonoBehaviour
             orbitalCamera.enabled = true;
     }
 
-    /// <summary>
-    /// Mueve la cámara a una posición y rotación específicas con transición suave e indefinida.
-    /// </summary>
+    
+    // Mueve la cámara a una posición y rotación específicas con transición suave e indefinida.    
     public void SetCameraToPositionSmooth(Vector3 targetPosition, Quaternion targetRotation, float duration)
     {
         if (zoomCoroutine != null)
