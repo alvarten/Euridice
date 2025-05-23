@@ -10,6 +10,8 @@ public class PianoTecla : MonoBehaviour
     private Image imagen;
     private Color colorOriginal;
 
+    //public SFXPlayer sfxPlayer;
+
     void Start()
     {
         imagen = GetComponent<Image>();

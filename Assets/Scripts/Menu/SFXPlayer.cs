@@ -16,6 +16,15 @@ public class SFXPlayer : MonoBehaviour
     public AudioClip pickClip;
     public AudioClip stepsClip;
 
+    [Header("Teclas piano")]
+    public AudioClip doPianoClip;
+    public AudioClip rePianoClip;
+    public AudioClip miPianoClip;
+    public AudioClip faPianoClip;
+    public AudioClip solPianoClip;
+    public AudioClip laPianoClip;
+    public AudioClip siPianoClip;
+
     private Coroutine loopingCoroutine;
 
     private List<AudioSource> activeSources = new List<AudioSource>();

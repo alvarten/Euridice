@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\casti\\Desktop\\Uni\\Proyecto_II\\Eurydice\\Eurydice_project\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{CB30AEB7-FA22-4312-6245-863427C24C37}|Assembly-CSharp.csproj|C:\\Users\\casti\\Desktop\\Uni\\Proyecto_II\\Eurydice\\Eurydice_project\\assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB30AEB7-FA22-4312-6245-863427C24C37}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{CB30AEB7-FA22-4312-6245-863427C24C37}|Assembly-CSharp.csproj|c:\\users\\casti\\desktop\\uni\\proyecto_ii\\eurydice\\eurydice_project\\assets\\scripts\\inventario\\inventoryitemui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CB30AEB7-FA22-4312-6245-863427C24C37}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\inventario\\inventoryitemui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CB30AEB7-FA22-4312-6245-863427C24C37}|Assembly-CSharp.csproj|c:\\users\\casti\\desktop\\uni\\proyecto_ii\\eurydice\\eurydice_project\\assets\\scripts\\inventario\\inventorymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{CB30AEB7-FA22-4312-6245-863427C24C37}|Assembly-CSharp.csproj|C:\\Users\\casti\\Desktop\\Uni\\Proyecto_II\\Eurydice\\Eurydice_project\\assets\\scripts\\inventario\\inventorymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CB30AEB7-FA22-4312-6245-863427C24C37}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\inventario\\inventorymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CB30AEB7-FA22-4312-6245-863427C24C37}|Assembly-CSharp.csproj|c:\\users\\casti\\desktop\\uni\\proyecto_ii\\eurydice\\eurydice_project\\assets\\scripts\\inventario\\itemreceiver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{CB30AEB7-FA22-4312-6245-863427C24C37}|Assembly-CSharp.csproj|C:\\Users\\casti\\Desktop\\Uni\\Proyecto_II\\Eurydice\\Eurydice_project\\assets\\scripts\\inventario\\itemreceiver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CB30AEB7-FA22-4312-6245-863427C24C37}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\inventario\\itemreceiver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB30AEB7-FA22-4312-6245-863427C24C37}|Assembly-CSharp.csproj|c:\\users\\casti\\desktop\\uni\\proyecto_ii\\eurydice\\eurydice_project\\assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB30AEB7-FA22-4312-6245-863427C24C37}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CB30AEB7-FA22-4312-6245-863427C24C37}|Assembly-CSharp.csproj|C:\\Users\\casti\\Desktop\\Uni\\Proyecto_II\\Eurydice\\Eurydice_project\\assets\\scripts\\facecamera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -34,11 +34,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "ItemReceiver.cs",
               "DocumentMoniker": "C:\\Users\\casti\\Desktop\\Uni\\Proyecto_II\\Eurydice\\Eurydice_project\\Assets\\Scripts\\Inventario\\ItemReceiver.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Inventario\\ItemReceiver.cs",
@@ -46,12 +46,11 @@
               "RelativeToolTip": "Assets\\Scripts\\Inventario\\ItemReceiver.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-11T15:35:17.343Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-11T15:35:17.343Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "InventoryManager.cs",
               "DocumentMoniker": "C:\\Users\\casti\\Desktop\\Uni\\Proyecto_II\\Eurydice\\Eurydice_project\\Assets\\Scripts\\Inventario\\InventoryManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Inventario\\InventoryManager.cs",
@@ -59,31 +58,30 @@
               "RelativeToolTip": "Assets\\Scripts\\Inventario\\InventoryManager.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-11T15:34:57.844Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-11T15:34:57.844Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "InventoryItemUI.cs",
               "DocumentMoniker": "C:\\Users\\casti\\Desktop\\Uni\\Proyecto_II\\Eurydice\\Eurydice_project\\Assets\\Scripts\\Inventario\\InventoryItemUI.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Inventario\\InventoryItemUI.cs",
               "ToolTip": "C:\\Users\\casti\\Desktop\\Uni\\Proyecto_II\\Eurydice\\Eurydice_project\\Assets\\Scripts\\Inventario\\InventoryItemUI.cs",
               "RelativeToolTip": "Assets\\Scripts\\Inventario\\InventoryItemUI.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-11T15:34:41.045Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "PlayerController.cs",
               "DocumentMoniker": "C:\\Users\\casti\\Desktop\\Uni\\Proyecto_II\\Eurydice\\Eurydice_project\\Assets\\Scripts\\PlayerController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerController.cs",
               "ToolTip": "C:\\Users\\casti\\Desktop\\Uni\\Proyecto_II\\Eurydice\\Eurydice_project\\Assets\\Scripts\\PlayerController.cs",
               "RelativeToolTip": "Assets\\Scripts\\PlayerController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-06T18:05:00.642Z",
               "EditorCaption": ""

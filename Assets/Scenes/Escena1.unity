@@ -2362,8 +2362,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1899506525}
   bookCenter: {fileID: 2020950300}
-  distance: -4.1
+  baseDistance: 10
+  minPlayerDistance: 3
   height: 0.8
+  positionSmoothSpeed: 5
+  rotationSmoothSpeed: 10
 --- !u!114 &330585549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2378,6 +2381,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zoomDuration: 1.5
   holdDuration: 2
+  orbitalCamera: {fileID: 0}
   faceCameraScript: {fileID: 1276332041}
 --- !u!1 &342533830 stripped
 GameObject:
@@ -3208,10 +3212,10 @@ RectTransform:
   - {fileID: 581603137}
   m_Father: {fileID: 563601925}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.4, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -0.4000244, y: 0}
+  m_SizeDelta: {x: -700, y: -350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &428091615 stripped
 GameObject:
@@ -5706,6 +5710,34 @@ PrefabInstance:
       propertyPath: stepsClip
       value: 
       objectReference: {fileID: 8300000, guid: 058c92305cbfadf448d32a38fcc6f6f1, type: 3}
+    - target: {fileID: 5526618258183034916, guid: 2b12dfd4e4dad4447ac8ada5b7680709, type: 3}
+      propertyPath: doPianoClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 683b51a2cb2948244abc440d226ab836, type: 3}
+    - target: {fileID: 5526618258183034916, guid: 2b12dfd4e4dad4447ac8ada5b7680709, type: 3}
+      propertyPath: faPianoClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 32fcf5c6e35974c459d80073cf108799, type: 3}
+    - target: {fileID: 5526618258183034916, guid: 2b12dfd4e4dad4447ac8ada5b7680709, type: 3}
+      propertyPath: laPianoClip
+      value: 
+      objectReference: {fileID: 8300000, guid: ac87cd2dc88a7ff47a0da51e012f50f6, type: 3}
+    - target: {fileID: 5526618258183034916, guid: 2b12dfd4e4dad4447ac8ada5b7680709, type: 3}
+      propertyPath: miPianoClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 301f75fc3f91dca4a8a3d69bfafd5767, type: 3}
+    - target: {fileID: 5526618258183034916, guid: 2b12dfd4e4dad4447ac8ada5b7680709, type: 3}
+      propertyPath: rePianoClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 367821f481fd2144e8a360d7c4344950, type: 3}
+    - target: {fileID: 5526618258183034916, guid: 2b12dfd4e4dad4447ac8ada5b7680709, type: 3}
+      propertyPath: siPianoClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 58a0bba9f9f456c4ea3112f569900732, type: 3}
+    - target: {fileID: 5526618258183034916, guid: 2b12dfd4e4dad4447ac8ada5b7680709, type: 3}
+      propertyPath: solPianoClip
+      value: 
+      objectReference: {fileID: 8300000, guid: aa67fa4ecb4ccde43b52c58b21042b83, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15526,10 +15558,10 @@ RectTransform:
   - {fileID: 1650647869}
   m_Father: {fileID: 563601925}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -331.9, y: 190}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchorMin: {x: 0.03375, y: 0.8844445}
+  m_AnchorMax: {x: 0.1375, y: 0.95777786}
+  m_AnchoredPosition: {x: -0.4000244, y: 0.5}
+  m_SizeDelta: {x: 77, y: -3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1856107563
 MonoBehaviour:
