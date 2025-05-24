@@ -3681,7 +3681,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75554cedafc761f48b2b0c414133f870, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 3
   gravity: -9.81
   sfxPlayer: {fileID: 858709396}
   canMove: 1
