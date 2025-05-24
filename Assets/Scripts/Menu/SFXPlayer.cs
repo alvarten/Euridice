@@ -1,11 +1,15 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Audio; // Asegúrate de incluir esto
 
 public class SFXPlayer : MonoBehaviour
 {
     [Header("Fuente base de sonido")]
     public AudioSource sfxSource;
+
+    [Header("Grupo de mezcla")]
+    public AudioMixerGroup sfxMixerGroup;
 
     [Header("Clips")]
     public AudioClip clickClip;
@@ -26,7 +30,6 @@ public class SFXPlayer : MonoBehaviour
     public AudioClip siPianoClip;
 
     private Coroutine loopingCoroutine;
-
     private List<AudioSource> activeSources = new List<AudioSource>();
 
     // --- Métodos de reproducción pública ---
@@ -37,11 +40,45 @@ public class SFXPlayer : MonoBehaviour
     public void PlaySlide() => PlayOneShot(slideClip);
     public void PlayPick() => PlayOneShot(pickClip);
 
+    public void PlayPianoNote(string noteCode)
+    {
+        AudioClip noteClip = null;
+
+        switch (noteCode.ToUpper())
+        {
+            case "DO":
+                noteClip = doPianoClip;
+                break;
+            case "RE":
+                noteClip = rePianoClip;
+                break;
+            case "MI":
+                noteClip = miPianoClip;
+                break;
+            case "FA":
+                noteClip = faPianoClip;
+                break;
+            case "SOL":
+                noteClip = solPianoClip;
+                break;
+            case "LA":
+                noteClip = laPianoClip;
+                break;
+            case "SI":
+                noteClip = siPianoClip;
+                break;
+            default:
+                Debug.LogWarning($"Nota de piano desconocida: {noteCode}");
+                return;
+        }
+        PlayOneShot(noteClip, 0.2f);
+    }
+
+
     // --- Reproduce múltiples sonidos simultáneamente ---
     public void PlayOneShot(AudioClip clip, float volume = 1f)
     {
         if (clip == null) return;
-
         AudioSource source = CreateTempSource(volume);
         source.PlayOneShot(clip);
         StartCoroutine(DestroyAfter(source, clip.length));
@@ -50,7 +87,6 @@ public class SFXPlayer : MonoBehaviour
     public void PlayFromTime(AudioClip clip, float startTime, float volume = 1f)
     {
         if (clip == null) return;
-
         AudioSource source = CreateTempSource(volume);
         source.clip = clip;
         source.time = startTime;
@@ -61,7 +97,6 @@ public class SFXPlayer : MonoBehaviour
     public void PlayClipSegment(AudioClip clip, float startTime, float endTime, float volume = 1f)
     {
         if (clip == null || startTime >= clip.length || endTime <= startTime) return;
-
         AudioSource source = CreateTempSource(volume);
         source.clip = clip;
         source.time = startTime;
@@ -92,6 +127,11 @@ public class SFXPlayer : MonoBehaviour
         newSource.spatialBlend = sfxSource != null ? sfxSource.spatialBlend : 0f;
         newSource.volume = volume;
         newSource.playOnAwake = false;
+
+        // Aquí se asigna el grupo de mezcla
+        if (sfxMixerGroup != null)
+            newSource.outputAudioMixerGroup = sfxMixerGroup;
+
         activeSources.Add(newSource);
         return newSource;
     }

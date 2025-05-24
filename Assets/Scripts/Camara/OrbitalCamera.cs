@@ -6,9 +6,9 @@ public class OrbitalCamera : MonoBehaviour
     public Transform bookCenter;
 
     [Header("Ajustes de posición")]
-    public float baseDistance = 10f;           // Distancia base desde el centro del libro
-    public float minPlayerDistance = 3f;       // Distancia mínima permitida entre cámara y jugador
-    public float height = 5f;                  // Altura de la cámara
+    public float baseDistance = 10f;
+    public float minPlayerDistance = 3f;
+    public float heightOffset = 1.2f;
 
     [Header("Suavizado")]
     public float positionSmoothSpeed = 5f;
@@ -26,7 +26,9 @@ public class OrbitalCamera : MonoBehaviour
         flatDirection.Normalize();
 
         // Posición base de la cámara desde el centro del libro
-        Vector3 baseCameraPos = bookCenter.position + flatDirection * baseDistance + Vector3.up * height;
+        float targetHeight = player.position.y + heightOffset;
+        Vector3 baseCameraPos = bookCenter.position + flatDirection * baseDistance;
+        baseCameraPos.y = targetHeight;
 
         // Verifica si el jugador está demasiado cerca de la cámara
         Vector3 toPlayer = player.position - baseCameraPos;
@@ -34,16 +36,15 @@ public class OrbitalCamera : MonoBehaviour
 
         if (distanceToPlayer < minPlayerDistance)
         {
-            // Alejar la cámara manteniendo dirección
             Vector3 escapeDir = -toPlayer.normalized;
             baseCameraPos = player.position + escapeDir * minPlayerDistance;
-            baseCameraPos.y = bookCenter.position.y + height;
+            baseCameraPos.y = targetHeight;
         }
 
-        // Aplicar suavizado al movimiento de cámara
+        // Suavizado de movimiento
         transform.position = Vector3.SmoothDamp(transform.position, baseCameraPos, ref velocity, 1f / positionSmoothSpeed);
 
-        // Rotar suavemente hacia un punto ligeramente por encima del jugador
+        // Suavizado de rotación hacia un punto sobre el jugador
         Vector3 lookTarget = Vector3.Lerp(player.position, player.position + Vector3.up * 2f, 0.3f);
         Quaternion desiredRot = Quaternion.LookRotation(lookTarget - transform.position);
         transform.rotation = Quaternion.Slerp(transform.rotation, desiredRot, Time.deltaTime * rotationSmoothSpeed);

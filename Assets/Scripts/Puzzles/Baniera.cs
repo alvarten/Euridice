@@ -6,8 +6,8 @@ public class Baniera : MonoBehaviour
     private bool yaActivado = false;
     public string itemNecesario = "Grifo";
     public CameraZoomEffect zoomEffect;
-    Vector3 focusPoint = new Vector3(-10.82611f, 5.560f, -3.807848f); // tu punto elegido
-    Quaternion focusRotation = Quaternion.Euler(72.055f, -90.336f, 0f); // o la rotación de la cámara en escena
+    Vector3 focusPoint = new Vector3(-10.75481f, 6.885497f, -5.326507f); // tu punto elegido
+    Quaternion focusRotation = Quaternion.Euler(79.716f, -85.353f, 5.068f); // o la rotación de la cámara en escena
 
     public void Interactuar()
     {

@@ -7,9 +7,10 @@ public class PianoPuzzle : MonoBehaviour
     private int progresoActual = 0;
 
     public GameObject objetoAlCompletar; // El objeto que se mostrará
-
+    public SFXPlayer sfxPlayer;
     public void PulsarTecla(PianoTecla tecla)
     {
+        sfxPlayer.PlayPianoNote(tecla.idTecla);
         if (tecla.idTecla == secuenciaCorrecta[progresoActual])
         {
             tecla.MostrarFeedback(Color.green);

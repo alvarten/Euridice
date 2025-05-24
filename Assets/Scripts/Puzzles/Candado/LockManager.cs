@@ -1,22 +1,16 @@
 using UnityEngine;
 
-public class LockManager : MonoBehaviour
+public class LockManager : BaseLockManager
 {
-    public static LockManager Instance;
-
     public LockDigit[] digits;
     public int[] correctCombination = { 3, 5, 4, 7 };
 
-    public GameObject lockPanel;       // Panel que contiene el candado
-    public GameObject unlockedPanel;   // Panel que aparece al desbloquear
+    public GameObject lockPanel;
+    public GameObject unlockedPanel;
 
     public SFXPlayer sfxPlayer;
-    void Awake()
-    {
-        Instance = this;
-    }
 
-    public void CheckCombination()
+    public override void CheckCombination()
     {
         for (int i = 0; i < digits.Length; i++)
         {
@@ -28,7 +22,5 @@ public class LockManager : MonoBehaviour
         sfxPlayer.PlayDoor();
         if (lockPanel != null) lockPanel.SetActive(false);
         if (unlockedPanel != null) unlockedPanel.SetActive(true);
-        
-            
     }
 }
