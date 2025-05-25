@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class PuzzlePiece : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     [Header("Identificador de posición lógica")]
-    public string correctId; // Por ejemplo, "A1", "B1", "C1", "A2"...
+    public string correctId; // Por ejemplo, "A1"
 
     [HideInInspector] public Transform originalParent;
 
@@ -40,7 +40,7 @@ public class PuzzlePiece : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         rt.SetParent(originalParent);
         rt.SetSiblingIndex(transform.GetSiblingIndex());
 
-        // Copiar tamaño si hay LayoutElement
+        // Copiar tamaño 
         LayoutElement le = placeholder.AddComponent<LayoutElement>();
         LayoutElement sourceLE = GetComponent<LayoutElement>();
         if (sourceLE != null)
@@ -75,7 +75,7 @@ public class PuzzlePiece : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
             int myIndex = placeholder.transform.GetSiblingIndex();
             int targetIndex = targetPiece.transform.GetSiblingIndex();
 
-            // Evitar la reestructuración incorrecta, especialmente al mover hacia abajo.
+            // Evitar la reestructuración incorrecta, a raiz de un error al mover hacia abajo.
             if (myIndex == targetIndex)
             {
                 Debug.Log("No se realiza intercambio, las piezas son iguales.");
@@ -94,7 +94,7 @@ public class PuzzlePiece : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
             // Comprobar si el puzzle está resuelto tras el intercambio
             if (puzzleManager != null)
             {
-                puzzleManager.CheckIfSolved(); // Llamamos a la comprobación después de hacer el intercambio
+                puzzleManager.CheckIfSolved(); 
             }
         }
         else
@@ -110,7 +110,6 @@ public class PuzzlePiece : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     // Método para verificar si la pieza está en su lugar correcto
     public bool IsInCorrectPosition()
     {
-        // Compara el correctId actualizado con el nombre de la pieza
         return correctId == gameObject.name.Replace("PuzzlePieceCuadro", "");
     }
 }

@@ -87,7 +87,7 @@ public class PlayerController : MonoBehaviour
         else if (h < -0.1f)
             spriteTransform.localScale = new Vector3(-1, 1, 1);
 
-        //ANIMACIONES
+        // animaciones
         animator.SetBool("isMoving", isMoving && controller.isGrounded);
     }
 }

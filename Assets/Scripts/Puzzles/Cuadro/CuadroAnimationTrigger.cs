@@ -44,7 +44,7 @@ public class CuadroAnimationTrigger : MonoBehaviour
         }
     }
 
-    // Llamar a este método al interactuar con la caja fuerte
+    // Llamar a este metodo al interactuar con la caja fuerte
     public void CollectRewardFromCajaFuerte()
     {
         if (rewardCollected) return;

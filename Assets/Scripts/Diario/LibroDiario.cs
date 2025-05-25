@@ -8,7 +8,7 @@ public class LibroDiario : MonoBehaviour
 
     public Sprite[] paginaSprites;
 
-    private int paginaActual = 0; // siempre impar (0, 2, 4...)
+    private int paginaActual = 0;
 
     public Button botonSiguiente;
     public Button botonAnterior;

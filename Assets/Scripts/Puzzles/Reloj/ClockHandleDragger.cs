@@ -22,7 +22,7 @@ public class ClockHandleDragger : MonoBehaviour, IDragHandler, IBeginDragHandler
 
         float currentHandAngle = handTransform.eulerAngles.z;
 
-        dragOffset = Mathf.DeltaAngle(pointerAngle, currentHandAngle); // Diferencia entre mouse y manecilla
+        dragOffset = Mathf.DeltaAngle(pointerAngle, currentHandAngle); // Diferencia entre mouse y manecilla (el sprite tiene una inclinacion por defecto)
     }
 
     public void OnDrag(PointerEventData eventData)

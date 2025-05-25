@@ -11,8 +11,8 @@ public class ClockPuzzle : MonoBehaviour
     [Range(0, 59)] public int targetMinute = 45;
 
     [Header("Márgenes de Tolerancia")]
-    public int allowedHourMargin = 1;     // ±1 hora
-    public int allowedMinuteMargin = 10;  // ±10 minutos
+    public int allowedHourMargin = 1;     // 1 hora
+    public int allowedMinuteMargin = 10;  // 10 minutos
 
     void Update()
     {
@@ -31,7 +31,7 @@ public class ClockPuzzle : MonoBehaviour
         if (hourOK && minuteOK)
         {
             Debug.Log("¡Hora correcta marcada!");
-            // Aquí puedes ejecutar cualquier acción que desees
+            // Falta implementar la logica de resolucion de este puzle
         }
     }
 
@@ -50,7 +50,7 @@ public class ClockPuzzle : MonoBehaviour
         Vector2 dir = (handle.transform.position - handle.centerPoint.position).normalized;
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90f;
 
-        // Inversión del sentido y compensación de ángulo inicial
+        // Inversión del sentido y compensación de ángulo inicial para que coincidan las manecillas con la hora marcada
         angle = (-angle - handle.initialAngleOffset + 360f) % 360f;
         return angle;
     }

@@ -11,7 +11,6 @@ public class MainMenuManager : MonoBehaviour
     public void OpenOptions()
     {
         Debug.Log("Opciones abiertas (aquí irá el menú de opciones)");
-        // Aquí puedes abrir un panel de opciones más adelante
     }
 
     public void QuitGame()

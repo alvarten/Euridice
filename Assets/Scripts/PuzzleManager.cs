@@ -2,15 +2,15 @@ using UnityEngine;
 
 public class PuzzleManager : MonoBehaviour
 {
-    public GameObject player; // Asigna el jugador desde el Inspector
-    public PuzzlePiece[] puzzlePieces; // Lista de todas las piezas del puzzle
-    public GameObject puzzleCompletedPanel; // Panel que se muestra cuando el puzzle es completado
-    public GameObject resolvingPuzzle; // Cuadro del puzzle resolviendo (vacío)
-    public GameObject solvedPuzzle; // Cuadro del puzzle resuelto (vacío)
+    public GameObject player; 
+    public PuzzlePiece[] puzzlePieces; // Lista de todas las piezas del puzzle del cuadro
+    public GameObject puzzleCompletedPanel; // Panel que se muestra cuando el puzzle del cuadro es completado
+    public GameObject resolvingPuzzle; 
+    public GameObject solvedPuzzle; 
 
     void Start()
     {
-        // Solo randomizar si hay piezas
+        // Se detectan las piezas y se randomizan
         if (puzzlePieces != null && puzzlePieces.Length > 0)
         {
             RandomizePuzzle();
@@ -73,7 +73,7 @@ public class PuzzleManager : MonoBehaviour
         CheckIfSolved();
     }
 
-    // Método para intercambiar dos piezas sin modificar el `correctId`
+    // Método para intercambiar dos piezas
     private void SwapPieces(PuzzlePiece pieceA, PuzzlePiece pieceB)
     {
         string tempId = pieceA.correctId;
@@ -100,9 +100,6 @@ public class PuzzleManager : MonoBehaviour
                 controller.canMove = !panel.activeSelf;
             }
         }
-
-        //Cursor.visible = panel.activeSelf;
-        //Cursor.lockState = panel.activeSelf ? CursorLockMode.None : CursorLockMode.Locked;
     }
 
     public void ActivarPanelResuelto(GameObject panelAntes, GameObject panelDespues)

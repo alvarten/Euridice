@@ -122,7 +122,6 @@ public class InventoryItemUI : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 
         while (elapsed < duration)
         {
-            //transform.localScale = targetScale;
             float t = elapsed / duration;
             transform.position = Vector3.Lerp(startPos, originalPosition, t);
             transform.localScale = Vector3.Lerp(startScale, targetScale, t );
@@ -134,7 +133,7 @@ public class InventoryItemUI : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         transform.position = originalPosition;
         transform.localScale = targetScale;
 
-        // Ahora lo devolvemos al layout del inventario
+        // Ahora devolvemos el onjeto al layout del inventario
         transform.SetParent(originalParent);
 
         isZoomed = false;

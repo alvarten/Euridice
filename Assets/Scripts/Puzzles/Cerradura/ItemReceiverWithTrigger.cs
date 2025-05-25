@@ -14,7 +14,7 @@ public class ItemReceiverWithTogglePanel : MonoBehaviour, IDropHandler
     public GameObject interactuableDespues; // El objeto que se activará
 
     [Header("Puzzle Manager")]
-    public PuzzleManager puzzleManager; // Referencia al PuzzleManager que tiene TogglePuzzlePanel()
+    public PuzzleManager puzzleManager;
 
     public void OnDrop(PointerEventData eventData)
     {
@@ -22,7 +22,7 @@ public class ItemReceiverWithTogglePanel : MonoBehaviour, IDropHandler
         if (droppedItem != null && droppedItem.itemId == acceptedItemId)
         {
             Debug.Log("¡Ítem correcto usado!");
-            //sfxPlayer.PlayChest();
+            //sfxPlayer.PlayChest(); //Sonido al abrir la cerradura
             Destroy(droppedItem.gameObject);
 
             // Activar el panel usando PuzzleManager

@@ -17,6 +17,7 @@ public class CameraZoomEffect : MonoBehaviour
     private Coroutine zoomCoroutine;
     public bool isZooming = false;
 
+    // Mueve la cámara a una posición y rotación específicas con transición suave.
     public void StartZoom(Vector3 targetPosition, Quaternion targetRotation, float transitionDuration, float holdTime)
     {
         if (zoomCoroutine != null)
@@ -46,7 +47,7 @@ public class CameraZoomEffect : MonoBehaviour
     }
 
 
-    // Mueve la cámara a una posición y rotación específicas con transición suave e indefinida.    
+    // Mueve la cámara a una posición y rotación específicas con transición suave de manera indefinida.
     public void SetCameraToPositionSmooth(Vector3 targetPosition, Quaternion targetRotation, float duration)
     {
         if (zoomCoroutine != null)

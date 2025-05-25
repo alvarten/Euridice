@@ -19,7 +19,7 @@ public class LockDigit : MonoBehaviour
 
     public void Decrease()
     {
-        currentValue = (currentValue - 1 + 10) % 10; // wrap-around hacia atrás
+        currentValue = (currentValue - 1 + 10) % 10;
         UpdateImage();
         LockManager.Instance.CheckCombination();
         sfxPlayer.PlayLock();

@@ -7,21 +7,17 @@ public class CollectiblePiece : MonoBehaviour
     [Header("Datos del coleccionable")]
     public string itemId = "PiezaEspada"; // Clave única
     public Sprite itemIcon;              // Icono a mostrar en el inventario
-    public bool usePlayerPrefs = true;   // ¿Guardar como recogido?
+    public bool usePlayerPrefs = true;   // Para guardarlo como recogido en un futuro
 
     [Header("Opciones visuales")]
     public bool destroyOnCollect = true; // O usar SetActive(false)
 
     void Start()
     {        
-        // Si ya se recogió anteriormente y queremos recordar eso
-        //if (usePlayerPrefs && PlayerPrefs.GetInt(itemId, 0) == 1)
-        //{
-        //    gameObject.SetActive(false);
-        //}
+        
     }
 
-    // Llama esto desde un botón, o al hacer clic, trigger, etc.
+    // Funcion para anadir el objeto al inventario
     public void OnClickCollect()
     {
         if (usePlayerPrefs)
@@ -33,8 +29,7 @@ public class CollectiblePiece : MonoBehaviour
         // Añadir al inventario
         InventoryManager.Instance.AddItem(itemIcon, itemId);
         sfxPlayer.PlayPick();
-        //Debug.Log("¡Va a destruirse!");
-        // Ocultar objeto recogido
+        // Ocultar objeto recogido o destruierlo
         if (destroyOnCollect) {
             //Debug.Log("¡Se destruye!");
             Destroy(gameObject);

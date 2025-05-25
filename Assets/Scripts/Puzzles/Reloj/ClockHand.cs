@@ -29,7 +29,6 @@ public class ClockHand : MonoBehaviour, IDragHandler, IBeginDragHandler
 
     public float GetRotationAngle()
     {
-        // Retorna el ángulo entre 0 y 360
         return (360f - rectTransform.eulerAngles.z) % 360f;
     }
 }

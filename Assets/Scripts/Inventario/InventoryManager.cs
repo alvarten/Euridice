@@ -6,8 +6,8 @@ public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager Instance;
 
-    public Transform inventoryPanel; // El layout horizontal en la esquina inferior izquierda
-    public GameObject inventoryItemPrefab; // Prefab con Image + drag script
+    public Transform inventoryPanel;
+    public GameObject inventoryItemPrefab;
 
     private void Awake()
     {

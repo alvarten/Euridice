@@ -6,7 +6,7 @@ public class OpenDoor : MonoBehaviour
     public SFXPlayer sfxPlayer;
 
     [Header("Rotación")]
-    public float rotationAmount = 40f;
+    public float rotationAmount = 40f; // grados en total
     public float rotationSpeed = 120f; // grados por segundo
 
     [Header("Una sola vez")]
@@ -18,7 +18,6 @@ public class OpenDoor : MonoBehaviour
 
     void Start()
     {
-        // Asegura que el objeto esté activo al iniciar la escena
         gameObject.SetActive(true);
     }
     void Update()

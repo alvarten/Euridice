@@ -20,11 +20,7 @@ public class OptionsMenu : MonoBehaviour
 
     void Start()
     {
-        // OPCIONAL: Descomenta esto una vez para reiniciar preferencias si algo falla
-         //PlayerPrefs.DeleteAll();
-         //PlayerPrefs.Save();
-
-        // Volumen
+        // Volumen de los distintos canales
         float master = PlayerPrefs.GetFloat("MasterVolume", 1f);
         float music = PlayerPrefs.GetFloat("MusicVolume", 1f);
         float sfx = PlayerPrefs.GetFloat("SFXVolume", 1f);
@@ -41,7 +37,7 @@ public class OptionsMenu : MonoBehaviour
         musicSlider.onValueChanged.AddListener(SetMusicVolume);
         sfxSlider.onValueChanged.AddListener(SetSFXVolume);
 
-        // Pantalla completa
+        // Ajustable de pantalla completa
         bool isFullscreen = PlayerPrefs.GetInt("Fullscreen", 1) == 1;
         fullscreenToggle.isOn = isFullscreen;
         SetFullscreen(isFullscreen);
