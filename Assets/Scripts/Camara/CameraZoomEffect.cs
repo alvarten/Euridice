@@ -3,7 +3,7 @@ using System.Collections;
 
 public class CameraZoomEffect : MonoBehaviour
 {
-    [Header("Zoom temporal")]
+    [Header("Valores por defecto")]
     public float zoomDuration = 1.5f;
     public float holdDuration = 2f;
 
@@ -15,14 +15,14 @@ public class CameraZoomEffect : MonoBehaviour
     private Quaternion originalRotation;
 
     private Coroutine zoomCoroutine;
-    private bool isZooming = false;
+    public bool isZooming = false;
 
-    public void StartZoom(Vector3 targetPosition, Quaternion targetRotation)
+    public void StartZoom(Vector3 targetPosition, Quaternion targetRotation, float transitionDuration, float holdTime)
     {
         if (zoomCoroutine != null)
             StopCoroutine(zoomCoroutine);
 
-        zoomCoroutine = StartCoroutine(ZoomSequence(targetPosition, targetRotation));
+        zoomCoroutine = StartCoroutine(ZoomSequence(targetPosition, targetRotation, transitionDuration, holdTime));
     }
 
     public void CancelZoom()
@@ -45,7 +45,7 @@ public class CameraZoomEffect : MonoBehaviour
             orbitalCamera.enabled = true;
     }
 
-    
+
     // Mueve la cámara a una posición y rotación específicas con transición suave e indefinida.    
     public void SetCameraToPositionSmooth(Vector3 targetPosition, Quaternion targetRotation, float duration)
     {
@@ -55,7 +55,7 @@ public class CameraZoomEffect : MonoBehaviour
         zoomCoroutine = StartCoroutine(PermanentTransition(targetPosition, targetRotation, duration));
     }
 
-    IEnumerator ZoomSequence(Vector3 targetPosition, Quaternion targetRotation)
+    IEnumerator ZoomSequence(Vector3 targetPosition, Quaternion targetRotation, float transitionDuration, float holdTime)
     {
         isZooming = true;
 
@@ -65,11 +65,11 @@ public class CameraZoomEffect : MonoBehaviour
         if (orbitalCamera != null)
             orbitalCamera.enabled = false;
 
-        yield return StartCoroutine(SmoothTransition(targetPosition, targetRotation, zoomDuration));
+        yield return StartCoroutine(SmoothTransition(targetPosition, targetRotation, transitionDuration));
 
-        yield return new WaitForSeconds(holdDuration);
+        yield return new WaitForSeconds(holdTime);
 
-        yield return StartCoroutine(SmoothTransition(originalPosition, originalRotation, zoomDuration));
+        yield return StartCoroutine(SmoothTransition(originalPosition, originalRotation, transitionDuration));
 
         if (orbitalCamera != null)
             orbitalCamera.enabled = true;
