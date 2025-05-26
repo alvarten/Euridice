@@ -2736,7 +2736,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 431939833}
         m_TargetAssemblyTypeName: RestartButton, Assembly-CSharp
-        m_MethodName: RestartScene
+        m_MethodName: LoadEscena1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10906,7 +10906,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Fin de la demo
+  m_text: Fin del tutorial demo
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -13590,7 +13590,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Restart
+  m_text: 'Continuar
 
 '
   m_isRightToLeft: 0
@@ -15603,7 +15603,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2409857723212712327, guid: b58643e1dec56b849853ed80e1226bc6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.30000305
+      value: 0.2999878
       objectReference: {fileID: 0}
     - target: {fileID: 5378728281938597612, guid: b58643e1dec56b849853ed80e1226bc6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -15613,6 +15613,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 858709396}
+    - target: {fileID: 5921458999291859578, guid: b58643e1dec56b849853ed80e1226bc6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.96585083
+      objectReference: {fileID: 0}
     - target: {fileID: 6007482477817378894, guid: b58643e1dec56b849853ed80e1226bc6, type: 3}
       propertyPath: m_Name
       value: PausePanel
@@ -15620,6 +15624,14 @@ PrefabInstance:
     - target: {fileID: 6007482477817378894, guid: b58643e1dec56b849853ed80e1226bc6, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6419712857668645526, guid: b58643e1dec56b849853ed80e1226bc6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.51660156
+      objectReference: {fileID: 0}
+    - target: {fileID: 7446047900665912757, guid: b58643e1dec56b849853ed80e1226bc6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.099998474
       objectReference: {fileID: 0}
     - target: {fileID: 8077160152609789010, guid: b58643e1dec56b849853ed80e1226bc6, type: 3}
       propertyPath: m_AnchorMax.x
