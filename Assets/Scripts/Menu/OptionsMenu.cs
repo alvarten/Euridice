@@ -8,6 +8,7 @@ public class OptionsMenu : MonoBehaviour
 {
     public GameObject optionsPanel;
     public GameObject mainMenuPanel;
+    public GameObject controlsPanel;
     public Slider masterSlider;
     public Slider musicSlider;
     public Slider sfxSlider;
@@ -91,7 +92,17 @@ public class OptionsMenu : MonoBehaviour
         optionsPanel.SetActive(false);
         mainMenuPanel.SetActive(true);
     }
+    public void OpenControls()
+    {
+        controlsPanel.SetActive(true);
+        optionsPanel.SetActive(false);
+    }
 
+    public void CloseControls()
+    {
+        controlsPanel.SetActive(false);
+        optionsPanel.SetActive(true);
+    }
     public void SetMasterVolume(float value)
     {
         audioMixer.SetFloat("MasterVolume", Mathf.Log10(Mathf.Clamp(value, 0.0001f, 1f)) * 20);

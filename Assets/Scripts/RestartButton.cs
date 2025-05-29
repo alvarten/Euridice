@@ -13,7 +13,7 @@ public class RestartButton : MonoBehaviour
     // Carga directamente la escena "Escena1"
     public void LoadEscena1()
     {
-        SceneManager.LoadScene("Escena1");
+        SceneManager.LoadScene(2);
     }
 }
 
