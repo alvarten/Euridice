@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6ce4284cc15504a41bba047baf3494a4
+guid: 92841c9c5e3a6b7419038bdf748da6bf
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -71,7 +71,7 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 4096
     resizeAlgorithm: 0
-    textureFormat: 4
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -93,24 +93,11 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: 4
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IMG_2292_0
+      name: Diary_0
       rect:
         serializedVersion: 2
         x: 0
@@ -125,14 +112,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7d566d3df3b01d14e8eb50c899e6d3bf
-      internalID: -669819685
+      spriteID: 9264d9a439b9661419663eb5dc0e1b67
+      internalID: 674498078
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IMG_2292_1
+      name: Diary_1
       rect:
         serializedVersion: 2
         x: 609
@@ -147,14 +134,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c756bcc98ba9554094f143bc55c0b26
-      internalID: 916003504
+      spriteID: f652b7154feb47f45bf13e8b6f91b828
+      internalID: -910586192
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IMG_2292_2
+      name: Diary_2
       rect:
         serializedVersion: 2
         x: 1218
@@ -169,14 +156,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9346c590a841621499dd163beb62746f
-      internalID: 1459315276
+      spriteID: c4f4a773044b85d4d8cf6c7561594950
+      internalID: 1647052411
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IMG_2292_3
+      name: Diary_3
       rect:
         serializedVersion: 2
         x: 1827
@@ -191,14 +178,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d6dffac7b1aea30499c55bb1c2d6e437
-      internalID: -602503045
+      spriteID: a9ee879dbde0b88449f4ba53376fc6b2
+      internalID: 689545246
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IMG_2292_4
+      name: Diary_4
       rect:
         serializedVersion: 2
         x: 2436
@@ -213,14 +200,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 672d5684243547d479022f5c54c404e8
-      internalID: 60372890
+      spriteID: 5c076f0f3856734438c8303909f7cd9a
+      internalID: 1043862485
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IMG_2292_5
+      name: Diary_5
       rect:
         serializedVersion: 2
         x: 3045
@@ -235,8 +222,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ac800bd50b49d804482290e66cb00ff4
-      internalID: -1230419280
+      spriteID: e2bfd2528dbe950429b748d9ff1a3d8f
+      internalID: 2018878891
       vertices: []
       indices: 
       edges: []
@@ -245,7 +232,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e9cd552d7013094d8279e3eccc4658c
+    spriteID: 3b801957ce73e2a4493477c14ca892b9
     internalID: 0
     vertices: []
     indices: 
@@ -255,12 +242,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      IMG_2292_0: -669819685
-      IMG_2292_1: 916003504
-      IMG_2292_2: 1459315276
-      IMG_2292_3: -602503045
-      IMG_2292_4: 60372890
-      IMG_2292_5: -1230419280
+      Diary_0: 674498078
+      Diary_1: -910586192
+      Diary_2: 1647052411
+      Diary_3: 689545246
+      Diary_4: 1043862485
+      Diary_5: 2018878891
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
