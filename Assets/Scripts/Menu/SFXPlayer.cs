@@ -38,7 +38,7 @@ public class SFXPlayer : MonoBehaviour
     public void PlayChest() => PlayFromTime(chestClip, 0.7f);
     public void PlayDoor() => PlayClipSegment(doorClip, 0.1f, 1.9f, 0.15f);
     public void PlaySlide() => PlayOneShot(slideClip);
-    public void PlayPick() => PlayOneShot(pickClip);
+    public void PlayPick() => PlayOneShot(pickClip, 0.5f);
 
     public void PlayPianoNote(string noteCode)
     {

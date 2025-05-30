@@ -143,4 +143,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sfxSource: {fileID: 6753574486501774104}
+  sfxMixerGroup: {fileID: -6600873080543514018, guid: 338d2a5f282e61748ac3f70e6ffa0b32, type: 2}
   clickClip: {fileID: 8300000, guid: 8bae3ad0fcabe3a468aa0a6dde45b8d2, type: 3}
+  lockClip: {fileID: 8300000, guid: 01476ffb05b063e43949bcaab8d649a3, type: 3}
+  chestClip: {fileID: 8300000, guid: 8588ea78bdd1ec04eb12c171284dfe12, type: 3}
+  doorClip: {fileID: 8300000, guid: 679359cf844b264489c731c4d94e2214, type: 3}
+  slideClip: {fileID: 8300000, guid: 566cfb01b97a188419ce2c5df328c93b, type: 3}
+  pickClip: {fileID: 8300000, guid: e5fdbe1176a620448afcd367b24ee235, type: 3}
+  stepsClip: {fileID: 8300000, guid: 058c92305cbfadf448d32a38fcc6f6f1, type: 3}
+  doPianoClip: {fileID: 8300000, guid: 683b51a2cb2948244abc440d226ab836, type: 3}
+  rePianoClip: {fileID: 8300000, guid: 367821f481fd2144e8a360d7c4344950, type: 3}
+  miPianoClip: {fileID: 8300000, guid: 301f75fc3f91dca4a8a3d69bfafd5767, type: 3}
+  faPianoClip: {fileID: 8300000, guid: 32fcf5c6e35974c459d80073cf108799, type: 3}
+  solPianoClip: {fileID: 8300000, guid: aa67fa4ecb4ccde43b52c58b21042b83, type: 3}
+  laPianoClip: {fileID: 8300000, guid: ac87cd2dc88a7ff47a0da51e012f50f6, type: 3}
+  siPianoClip: {fileID: 8300000, guid: 58a0bba9f9f456c4ea3112f569900732, type: 3}

@@ -6952,62 +6952,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5526618258183034916, guid: 2b12dfd4e4dad4447ac8ada5b7680709, type: 3}
-      propertyPath: doorClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 679359cf844b264489c731c4d94e2214, type: 3}
-    - target: {fileID: 5526618258183034916, guid: 2b12dfd4e4dad4447ac8ada5b7680709, type: 3}
-      propertyPath: lockClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 01476ffb05b063e43949bcaab8d649a3, type: 3}
-    - target: {fileID: 5526618258183034916, guid: 2b12dfd4e4dad4447ac8ada5b7680709, type: 3}
-      propertyPath: pickClip
-      value: 
-      objectReference: {fileID: 8300000, guid: fc600438aa690a741b89285c7813dfb7, type: 3}
-    - target: {fileID: 5526618258183034916, guid: 2b12dfd4e4dad4447ac8ada5b7680709, type: 3}
-      propertyPath: chestClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 8588ea78bdd1ec04eb12c171284dfe12, type: 3}
-    - target: {fileID: 5526618258183034916, guid: 2b12dfd4e4dad4447ac8ada5b7680709, type: 3}
-      propertyPath: slideClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 566cfb01b97a188419ce2c5df328c93b, type: 3}
-    - target: {fileID: 5526618258183034916, guid: 2b12dfd4e4dad4447ac8ada5b7680709, type: 3}
-      propertyPath: stepsClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 058c92305cbfadf448d32a38fcc6f6f1, type: 3}
-    - target: {fileID: 5526618258183034916, guid: 2b12dfd4e4dad4447ac8ada5b7680709, type: 3}
-      propertyPath: doPianoClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 683b51a2cb2948244abc440d226ab836, type: 3}
-    - target: {fileID: 5526618258183034916, guid: 2b12dfd4e4dad4447ac8ada5b7680709, type: 3}
-      propertyPath: faPianoClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 32fcf5c6e35974c459d80073cf108799, type: 3}
-    - target: {fileID: 5526618258183034916, guid: 2b12dfd4e4dad4447ac8ada5b7680709, type: 3}
-      propertyPath: laPianoClip
-      value: 
-      objectReference: {fileID: 8300000, guid: ac87cd2dc88a7ff47a0da51e012f50f6, type: 3}
-    - target: {fileID: 5526618258183034916, guid: 2b12dfd4e4dad4447ac8ada5b7680709, type: 3}
-      propertyPath: miPianoClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 301f75fc3f91dca4a8a3d69bfafd5767, type: 3}
-    - target: {fileID: 5526618258183034916, guid: 2b12dfd4e4dad4447ac8ada5b7680709, type: 3}
-      propertyPath: rePianoClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 367821f481fd2144e8a360d7c4344950, type: 3}
-    - target: {fileID: 5526618258183034916, guid: 2b12dfd4e4dad4447ac8ada5b7680709, type: 3}
-      propertyPath: siPianoClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 58a0bba9f9f456c4ea3112f569900732, type: 3}
-    - target: {fileID: 5526618258183034916, guid: 2b12dfd4e4dad4447ac8ada5b7680709, type: 3}
-      propertyPath: solPianoClip
-      value: 
-      objectReference: {fileID: 8300000, guid: aa67fa4ecb4ccde43b52c58b21042b83, type: 3}
-    - target: {fileID: 5526618258183034916, guid: 2b12dfd4e4dad4447ac8ada5b7680709, type: 3}
-      propertyPath: sfxMixerGroup
-      value: 
-      objectReference: {fileID: -6600873080543514018, guid: 338d2a5f282e61748ac3f70e6ffa0b32, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

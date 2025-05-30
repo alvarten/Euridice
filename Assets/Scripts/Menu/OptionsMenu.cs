@@ -9,6 +9,7 @@ public class OptionsMenu : MonoBehaviour
     public GameObject optionsPanel;
     public GameObject mainMenuPanel;
     public GameObject controlsPanel;
+    public GameObject mutedIcon; //el icono cuando se mutee el volumen master
     public Slider masterSlider;
     public Slider musicSlider;
     public Slider sfxSlider;
@@ -21,6 +22,8 @@ public class OptionsMenu : MonoBehaviour
 
     void Start()
     {
+        //IsVolumeMuted();
+
         // Volumen de los distintos canales
         float master = PlayerPrefs.GetFloat("MasterVolume", 1f);
         float music = PlayerPrefs.GetFloat("MusicVolume", 1f);
@@ -135,4 +138,18 @@ public class OptionsMenu : MonoBehaviour
         Screen.SetResolution(res.x, res.y, Screen.fullScreenMode);
         PlayerPrefs.SetInt("ResolutionIndex", index);
     }
+    
+    /*
+    public void IsVolumeMuted()
+    {
+        if (masterSlider.value == 0) //lo he intentado con el valor del slider pero no me lo cogia, no se como ponerlo con la musica
+        {
+            mutedIcon.SetActive(true);
+        }
+        else
+        {
+            mutedIcon.SetActive(false);
+        }
+
+    }*/
 }
