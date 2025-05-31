@@ -15,6 +15,7 @@ public class OrbitalCamera : MonoBehaviour
     public float rotationSmoothSpeed = 10f;
 
     private Vector3 velocity = Vector3.zero;
+    private bool forceSnap = false;
 
     void LateUpdate()
     {
@@ -42,11 +43,23 @@ public class OrbitalCamera : MonoBehaviour
         }
 
         // Suavizado de movimiento
-        transform.position = Vector3.SmoothDamp(transform.position, baseCameraPos, ref velocity, 1f / positionSmoothSpeed);
+        if (forceSnap)
+        {
+            transform.position = baseCameraPos;
+            forceSnap = false;
+        }
+        else
+        {
+            transform.position = Vector3.SmoothDamp(transform.position, baseCameraPos, ref velocity, 1f / positionSmoothSpeed);
+        }
 
         // Suavizado de rotación hacia un punto sobre el jugador
         Vector3 lookTarget = Vector3.Lerp(player.position, player.position + Vector3.up * 2f, 0.3f);
         Quaternion desiredRot = Quaternion.LookRotation(lookTarget - transform.position);
         transform.rotation = Quaternion.Slerp(transform.rotation, desiredRot, Time.deltaTime * rotationSmoothSpeed);
+    }
+    public void SnapToTarget()
+    {
+        forceSnap = true;
     }
 }

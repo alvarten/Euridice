@@ -3,40 +3,49 @@ using System.Collections;
 
 public class SalaTrigger : MonoBehaviour
 {
+    [Header("Foco de cámara")]
     public Transform cameraFocusPoint;
     public Vector3 desiredEulerRotation;
     public float delayBeforeZoom = 3f;
 
     private Coroutine zoomDelayCoroutine;
     private CameraZoomEffect cameraZoom;
+    private Transform player;
+    private Collider triggerCollider;
     private bool playerInside = false;
 
     void Start()
     {
         cameraZoom = Camera.main.GetComponent<CameraZoomEffect>();
+        triggerCollider = GetComponent<Collider>();
+
+        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+        if (playerObj != null)
+            player = playerObj.transform;
     }
 
-    void OnTriggerEnter(Collider other)
+    void Update()
     {
-        if (other.CompareTag("Player"))
+        if (player == null || triggerCollider == null) return;
+
+        bool isCurrentlyInside = triggerCollider.bounds.Contains(player.position);
+
+        if (isCurrentlyInside && !playerInside)
         {
             playerInside = true;
             zoomDelayCoroutine = StartCoroutine(WaitForZoomAndStart());
         }
-    }
-
-    void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
+        else if (!isCurrentlyInside && playerInside)
         {
             playerInside = false;
+
             if (zoomDelayCoroutine != null)
             {
                 StopCoroutine(zoomDelayCoroutine);
                 zoomDelayCoroutine = null;
             }
 
-            cameraZoom.RestoreOrbitalCamera(); // Reactivamos el control orbital
+            cameraZoom.RestoreOrbitalCamera();
         }
     }
 

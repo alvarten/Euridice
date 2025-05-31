@@ -5,18 +5,34 @@ public class Interactuable : MonoBehaviour
 {
     public GameObject visualIndicator;
     public UnityEvent onInteract;
+    public float interactionRadius = 2f;
 
     private bool isPlayerInside = false;
-    
+    private Transform player;
 
     void Start()
     {
         if (visualIndicator != null)
-            visualIndicator.SetActive(false);        
+            visualIndicator.SetActive(false);
+
+        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+        if (playerObj != null)
+            player = playerObj.transform;
     }
 
     void Update()
     {
+        if (player != null && isPlayerInside)
+        {
+            float distance = Vector3.Distance(transform.position, player.position);
+            if (distance > interactionRadius)
+            {
+                isPlayerInside = false;
+                if (visualIndicator != null)
+                    visualIndicator.SetActive(false);
+            }
+        }
+
         if (isPlayerInside && Input.GetKeyDown(KeyCode.E))
         {
             Interact();
@@ -45,8 +61,7 @@ public class Interactuable : MonoBehaviour
 
     private void Interact()
     {
-        if (onInteract != null) { 
+        if (onInteract != null)
             onInteract.Invoke();
-        }            
     }
 }
