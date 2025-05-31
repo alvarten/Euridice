@@ -22,7 +22,7 @@ public class ItemReceiverCook : MonoBehaviour, IDropHandler
             Destroy(droppedItem.gameObject);
 
             puzzleManager?.ActivarPanelResuelto(panelAntes, panelDespues);
-            cookTracker?.AddIngredient(); // <- Añadimos uno al contador
+            cookTracker?.AddIngredient(); // Añadimos uno al contador
         }
         else
         {
