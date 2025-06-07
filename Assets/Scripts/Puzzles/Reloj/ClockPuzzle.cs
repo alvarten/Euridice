@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ClockPuzzle : MonoBehaviour
@@ -6,32 +7,75 @@ public class ClockPuzzle : MonoBehaviour
     public ClockHandleDragger hourHandle;
     public ClockHandleDragger minuteHandle;
 
-    [Header("Hora Objetivo")]
-    [Range(0, 11)] public int targetHour = 3;
-    [Range(0, 59)] public int targetMinute = 45;
+    [Header("Horas Objetivo (HH, MM)")]
+    public List<Vector2Int> targetTimes = new List<Vector2Int>()
+    {
+        new Vector2Int(3, 45),
+        new Vector2Int(6, 15),
+        new Vector2Int(9, 0)
+    };
 
     [Header("Márgenes de Tolerancia")]
     public int allowedHourMargin = 1;     // 1 hora
     public int allowedMinuteMargin = 10;  // 10 minutos
 
+    private int currentStep = 0;
+    public SFXPlayer sfxPlayer;
+
+    [Header("Cambio de interactuables")]
+    public GameObject interactuableAntes;   // El objeto que se desactivará
+    public GameObject interactuableDespues; // El objeto que se activará
+
+    [Header("Interfaz de usuario")]
+    public GameObject panelParaActivar; // Este panel será toggled (activado/desactivado)
+
+    [Header("Puzzle Manager")]
+    public PuzzleManager puzzleManager;
+
     void Update()
     {
-        CheckTargetTime();
+        
     }
 
     public void CheckTargetTime()
     {
+        if (currentStep >= targetTimes.Count)
+        {
+            Debug.Log("Puzzle ya completado.");
+            return;
+        }
+
         GetCurrentTime(out int currentHour, out int currentMinute);
+        Vector2Int target = targetTimes[currentStep];
 
-        bool hourOK = Mathf.Abs(Mathf.DeltaAngle(currentHour * 30f, targetHour * 30f)) <= allowedHourMargin * 30f;
-        bool minuteOK = Mathf.Abs(Mathf.DeltaAngle(currentMinute * 6f, targetMinute * 6f)) <= allowedMinuteMargin * 6f;
+        bool hourOK = Mathf.Abs(Mathf.DeltaAngle(currentHour * 30f, target.x * 30f)) <= allowedHourMargin * 30f;
+        bool minuteOK = Mathf.Abs(Mathf.DeltaAngle(currentMinute * 6f, target.y * 6f)) <= allowedMinuteMargin * 6f;
 
-        Debug.Log($"Hora actual: {currentHour:00}:{currentMinute:00} | Objetivo: {targetHour:00}:{targetMinute:00}");
+        Debug.Log($"Intento {currentStep + 1} | Hora actual: {currentHour:00}:{currentMinute:00} | Objetivo: {target.x:00}:{target.y:00}");
 
         if (hourOK && minuteOK)
         {
-            Debug.Log("¡Hora correcta marcada!");
-            // Falta implementar la logica de resolucion de este puzle
+            Debug.Log("Hora correcta!");
+            sfxPlayer?.PlayClick();
+            currentStep++;
+
+            if (currentStep >= targetTimes.Count)
+            {
+                Debug.Log("Puzzle completado correctamente.");
+
+                puzzleManager.TogglePuzzlePanel(panelParaActivar);
+                // Cambiar interactuables para dar la llave y activar la animacion del reloj abriendose
+                if (interactuableAntes != null)
+                    interactuableAntes.SetActive(false);
+
+                if (interactuableDespues != null)
+                    interactuableDespues.SetActive(true);
+            }
+        }
+        else
+        {
+            Debug.Log("Hora incorrecta. Reiniciando progreso.");
+            currentStep = 0;
         }
     }
 
