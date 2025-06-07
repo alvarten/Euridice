@@ -19,6 +19,7 @@ public class SFXPlayer : MonoBehaviour
     public AudioClip slideClip;
     public AudioClip pickClip;
     public AudioClip stepsClip;
+    public AudioClip bubleClip;
 
     [Header("Teclas piano")]
     public AudioClip doPianoClip;
@@ -39,6 +40,8 @@ public class SFXPlayer : MonoBehaviour
     public void PlayDoor() => PlayClipSegment(doorClip, 0.1f, 1.9f, 0.15f);
     public void PlaySlide() => PlayOneShot(slideClip);
     public void PlayPick() => PlayOneShot(pickClip, 0.5f);
+
+    public void PlayBuble() => PlayOneShot(bubleClip, 0.5f);
 
     public void PlayPianoNote(string noteCode)
     {
