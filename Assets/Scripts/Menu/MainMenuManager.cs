@@ -5,7 +5,8 @@ public class MainMenuManager : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene(1); 
+        int lastScene = PlayerPrefs.GetInt("LastScene", 1);
+        SceneManager.LoadScene(lastScene); 
     }
 
     public void OpenOptions()

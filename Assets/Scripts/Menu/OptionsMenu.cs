@@ -21,7 +21,7 @@ public class OptionsMenu : MonoBehaviour
     private List<Vector2Int> allowedResolutions;
 
     void Start()
-    {
+    {        
         //IsVolumeMuted();
 
         // Volumen de los distintos canales
