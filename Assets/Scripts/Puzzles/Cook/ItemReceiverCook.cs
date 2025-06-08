@@ -18,7 +18,7 @@ public class ItemReceiverCook : MonoBehaviour, IDropHandler
         if (droppedItem != null && droppedItem.itemId == acceptedItemId)
         {
             Debug.Log("¡Ítem correcto usado!");
-            sfxPlayer?.PlayPick();
+            sfxPlayer?.PlayBuble();
             Destroy(droppedItem.gameObject);
 
             puzzleManager?.ActivarPanelResuelto(panelAntes, panelDespues);
