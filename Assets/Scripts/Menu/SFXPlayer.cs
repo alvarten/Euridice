@@ -21,6 +21,8 @@ public class SFXPlayer : MonoBehaviour
     public AudioClip stepsClip;
     public AudioClip bubleClip;
     public AudioClip pageClip;
+    public AudioClip errorClip;
+    public AudioClip waterClip;
 
     [Header("Teclas piano")]
     public AudioClip doPianoClip;
@@ -32,11 +34,15 @@ public class SFXPlayer : MonoBehaviour
     public AudioClip siPianoClip;
 
     [Header("Creepy")]
+    public AudioClip walkIntroClip;
     public AudioClip chokeClip;
-    public AudioClip laugh1;
-    public AudioClip laugh2;
-    public AudioClip laugh3;
-    public AudioClip laugh4;
+    public AudioClip laugh1Clip;
+    public AudioClip laugh2Clip;
+    public AudioClip laugh3Clip;
+    public AudioClip laugh4Clip;
+    public AudioClip errorMen1Clip;
+    public AudioClip errorMen2Clip;
+    public AudioClip errorMen3Clip;
 
     private Coroutine loopingCoroutine;
     private List<AudioSource> activeSources = new List<AudioSource>();
@@ -50,6 +56,8 @@ public class SFXPlayer : MonoBehaviour
     public void PlayPick() => PlayOneShot(pickClip, 0.5f);
     public void PlayBuble() => PlayOneShot(bubleClip, 0.5f);
     public void PlayPage() => PlayOneShot(pageClip, 1.3f);
+    public void PlayError() => PlayOneShot(errorClip, 0.5f);
+    public void PlayWater() => PlayClipSegment(waterClip, 0.1f, 3f);
 
     public void PlayPianoNote(string noteCode)
     {

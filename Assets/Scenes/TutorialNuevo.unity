@@ -8378,7 +8378,7 @@ PrefabInstance:
     - target: {fileID: 545386968165300675, guid: 9fcb397b3e8f60845a33e2c5d61c2556, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 3c76600a5424c76459e19eb0c91bae51, type: 3}
+      objectReference: {fileID: 21300000, guid: 061e08c8819a1ec42a4a41368b25809c, type: 3}
     - target: {fileID: 545386968165300675, guid: 9fcb397b3e8f60845a33e2c5d61c2556, type: 3}
       propertyPath: m_PreserveAspect
       value: 1
@@ -8390,7 +8390,7 @@ PrefabInstance:
     - target: {fileID: 4776313238802193974, guid: 9fcb397b3e8f60845a33e2c5d61c2556, type: 3}
       propertyPath: itemIcon
       value: 
-      objectReference: {fileID: 21300000, guid: 3c76600a5424c76459e19eb0c91bae51, type: 3}
+      objectReference: {fileID: 21300000, guid: 061e08c8819a1ec42a4a41368b25809c, type: 3}
     - target: {fileID: 4776313238802193974, guid: 9fcb397b3e8f60845a33e2c5d61c2556, type: 3}
       propertyPath: sfxPlayer
       value: 
@@ -8748,7 +8748,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1315665900
 MonoBehaviour:
   m_ObjectHideFlags: 0

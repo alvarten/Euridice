@@ -52,7 +52,7 @@ public class VelasManager : MonoBehaviour
             ReiniciarPuzle();
 
             //SONIDO ERROR
-            //sfxPlayer.PlayError();
+            sfxPlayer.PlayError();
         }
     }
 
