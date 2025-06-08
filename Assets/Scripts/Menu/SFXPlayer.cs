@@ -20,6 +20,7 @@ public class SFXPlayer : MonoBehaviour
     public AudioClip pickClip;
     public AudioClip stepsClip;
     public AudioClip bubleClip;
+    public AudioClip pageClip;
 
     [Header("Teclas piano")]
     public AudioClip doPianoClip;
@@ -29,6 +30,13 @@ public class SFXPlayer : MonoBehaviour
     public AudioClip solPianoClip;
     public AudioClip laPianoClip;
     public AudioClip siPianoClip;
+
+    [Header("Creepy")]
+    public AudioClip chokeClip;
+    public AudioClip laugh1;
+    public AudioClip laugh2;
+    public AudioClip laugh3;
+    public AudioClip laugh4;
 
     private Coroutine loopingCoroutine;
     private List<AudioSource> activeSources = new List<AudioSource>();
@@ -41,6 +49,7 @@ public class SFXPlayer : MonoBehaviour
     public void PlaySlide() => PlayOneShot(slideClip);
     public void PlayPick() => PlayOneShot(pickClip, 0.5f);
     public void PlayBuble() => PlayOneShot(bubleClip, 0.5f);
+    public void PlayPage() => PlayOneShot(pageClip, 1.3f);
 
     public void PlayPianoNote(string noteCode)
     {

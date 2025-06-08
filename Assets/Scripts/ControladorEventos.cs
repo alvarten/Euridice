@@ -22,14 +22,19 @@ public class ControladorEventos : MonoBehaviour
     public Volume globalVolume;
     public Color colorInicial = Color.white;
     public Color colorFinal = Color.red;
-    private float duracionTransicion = 3f;
+    public float saturacionInicial = 0f;
+    public float saturacionFinal = -100f;
+    public float vignetteInicial = 0f;
+    public float vignetteFinal = 0.4f;
 
     private float tiempoTranscurrido = 0f;
     private bool partidaFinalizada = false;
     private bool animacion70Iniciada = false;
+    private bool transicionPostFXHecha = false;
     private bool transicionColorHecha = false;
 
     private ColorAdjustments colorAdjustments;
+    private Vignette vignette;
 
     void Start()
     {
@@ -43,10 +48,19 @@ public class ControladorEventos : MonoBehaviour
             canvasGroup.blocksRaycasts = false;
         }
 
-        if (globalVolume != null && globalVolume.profile.TryGet(out colorAdjustments))
+        if (globalVolume != null)
         {
-            colorAdjustments.colorFilter.overrideState = true;
-            colorAdjustments.colorFilter.value = colorInicial;
+            if (globalVolume.profile.TryGet(out colorAdjustments))
+            {
+                colorAdjustments.saturation.overrideState = true;
+                colorAdjustments.saturation.value = saturacionInicial;
+            }
+
+            if (globalVolume.profile.TryGet(out vignette))
+            {
+                vignette.intensity.overrideState = true;
+                vignette.intensity.value = vignetteInicial;
+            }
         }
     }
 
@@ -58,11 +72,11 @@ public class ControladorEventos : MonoBehaviour
 
         float porcentaje = tiempoTranscurrido / duracionPartida;
 
-        // Transición de color al 50%
-        if (!transicionColorHecha && porcentaje >= 0.5f)
+        // Transición de post-procesado al 50%
+        if (!transicionPostFXHecha && porcentaje >= 0.5f)
         {
-            transicionColorHecha = true;
-            StartCoroutine(TransicionarColor());
+            transicionPostFXHecha = true;
+            StartCoroutine(TransicionarPostProcesado());
         }
 
         // Animación al 70%
@@ -76,8 +90,13 @@ public class ControladorEventos : MonoBehaviour
         {
             FinalizarPartida();
         }
-    }
 
+        if (!transicionColorHecha && porcentaje >= 0.5f)
+        {
+            transicionColorHecha = true;
+            StartCoroutine(TransicionarColor());
+        }
+    }
     void IniciarAnimacion70()
     {
         animacion70Iniciada = true;
@@ -103,9 +122,7 @@ public class ControladorEventos : MonoBehaviour
         {
             var controller = player.GetComponent<PlayerController>();
             if (controller != null)
-            {
                 controller.canMove = false;
-            }
         }
     }
 
@@ -126,6 +143,31 @@ public class ControladorEventos : MonoBehaviour
         canvasGroup.blocksRaycasts = true;
     }
 
+    System.Collections.IEnumerator TransicionarPostProcesado()
+    {
+        float t = 0f;
+        float duracionTransicion = duracionPartida / 2f;
+
+        while (t < duracionTransicion)
+        {
+            t += Time.deltaTime;
+            float progreso = t / duracionTransicion;
+
+            if (colorAdjustments != null)
+                colorAdjustments.saturation.value = Mathf.Lerp(saturacionInicial, saturacionFinal, progreso);
+
+            if (vignette != null)
+                vignette.intensity.value = Mathf.Lerp(vignetteInicial, vignetteFinal, progreso);
+
+            yield return null;
+        }
+
+        if (colorAdjustments != null)
+            colorAdjustments.saturation.value = saturacionFinal;
+
+        if (vignette != null)
+            vignette.intensity.value = vignetteFinal;
+    }
     System.Collections.IEnumerator TransicionarColor()
     {
         float t = 0f;

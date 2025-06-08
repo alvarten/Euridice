@@ -50,6 +50,9 @@ public class VelasManager : MonoBehaviour
             // Error: reiniciar
             Debug.Log("Orden incorrecto. Reiniciando puzle...");
             ReiniciarPuzle();
+
+            //SONIDO ERROR
+            //sfxPlayer.PlayError();
         }
     }
 
