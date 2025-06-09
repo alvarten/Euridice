@@ -17,6 +17,15 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Tutorial.unity
     guid: 5ec35fa6049026b42b9c71c779116b30
+  - enabled: 1
+    path: Assets/Scenes/CambioEscenaCin.unity
+    guid: 0e2996eb5d19de24a8ed641742ed91b1
+  - enabled: 1
+    path: Assets/Scenes/EscenaFinalJuego.unity
+    guid: 6babcdfdd4c6d714e9d550fa65b9f65f
+  - enabled: 1
+    path: Assets/Scenes/Creditos.unity
+    guid: 3229f019944e7e54d9efa878a7124b00
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

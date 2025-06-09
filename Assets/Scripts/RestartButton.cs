@@ -13,7 +13,7 @@ public class RestartButton : MonoBehaviour
     // Carga directamente la escena "Escena1"
     public void LoadEscena1()
     {
-        PlayerPrefs.SetInt("LastScene", 2);
+        PlayerPrefs.SetInt("LastScene", 3);
         PlayerPrefs.Save();
         SceneManager.LoadScene(2);
     }

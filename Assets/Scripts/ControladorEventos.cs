@@ -41,6 +41,15 @@ public class ControladorEventos : MonoBehaviour
     private ColorAdjustments colorAdjustments;
     private Vignette vignette;
 
+    [Header("Zoom de Cámara")]
+    public CameraZoomEffect zoomEffect;
+    public Vector3 puntoZoom = new Vector3(-10.75481f, 6.885497f, -5.326507f);
+    public Quaternion rotacionZoom = Quaternion.Euler(79.716f, -85.353f, 5.068f);
+    public float duracionZoom = 1.5f;
+    public float tiempoMantenerZoom = 2f;
+    public FaceCamera faceCameraScript;
+
+
     void Start()
     {
         if (panelFinal != null)
@@ -157,9 +166,16 @@ public class ControladorEventos : MonoBehaviour
 
         if (animador70 != null)
         {
+            sfxPlayer.PlayChoke();
             animador70.SetTrigger(triggerAnimacion70);
             Debug.Log("Animación del 70% activada.");
         }
+        
+        if (zoomEffect != null)
+        {
+            zoomEffect.StartZoom(puntoZoom, rotacionZoom, duracionZoom, tiempoMantenerZoom);
+        }        
+        StartCoroutine(DisableFaceCameraTemporarily(duracionZoom + tiempoMantenerZoom));
     }
 
     void FinalizarPartida()
@@ -241,5 +257,15 @@ public class ControladorEventos : MonoBehaviour
 
         if (colorAdjustments != null)
             colorAdjustments.colorFilter.value = colorFinal;
+    }
+    private IEnumerator DisableFaceCameraTemporarily(float duration)
+    {
+        if (faceCameraScript != null)
+            faceCameraScript.enabled = false;
+
+        yield return new WaitForSeconds(duration);
+
+        if (faceCameraScript != null)
+            faceCameraScript.enabled = true;
     }
 }

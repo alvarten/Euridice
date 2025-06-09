@@ -12,39 +12,36 @@ public class CodePad : MonoBehaviour
     [SerializeField] private GameObject objectToShow;
     [SerializeField] private GameObject panelToHide;
     [SerializeField] private PuzzleManager puzzleManager;
-
-    private int progress = 0;
+    
     private string currentInput = "";
     private bool isUnlocked = false;
 
     public void PressKey(string digit)
     {
-        if (isUnlocked) return;
+        if (isUnlocked || currentInput.Length >= correctCode.Length) return;
 
-        if (digit == correctCode[progress].ToString())
+        currentInput += digit;
+        UpdateDisplay();
+
+        if (currentInput.Length == correctCode.Length)
         {
-            currentInput += digit;
-            progress++;
-
-            if (progress == correctCode.Length)
+            if (currentInput == correctCode)
             {
                 isUnlocked = true;
                 OnUnlocked();
             }
+            else
+            {
+                sfxPlayer.PlayError();
+                ResetCode();
+                UpdateDisplay();
+            }
         }
-        else
-        {
-            ResetCode();
-            sfxPlayer.PlayError();
-        }
-
-        UpdateDisplay();
     }
 
     private void ResetCode()
     {
         currentInput = "";
-        progress = 0;
     }
 
     private void UpdateDisplay()

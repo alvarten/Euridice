@@ -62,7 +62,7 @@ public class SFXPlayer : MonoBehaviour
     public void PlayPage() => PlayOneShot(pageClip, 1.3f);
     public void PlayWater() => PlayClipSegment(waterClip, 0.1f, 3f);
     public void PlayIntroGuardian() => PlayOneShot(walkIntroClip);
-
+    public void PlayChoke() => PlayWithDelayBefore(chokeClip, 4.55f, 2f, 4.1f, 2.8f);
     public void PlayError()
     {
         if (controladorEventos != null && controladorEventos.tiempoTranscurrido >= 260f)
@@ -234,5 +234,33 @@ public class SFXPlayer : MonoBehaviour
 
         int index = Random.Range(0, clips.Length);
         return clips[index];
+    }
+
+    public void PlayWithDelayBefore(AudioClip clip, float delay, float volume, float startTime, float cutAfterSeconds)
+    {
+        if (clip == null || startTime < 0 || startTime >= clip.length || cutAfterSeconds <= 0 || (startTime + cutAfterSeconds) > clip.length)
+        {
+            Debug.LogWarning("Parámetros inválidos para PlayWithDelayBefore.");
+            return;
+        }
+
+        StartCoroutine(PlayWithDelayCoroutine(clip, delay, volume, startTime, cutAfterSeconds));
+    }
+    private IEnumerator PlayWithDelayCoroutine(AudioClip clip, float delay, float volume, float startTime, float cutAfterSeconds)
+    {
+        yield return new WaitForSeconds(delay);
+
+        AudioSource source = CreateTempSource(volume);
+        source.clip = clip;
+        source.time = startTime;
+        source.Play();
+
+        yield return new WaitForSeconds(cutAfterSeconds);
+        if (source != null)
+        {
+            source.Stop();
+            activeSources.Remove(source);
+            Destroy(source);
+        }
     }
 }
