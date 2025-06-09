@@ -17,6 +17,7 @@ public class ComprobacionPuertaFinal : MonoBehaviour
         else
         {
             sfxPlayer?.PlayError();
+
             Debug.Log($"El jugador **NO** tiene el objeto necesario: {itemNecesario}");
         }
     }

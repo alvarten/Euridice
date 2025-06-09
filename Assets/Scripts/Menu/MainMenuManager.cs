@@ -9,10 +9,6 @@ public class MainMenuManager : MonoBehaviour
         SceneManager.LoadScene(lastScene); 
     }
 
-    public void OpenOptions()
-    {
-        Debug.Log("Opciones abiertas (aquí irá el menú de opciones)");
-    }
 
     public void QuitGame()
     {
