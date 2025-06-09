@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.Audio; // Asegúrate de incluir esto
+using UnityEngine.Audio; 
 
 public class SFXPlayer : MonoBehaviour
 {
@@ -189,7 +189,6 @@ public class SFXPlayer : MonoBehaviour
         newSource.volume = volume;
         newSource.playOnAwake = false;
 
-        // Aquí se asigna el grupo de mezcla
         if (sfxMixerGroup != null)
             newSource.outputAudioMixerGroup = sfxMixerGroup;
 

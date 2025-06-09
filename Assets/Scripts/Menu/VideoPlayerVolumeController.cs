@@ -17,13 +17,10 @@ public class VideoPlayerVolumeController : MonoBehaviour
     {
         videoPlayer = GetComponent<VideoPlayer>();
 
-        // Obtener volumen en decibelios desde el AudioMixer
         if (musicMixerGroup.audioMixer.GetFloat("MusicVolume", out float volumeDB))
         {
-            // Convertir de decibelios a lineal (0–1)
             float linearVolume = Mathf.Pow(10f, volumeDB / 20f);
 
-            // Aplicar volumen directamente al VideoPlayer
             videoPlayer.SetDirectAudioVolume(audioTrackIndex, linearVolume);
         }
         else

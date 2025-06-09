@@ -4,6 +4,8 @@ public class PauseMenu : MonoBehaviour
 {
     public GameObject pausePanel;
     public GameObject optionsPanel;
+    public GameObject player; 
+
     private bool isPaused = false;
 
     void Update()
@@ -26,15 +28,15 @@ public class PauseMenu : MonoBehaviour
     public void TogglePause()
     {
         isPaused = !isPaused;
-        Time.timeScale = isPaused ? 0f : 1f;
         pausePanel.SetActive(isPaused);
+        TogglePlayerMovement(!isPaused);
     }
 
     public void ResumeGame()
     {
         isPaused = false;
-        Time.timeScale = 1f;
         pausePanel.SetActive(false);
+        TogglePlayerMovement(true);
     }
 
     public void OpenOptions()
@@ -51,7 +53,18 @@ public class PauseMenu : MonoBehaviour
 
     public void QuitToMainMenu()
     {
-        Time.timeScale = 1f;
         UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+    }
+
+    private void TogglePlayerMovement(bool canMove)
+    {
+        if (player != null)
+        {
+            var controller = player.GetComponent<PlayerController>();
+            if (controller != null)
+            {
+                controller.canMove = canMove;
+            }
+        }
     }
 }
