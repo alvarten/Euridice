@@ -3,16 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\casti\\Desktop\\Uni\\Proyecto_II\\Eurydice\\Eurydice_project\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{CB30AEB7-FA22-4312-6245-863427C24C37}|Assembly-CSharp.csproj|C:\\Users\\casti\\Desktop\\Uni\\Proyecto_II\\Eurydice\\Eurydice_project\\assets\\scripts\\restartbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB30AEB7-FA22-4312-6245-863427C24C37}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\restartbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB30AEB7-FA22-4312-6245-863427C24C37}|Assembly-CSharp.csproj|c:\\users\\casti\\desktop\\uni\\proyecto_ii\\eurydice\\eurydice_project\\assets\\scripts\\pocionscenechanger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB30AEB7-FA22-4312-6245-863427C24C37}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\pocionscenechanger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB30AEB7-FA22-4312-6245-863427C24C37}|Assembly-CSharp.csproj|c:\\users\\casti\\desktop\\uni\\proyecto_ii\\eurydice\\eurydice_project\\assets\\scripts\\puzzles\\numpad\\codepad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB30AEB7-FA22-4312-6245-863427C24C37}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\puzzles\\numpad\\codepad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB30AEB7-FA22-4312-6245-863427C24C37}|Assembly-CSharp.csproj|C:\\Users\\casti\\Desktop\\Uni\\Proyecto_II\\Eurydice\\Eurydice_project\\assets\\scripts\\menu\\sfxplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB30AEB7-FA22-4312-6245-863427C24C37}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\menu\\sfxplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{CB30AEB7-FA22-4312-6245-863427C24C37}|Assembly-CSharp.csproj|C:\\Users\\casti\\Desktop\\Uni\\Proyecto_II\\Eurydice\\Eurydice_project\\assets\\scripts\\menu\\mainmenumanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CB30AEB7-FA22-4312-6245-863427C24C37}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\menu\\mainmenumanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CB30AEB7-FA22-4312-6245-863427C24C37}|Assembly-CSharp.csproj|C:\\Users\\casti\\Desktop\\Uni\\Proyecto_II\\Eurydice\\Eurydice_project\\assets\\scripts\\menu\\pausemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CB30AEB7-FA22-4312-6245-863427C24C37}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\menu\\pausemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB30AEB7-FA22-4312-6245-863427C24C37}|Assembly-CSharp.csproj|c:\\users\\casti\\desktop\\uni\\proyecto_ii\\eurydice\\eurydice_project\\assets\\scripts\\menu\\sfxplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB30AEB7-FA22-4312-6245-863427C24C37}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\menu\\sfxplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CB30AEB7-FA22-4312-6245-863427C24C37}|Assembly-CSharp.csproj|C:\\Users\\casti\\Desktop\\Uni\\Proyecto_II\\Eurydice\\Eurydice_project\\assets\\scripts\\puzzles\\baniera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -51,10 +63,6 @@
       "RelativeMoniker": "D:0:0:{CB30AEB7-FA22-4312-6245-863427C24C37}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\puzzlemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CB30AEB7-FA22-4312-6245-863427C24C37}|Assembly-CSharp.csproj|C:\\Users\\casti\\Desktop\\Uni\\Proyecto_II\\Eurydice\\Eurydice_project\\assets\\scripts\\restartbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB30AEB7-FA22-4312-6245-863427C24C37}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\restartbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{CB30AEB7-FA22-4312-6245-863427C24C37}|Assembly-CSharp.csproj|C:\\Users\\casti\\Desktop\\Uni\\Proyecto_II\\Eurydice\\Eurydice_project\\assets\\scripts\\inventario\\inventorymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CB30AEB7-FA22-4312-6245-863427C24C37}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\inventario\\inventorymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -86,11 +94,49 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PocionSceneChanger.cs",
+              "DocumentMoniker": "C:\\Users\\casti\\Desktop\\Uni\\Proyecto_II\\Eurydice\\Eurydice_project\\Assets\\Scripts\\PocionSceneChanger.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PocionSceneChanger.cs",
+              "ToolTip": "C:\\Users\\casti\\Desktop\\Uni\\Proyecto_II\\Eurydice\\Eurydice_project\\Assets\\Scripts\\PocionSceneChanger.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PocionSceneChanger.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T17:08:50.862Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CodePad.cs",
+              "DocumentMoniker": "C:\\Users\\casti\\Desktop\\Uni\\Proyecto_II\\Eurydice\\Eurydice_project\\Assets\\Scripts\\Puzzles\\NumPad\\CodePad.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Puzzles\\NumPad\\CodePad.cs",
+              "ToolTip": "C:\\Users\\casti\\Desktop\\Uni\\Proyecto_II\\Eurydice\\Eurydice_project\\Assets\\Scripts\\Puzzles\\NumPad\\CodePad.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Puzzles\\NumPad\\CodePad.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAgwCUAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T15:19:54.353Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "SFXPlayer.cs",
+              "DocumentMoniker": "C:\\Users\\casti\\Desktop\\Uni\\Proyecto_II\\Eurydice\\Eurydice_project\\Assets\\Scripts\\Menu\\SFXPlayer.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Menu\\SFXPlayer.cs",
+              "ToolTip": "C:\\Users\\casti\\Desktop\\Uni\\Proyecto_II\\Eurydice\\Eurydice_project\\Assets\\Scripts\\Menu\\SFXPlayer.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Menu\\SFXPlayer.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAowDoAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T21:31:50.459Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Baniera.cs",
               "DocumentMoniker": "C:\\Users\\casti\\Desktop\\Uni\\Proyecto_II\\Eurydice\\Eurydice_project\\Assets\\Scripts\\Puzzles\\Baniera.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Puzzles\\Baniera.cs",
@@ -102,7 +148,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "MesillaDiario.cs",
               "DocumentMoniker": "C:\\Users\\casti\\Desktop\\Uni\\Proyecto_II\\Eurydice\\Eurydice_project\\Assets\\Scripts\\MesillaDiario.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\MesillaDiario.cs",
@@ -114,20 +160,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "SFXPlayer.cs",
-              "DocumentMoniker": "C:\\Users\\casti\\Desktop\\Uni\\Proyecto_II\\Eurydice\\Eurydice_project\\Assets\\Scripts\\Menu\\SFXPlayer.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Menu\\SFXPlayer.cs",
-              "ToolTip": "C:\\Users\\casti\\Desktop\\Uni\\Proyecto_II\\Eurydice\\Eurydice_project\\Assets\\Scripts\\Menu\\SFXPlayer.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Menu\\SFXPlayer.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAIBJwDoAAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T21:31:50.459Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "VelasManager.cs",
               "DocumentMoniker": "C:\\Users\\casti\\Desktop\\Uni\\Proyecto_II\\Eurydice\\Eurydice_project\\Assets\\Scripts\\Puzzles\\VelasHall\\VelasManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Puzzles\\VelasHall\\VelasManager.cs",
@@ -139,7 +172,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "ControladorEventos.cs",
               "DocumentMoniker": "C:\\Users\\casti\\Desktop\\Uni\\Proyecto_II\\Eurydice\\Eurydice_project\\Assets\\Scripts\\ControladorEventos.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ControladorEventos.cs",
@@ -151,7 +184,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "LibroDiario.cs",
               "DocumentMoniker": "C:\\Users\\casti\\Desktop\\Uni\\Proyecto_II\\Eurydice\\Eurydice_project\\Assets\\Scripts\\Diario\\LibroDiario.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Diario\\LibroDiario.cs",
@@ -163,7 +196,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 0,
               "Title": "RestartButton.cs",
               "DocumentMoniker": "C:\\Users\\casti\\Desktop\\Uni\\Proyecto_II\\Eurydice\\Eurydice_project\\Assets\\Scripts\\RestartButton.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\RestartButton.cs",
@@ -171,11 +204,12 @@
               "RelativeToolTip": "Assets\\Scripts\\RestartButton.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T18:02:02.449Z"
+              "WhenOpened": "2025-05-29T18:02:02.449Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "OptionsMenu.cs",
               "DocumentMoniker": "C:\\Users\\casti\\Desktop\\Uni\\Proyecto_II\\Eurydice\\Eurydice_project\\Assets\\Scripts\\Menu\\OptionsMenu.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Menu\\OptionsMenu.cs",
@@ -187,7 +221,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "PauseMenu.cs",
               "DocumentMoniker": "C:\\Users\\casti\\Desktop\\Uni\\Proyecto_II\\Eurydice\\Eurydice_project\\Assets\\Scripts\\Menu\\PauseMenu.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Menu\\PauseMenu.cs",
@@ -195,12 +229,11 @@
               "RelativeToolTip": "Assets\\Scripts\\Menu\\PauseMenu.cs",
               "ViewState": "AgIAABYAAAAAAAAAAAAgwDYAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T17:46:26.505Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-29T17:46:26.505Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "MainMenuManager.cs",
               "DocumentMoniker": "C:\\Users\\casti\\Desktop\\Uni\\Proyecto_II\\Eurydice\\Eurydice_project\\Assets\\Scripts\\Menu\\MainMenuManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Menu\\MainMenuManager.cs",
@@ -208,12 +241,11 @@
               "RelativeToolTip": "Assets\\Scripts\\Menu\\MainMenuManager.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T17:46:18.914Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-29T17:46:18.914Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 14,
               "Title": "PuzzleManager.cs",
               "DocumentMoniker": "C:\\Users\\casti\\Desktop\\Uni\\Proyecto_II\\Eurydice\\Eurydice_project\\Assets\\Scripts\\PuzzleManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PuzzleManager.cs",
@@ -225,7 +257,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "PianoPuzzle.cs",
               "DocumentMoniker": "C:\\Users\\casti\\Desktop\\Uni\\Proyecto_II\\Eurydice\\Eurydice_project\\Assets\\Scripts\\Puzzles\\Piano\\PianoPuzzle.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Puzzles\\Piano\\PianoPuzzle.cs",
@@ -237,7 +269,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "PianoTecla.cs",
               "DocumentMoniker": "C:\\Users\\casti\\Desktop\\Uni\\Proyecto_II\\Eurydice\\Eurydice_project\\Assets\\Scripts\\Puzzles\\Piano\\PianoTecla.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Puzzles\\Piano\\PianoTecla.cs",
@@ -249,7 +281,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "ItemReceiver.cs",
               "DocumentMoniker": "C:\\Users\\casti\\Desktop\\Uni\\Proyecto_II\\Eurydice\\Eurydice_project\\Assets\\Scripts\\Inventario\\ItemReceiver.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Inventario\\ItemReceiver.cs",
@@ -261,7 +293,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "InventoryManager.cs",
               "DocumentMoniker": "C:\\Users\\casti\\Desktop\\Uni\\Proyecto_II\\Eurydice\\Eurydice_project\\Assets\\Scripts\\Inventario\\InventoryManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Inventario\\InventoryManager.cs",
@@ -273,7 +305,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "InventoryItemUI.cs",
               "DocumentMoniker": "C:\\Users\\casti\\Desktop\\Uni\\Proyecto_II\\Eurydice\\Eurydice_project\\Assets\\Scripts\\Inventario\\InventoryItemUI.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Inventario\\InventoryItemUI.cs",
@@ -285,7 +317,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "PlayerController.cs",
               "DocumentMoniker": "C:\\Users\\casti\\Desktop\\Uni\\Proyecto_II\\Eurydice\\Eurydice_project\\Assets\\Scripts\\PlayerController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerController.cs",
@@ -297,7 +329,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "OrbitalCamera.cs",
               "DocumentMoniker": "C:\\Users\\casti\\Desktop\\Uni\\Proyecto_II\\Eurydice\\Eurydice_project\\Assets\\Scripts\\OrbitalCamera.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\OrbitalCamera.cs",
@@ -309,7 +341,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "FaceCamera.cs",
               "DocumentMoniker": "C:\\Users\\casti\\Desktop\\Uni\\Proyecto_II\\Eurydice\\Eurydice_project\\Assets\\Scripts\\FaceCamera.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\FaceCamera.cs",
