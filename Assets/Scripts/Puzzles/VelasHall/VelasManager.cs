@@ -18,6 +18,9 @@ public class VelasManager : MonoBehaviour
     [Header("Objeto que se activa al completar el puzle")]
     public GameObject objetosInteractuablesFinal;
 
+    [Header("Objeto con script OpenDoor")]
+    public OpenDoor cuadroFinal;
+
     public SFXPlayer sfxPlayer;
     // Esta función se llama cuando se interactúa con una vela
     public void ActivarVela(int idVela)
@@ -79,6 +82,13 @@ public class VelasManager : MonoBehaviour
         if (objetosInteractuablesFinal != null)
         {
             objetosInteractuablesFinal.SetActive(true);
+        }
+        // Activar abrir cuadro
+        if (cuadroFinal != null)
+        {
+            // Sonido de encender
+            sfxPlayer?.PlayDoor();
+            cuadroFinal.AbrirPuerta();
         }
     }
 }

@@ -1,16 +1,14 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ItemReceiverCook : MonoBehaviour, IDropHandler
+public class DiarioItemReceiver : MonoBehaviour, IDropHandler
 {
     public string acceptedItemId;
-    public PuzzleManager puzzleManager;
     public SFXPlayer sfxPlayer;
 
-    public GameObject panelAntes;
-    public GameObject panelDespues;
-
-    public CookTracker cookTracker;
+    [Header("Para modificar el diario")]
+    public LibroDiario libroDiario;
+    public Sprite nuevoSpritePagina3;
 
     public void OnDrop(PointerEventData eventData)
     {
@@ -18,15 +16,17 @@ public class ItemReceiverCook : MonoBehaviour, IDropHandler
         if (droppedItem != null && droppedItem.itemId == acceptedItemId)
         {
             Debug.Log("¡Ítem correcto usado!");
-            sfxPlayer?.PlayBuble();
+            sfxPlayer.PlayPage();
             Destroy(droppedItem.gameObject);
 
-            puzzleManager?.ActivarPanelResuelto(panelAntes, panelDespues);
-            cookTracker?.AddIngredient(); // Añadimos uno al contador
+            // Activar cambio en el diario
+            if (libroDiario != null && nuevoSpritePagina3 != null)
+            {
+                libroDiario.CambiarSpritePagina3(nuevoSpritePagina3);
+            }
         }
         else
         {
-            sfxPlayer?.PlayError();
             Debug.Log("Ítem incorrecto.");
         }
     }

@@ -7,6 +7,7 @@ public class ItemReceiverWithTogglePanel : MonoBehaviour, IDropHandler
     public SFXPlayer sfxPlayer;
 
     [Header("Interfaz de usuario")]
+    
     public GameObject panelParaActivar; // Este panel será toggled (activado/desactivado)
 
     [Header("Cambio de interactuables")]

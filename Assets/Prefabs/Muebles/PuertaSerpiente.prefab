@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &559481706028365352
+--- !u!1 &3897529866445275351
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,48 +8,48 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3789154766389867308}
-  - component: {fileID: 3679824868759566916}
-  - component: {fileID: 2324290177796645549}
-  - component: {fileID: 1963221198869813182}
-  - component: {fileID: 8216686376225220254}
+  - component: {fileID: 4421723875201653357}
+  - component: {fileID: 788910565132932552}
+  - component: {fileID: 3248839926654820610}
+  - component: {fileID: 1312508755399830733}
+  - component: {fileID: 5552097454464473840}
   m_Layer: 0
-  m_Name: DoorSnake
+  m_Name: PuertaSerpiente
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
---- !u!4 &3789154766389867308
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &4421723875201653357
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 559481706028365352}
+  m_GameObject: {fileID: 3897529866445275351}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 3.8796692, y: -6.7280226, z: -6.7926874}
-  m_LocalScale: {x: 1.3182, y: 1.3182, z: 1.3182}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: -11.7024, y: 0.154, z: -4.029}
+  m_LocalScale: {x: 1.3182, y: 1.3182, z: 1.318}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &3679824868759566916
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!33 &788910565132932552
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 559481706028365352}
-  m_Mesh: {fileID: 1612787191538033931, guid: b99507ce0978471449fe6d061a496da4, type: 3}
---- !u!23 &2324290177796645549
+  m_GameObject: {fileID: 3897529866445275351}
+  m_Mesh: {fileID: 1612787191538033931, guid: d4a7b8db8e3b95a4e953744770da25f1, type: 3}
+--- !u!23 &3248839926654820610
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 559481706028365352}
+  m_GameObject: {fileID: 3897529866445275351}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -88,13 +88,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1963221198869813182
+--- !u!64 &1312508755399830733
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 559481706028365352}
+  m_GameObject: {fileID: 3897529866445275351}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -109,20 +109,20 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 1612787191538033931, guid: b99507ce0978471449fe6d061a496da4, type: 3}
---- !u!114 &8216686376225220254
+  m_Mesh: {fileID: 1612787191538033931, guid: d4a7b8db8e3b95a4e953744770da25f1, type: 3}
+--- !u!114 &5552097454464473840
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 559481706028365352}
+  m_GameObject: {fileID: 3897529866445275351}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 977a08a25005c2349828a54d0dec578e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sfxPlayer: {fileID: 0}
-  rotationAmount: 40
+  rotationAmount: -150
   rotationSpeed: 120
   openOnlyOnce: 1

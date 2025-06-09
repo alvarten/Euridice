@@ -47,6 +47,10 @@ public class SFXPlayer : MonoBehaviour
     private Coroutine loopingCoroutine;
     private List<AudioSource> activeSources = new List<AudioSource>();
 
+    [Header("Referencia al Controlador de Eventos")]
+    public ControladorEventos controladorEventos; 
+
+
     // --- Métodos de reproducción pública ---
     public void PlayClick() => PlayOneShot(clickClip);
     public void PlayLock() => PlayOneShot(lockClip);
@@ -56,9 +60,47 @@ public class SFXPlayer : MonoBehaviour
     public void PlayPick() => PlayOneShot(pickClip, 0.5f);
     public void PlayBuble() => PlayOneShot(bubleClip, 0.5f);
     public void PlayPage() => PlayOneShot(pageClip, 1.3f);
-    public void PlayError() => PlayOneShot(errorClip, 0.5f);
     public void PlayWater() => PlayClipSegment(waterClip, 0.1f, 3f);
+    public void PlayIntroGuardian() => PlayOneShot(walkIntroClip);
 
+    public void PlayError()
+    {
+        if (controladorEventos != null && controladorEventos.tiempoTranscurrido >= 260f)
+        {
+            // 1/3 de probabilidad de reproducir el clip normal, 2/3 de reproducir un errorMen
+            float probabilidad = Random.value;
+
+            if (probabilidad <= 1f / 3f)
+            {
+                PlayOneShot(errorClip, 0.5f);
+            }
+            else
+            {
+                PlayErrorMen();  
+            }
+        }
+        else
+        {
+            // Si el tiempo es menor a 260, siempre reproduce el clip normal
+            PlayOneShot(errorClip, 0.5f);
+        }
+    }
+
+    // Reproduce un error aleatorio de "errorMen"
+    public void PlayErrorMen()
+    {
+        AudioClip[] errorClips = new AudioClip[] { errorMen1Clip, errorMen2Clip, errorMen3Clip };
+        AudioClip randomError = GetRandomClip(errorClips);
+        PlayOneShot(randomError, 1f);
+    }
+
+    // Reproduce una risa aleatoria
+    public void PlayLaugh()
+    {
+        AudioClip[] laughClips = new AudioClip[] { laugh1Clip, laugh2Clip, laugh3Clip, laugh4Clip };
+        AudioClip randomLaugh = GetRandomClip(laughClips);
+        PlayOneShot(randomLaugh, 1f);
+    }
     public void PlayPianoNote(string noteCode)
     {
         AudioClip noteClip = null;
@@ -183,5 +225,14 @@ public class SFXPlayer : MonoBehaviour
             PlayOneShot(clip, volume);
             yield return new WaitForSeconds(clip.length + delay);
         }
+    }
+
+    // Método de utilidad para obtener un clip aleatorio de un array
+    private AudioClip GetRandomClip(AudioClip[] clips)
+    {
+        if (clips == null || clips.Length == 0) return null;
+
+        int index = Random.Range(0, clips.Length);
+        return clips[index];
     }
 }

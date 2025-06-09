@@ -74,6 +74,7 @@ public class ClockPuzzle : MonoBehaviour
         }
         else
         {
+            sfxPlayer?.PlayError();
             Debug.Log("Hora incorrecta. Reiniciando progreso.");
             currentStep = 0;
         }

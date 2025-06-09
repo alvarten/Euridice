@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using System.Collections;
 
 public class ControladorEventos : MonoBehaviour
 {
@@ -27,11 +28,15 @@ public class ControladorEventos : MonoBehaviour
     public float vignetteInicial = 0f;
     public float vignetteFinal = 0.4f;
 
-    private float tiempoTranscurrido = 0f;
+    [Header("Sonido")]
+    public SFXPlayer sfxPlayer;
+
+    public float tiempoTranscurrido = 0f;
     private bool partidaFinalizada = false;
     private bool animacion70Iniciada = false;
     private bool transicionPostFXHecha = false;
     private bool transicionColorHecha = false;
+    private bool guardianActivado = false;
 
     private ColorAdjustments colorAdjustments;
     private Vignette vignette;
@@ -77,6 +82,9 @@ public class ControladorEventos : MonoBehaviour
         {
             transicionPostFXHecha = true;
             StartCoroutine(TransicionarPostProcesado());
+
+            // Activar guardián
+            ActivarGuardian();
         }
 
         // Animación al 70%
@@ -97,6 +105,52 @@ public class ControladorEventos : MonoBehaviour
             StartCoroutine(TransicionarColor());
         }
     }
+
+    void ActivarGuardian()
+    {
+        if (guardianActivado || sfxPlayer == null) return;
+
+        guardianActivado = true;
+        sfxPlayer.PlayIntroGuardian();
+        StartCoroutine(RisasAleatorias());
+    }
+
+    IEnumerator RisasAleatorias()
+    {
+        while (!partidaFinalizada)
+        {
+            float porcentaje = tiempoTranscurrido / duracionPartida;
+            float delay;
+
+            if (porcentaje >= 0.5f && porcentaje < 0.65f)
+            {
+                delay = 30f;
+            }
+            else if (porcentaje >= 0.75f && porcentaje < 0.95f)
+            {
+                delay = 20f;
+            }
+            else
+            {
+                yield return new WaitForSeconds(5f);
+                continue;
+            }
+
+            yield return new WaitForSeconds(delay);
+
+            porcentaje = tiempoTranscurrido / duracionPartida;
+
+            if ((porcentaje >= 0.5f && porcentaje < 0.65f) || (porcentaje >= 0.75f && porcentaje < 0.95f))
+            {
+                if (Random.value < 0.5f)
+                {
+                    sfxPlayer.PlayLaugh();
+                }
+            }
+        }
+    }
+
+
     void IniciarAnimacion70()
     {
         animacion70Iniciada = true;
@@ -126,7 +180,7 @@ public class ControladorEventos : MonoBehaviour
         }
     }
 
-    System.Collections.IEnumerator FadeInCanvasGroup()
+    IEnumerator FadeInCanvasGroup()
     {
         float duracion = 2f;
         float t = 0f;
@@ -143,7 +197,7 @@ public class ControladorEventos : MonoBehaviour
         canvasGroup.blocksRaycasts = true;
     }
 
-    System.Collections.IEnumerator TransicionarPostProcesado()
+    IEnumerator TransicionarPostProcesado()
     {
         float t = 0f;
         float duracionTransicion = duracionPartida / 2f;
@@ -168,10 +222,12 @@ public class ControladorEventos : MonoBehaviour
         if (vignette != null)
             vignette.intensity.value = vignetteFinal;
     }
-    System.Collections.IEnumerator TransicionarColor()
+
+    IEnumerator TransicionarColor()
     {
         float t = 0f;
         float duracionTransicion = duracionPartida / 2f;
+
         while (t < duracionTransicion)
         {
             t += Time.deltaTime;
