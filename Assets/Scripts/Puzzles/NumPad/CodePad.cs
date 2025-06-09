@@ -3,6 +3,7 @@ using TMPro;
 
 public class CodePad : MonoBehaviour
 {
+    public SFXPlayer sfxPlayer;
     [SerializeField] private string correctCode = "1234";
     [SerializeField] private TextMeshProUGUI displayText;
 
@@ -34,6 +35,7 @@ public class CodePad : MonoBehaviour
         else
         {
             ResetCode();
+            sfxPlayer.PlayError();
         }
 
         UpdateDisplay();
