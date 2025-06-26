@@ -4,7 +4,7 @@ using UnityEngine;
 public class PianoPuzzle : MonoBehaviour
 {
     public List<string> secuenciaCorrecta;
-    private int progresoActual = 0;
+    public int progresoActual = 0;
 
     public GameObject objetoAlCompletar; 
     public SFXPlayer sfxPlayer;

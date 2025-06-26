@@ -48,6 +48,7 @@ public class ControladorEventos : MonoBehaviour
     public float duracionZoom = 1.5f;
     public float tiempoMantenerZoom = 2f;
     public FaceCamera faceCameraScript;
+    public PuzzleManager puzzleManager;
 
 
     void Start()
@@ -167,6 +168,7 @@ public class ControladorEventos : MonoBehaviour
         if (animador70 != null)
         {
             sfxPlayer.PlayChoke();
+            puzzleManager.CerrarPanelesParaAnimacion();
             animador70.SetTrigger(triggerAnimacion70);
             Debug.Log("Animación del 70% activada.");
         }

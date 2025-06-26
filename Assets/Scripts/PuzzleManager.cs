@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PuzzleManager : MonoBehaviour
@@ -6,7 +7,9 @@ public class PuzzleManager : MonoBehaviour
     public PuzzlePiece[] puzzlePieces; // Lista de todas las piezas del puzzle del cuadro
     public GameObject puzzleCompletedPanel; // Panel que se muestra cuando el puzzle del cuadro es completado
     public GameObject resolvingPuzzle; 
-    public GameObject solvedPuzzle; 
+    public GameObject solvedPuzzle;
+    public List<GameObject> puzzlePanels;
+    public List<string> panelsExcluidos;
 
     void Start()
     {
@@ -98,6 +101,16 @@ public class PuzzleManager : MonoBehaviour
             if (controller != null)
             {
                 controller.canMove = !panel.activeSelf;
+            }
+        }
+    }
+    public void CerrarPanelesParaAnimacion()
+    {
+        foreach (GameObject panel in puzzlePanels)
+        {
+            if (panel.activeSelf && !panelsExcluidos.Contains(panel.name))
+            {
+                TogglePuzzlePanel(panel);
             }
         }
     }

@@ -1055,8 +1055,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Parece que has conseguido que Euridice salga de su prision, pero...\n\n\xBFConseguiras
-    ayudarla a regresar a su cuento y reunirse con Orfeo?"
+  m_text: 'It seems you''ve managed to free Eurydice from her prison, but...
+
+    
+
+    Will
+    you be able to help her return to her tale and reunite with Orpheus?'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 03d60291725a0ec479a2333879b870fa, type: 2}
   m_sharedMaterial: {fileID: 5269863732144280399, guid: 03d60291725a0ec479a2333879b870fa, type: 2}
@@ -1916,7 +1920,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Rescata a Eurydice
+  m_text: Rescue Eurydice
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 03d60291725a0ec479a2333879b870fa, type: 2}
   m_sharedMaterial: {fileID: 5269863732144280399, guid: 03d60291725a0ec479a2333879b870fa, type: 2}
@@ -1981,7 +1985,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -1.4382935, y: 3.0672016, z: -2.541504, w: 2.885275}
+  m_margin: {x: -19.022186, y: 3.0672016, z: -19.50251, w: 2.885275}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -4760,6 +4764,86 @@ PrefabInstance:
     - target: {fileID: 2281009010415111688, guid: 786d1d92ba0885746b6db2ca6c0f9631, type: 3}
       propertyPath: puzzleCompletedPanel
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2281009010415111688, guid: 786d1d92ba0885746b6db2ca6c0f9631, type: 3}
+      propertyPath: puzzlePanels.Array.size
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 2281009010415111688, guid: 786d1d92ba0885746b6db2ca6c0f9631, type: 3}
+      propertyPath: panelsExcluidos.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2281009010415111688, guid: 786d1d92ba0885746b6db2ca6c0f9631, type: 3}
+      propertyPath: 'puzzlePanels.Array.data[0]'
+      value: 
+      objectReference: {fileID: 348737924}
+    - target: {fileID: 2281009010415111688, guid: 786d1d92ba0885746b6db2ca6c0f9631, type: 3}
+      propertyPath: 'puzzlePanels.Array.data[1]'
+      value: 
+      objectReference: {fileID: 563601924}
+    - target: {fileID: 2281009010415111688, guid: 786d1d92ba0885746b6db2ca6c0f9631, type: 3}
+      propertyPath: 'puzzlePanels.Array.data[2]'
+      value: 
+      objectReference: {fileID: 896799170}
+    - target: {fileID: 2281009010415111688, guid: 786d1d92ba0885746b6db2ca6c0f9631, type: 3}
+      propertyPath: 'puzzlePanels.Array.data[3]'
+      value: 
+      objectReference: {fileID: 1897537768}
+    - target: {fileID: 2281009010415111688, guid: 786d1d92ba0885746b6db2ca6c0f9631, type: 3}
+      propertyPath: 'puzzlePanels.Array.data[4]'
+      value: 
+      objectReference: {fileID: 1446846054}
+    - target: {fileID: 2281009010415111688, guid: 786d1d92ba0885746b6db2ca6c0f9631, type: 3}
+      propertyPath: 'puzzlePanels.Array.data[5]'
+      value: 
+      objectReference: {fileID: 864568051}
+    - target: {fileID: 2281009010415111688, guid: 786d1d92ba0885746b6db2ca6c0f9631, type: 3}
+      propertyPath: 'puzzlePanels.Array.data[6]'
+      value: 
+      objectReference: {fileID: 1007841456}
+    - target: {fileID: 2281009010415111688, guid: 786d1d92ba0885746b6db2ca6c0f9631, type: 3}
+      propertyPath: 'puzzlePanels.Array.data[7]'
+      value: 
+      objectReference: {fileID: 287545938}
+    - target: {fileID: 2281009010415111688, guid: 786d1d92ba0885746b6db2ca6c0f9631, type: 3}
+      propertyPath: 'puzzlePanels.Array.data[8]'
+      value: 
+      objectReference: {fileID: 1426428028}
+    - target: {fileID: 2281009010415111688, guid: 786d1d92ba0885746b6db2ca6c0f9631, type: 3}
+      propertyPath: 'puzzlePanels.Array.data[9]'
+      value: 
+      objectReference: {fileID: 1763561110}
+    - target: {fileID: 2281009010415111688, guid: 786d1d92ba0885746b6db2ca6c0f9631, type: 3}
+      propertyPath: 'puzzlePanels.Array.data[10]'
+      value: 
+      objectReference: {fileID: 392739006}
+    - target: {fileID: 2281009010415111688, guid: 786d1d92ba0885746b6db2ca6c0f9631, type: 3}
+      propertyPath: 'puzzlePanels.Array.data[11]'
+      value: 
+      objectReference: {fileID: 1098475206}
+    - target: {fileID: 2281009010415111688, guid: 786d1d92ba0885746b6db2ca6c0f9631, type: 3}
+      propertyPath: 'puzzlePanels.Array.data[12]'
+      value: 
+      objectReference: {fileID: 1256524226}
+    - target: {fileID: 2281009010415111688, guid: 786d1d92ba0885746b6db2ca6c0f9631, type: 3}
+      propertyPath: 'puzzlePanels.Array.data[13]'
+      value: 
+      objectReference: {fileID: 1256524226}
+    - target: {fileID: 2281009010415111688, guid: 786d1d92ba0885746b6db2ca6c0f9631, type: 3}
+      propertyPath: 'puzzlePanels.Array.data[14]'
+      value: 
+      objectReference: {fileID: 1256524226}
+    - target: {fileID: 2281009010415111688, guid: 786d1d92ba0885746b6db2ca6c0f9631, type: 3}
+      propertyPath: 'panelsExcluidos.Array.data[0]'
+      value: InventoryPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 2281009010415111688, guid: 786d1d92ba0885746b6db2ca6c0f9631, type: 3}
+      propertyPath: 'panelsExcluidos.Array.data[1]'
+      value: MesillaDiario
+      objectReference: {fileID: 0}
+    - target: {fileID: 2281009010415111688, guid: 786d1d92ba0885746b6db2ca6c0f9631, type: 3}
+      propertyPath: 'panelsExcluidos.Array.data[2]'
+      value: FaltaGrifo
       objectReference: {fileID: 0}
     - target: {fileID: 8732026771922696657, guid: 786d1d92ba0885746b6db2ca6c0f9631, type: 3}
       propertyPath: m_Name
@@ -22977,6 +23061,7 @@ MonoBehaviour:
   duracionZoom: 1
   tiempoMantenerZoom: 5.5
   faceCameraScript: {fileID: 1276332041}
+  puzzleManager: {fileID: 382934903}
 --- !u!4 &1636951889
 Transform:
   m_ObjectHideFlags: 0
@@ -23917,7 +24002,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Fin de la demo
+  m_text: Demo's End
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 03d60291725a0ec479a2333879b870fa, type: 2}
   m_sharedMaterial: {fileID: 5269863732144280399, guid: 03d60291725a0ec479a2333879b870fa, type: 2}
@@ -24237,8 +24322,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "No has conseguido que Euridice escape a tiempo... \nNo pierdas la esperanza,
-    siempre puedes volver a intentarlo"
+  m_text: "\rYou haven't managed to get Eurydice to escape in time...\r\nDon't lose
+    hope, you can always try again."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 03d60291725a0ec479a2333879b870fa, type: 2}
   m_sharedMaterial: {fileID: 5269863732144280399, guid: 03d60291725a0ec479a2333879b870fa, type: 2}
@@ -27328,6 +27413,7 @@ MonoBehaviour:
   - Si
   - Re
   - Do
+  progresoActual: 0
   objetoAlCompletar: {fileID: 576983116}
   sfxPlayer: {fileID: 1641372922}
 --- !u!4 &1909730407
