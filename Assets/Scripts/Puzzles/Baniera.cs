@@ -15,6 +15,8 @@ public class Baniera : MonoBehaviour
     Vector3 focusPoint = new Vector3(-10.75481f, 6.885497f, -5.326507f);
     Quaternion focusRotation = Quaternion.Euler(79.716f, -85.353f, 5.068f);
 
+    [Header("Objeto a desactivar durante el zoom")]
+    public GameObject objetoInteractuable;
     //---
     [Header("Texto a mostrar")]
     public TextMeshProUGUI uiText;
@@ -44,8 +46,8 @@ public class Baniera : MonoBehaviour
     {
         if (InventoryManager.Instance != null && InventoryManager.Instance.HasItem(itemNecesario))
         {
-            zoomEffect.StartZoom(focusPoint, focusRotation, 1.5f, 2f);
-            StartCoroutine(DisableFaceCameraTemporarily(3.5f));
+            zoomEffect.StartZoomUntilKey(focusPoint, focusRotation, 1.5f, KeyCode.E, objetoInteractuable);
+            //StartCoroutine(DisableFaceCameraTemporarily(3.5f));
             InventoryManager.Instance.RemoveItem(itemNecesario);
             animatorBañera.SetTrigger("Llenar");
             yaActivado = true;
@@ -55,29 +57,18 @@ public class Baniera : MonoBehaviour
         }
         else if (yaActivado)
         {
-            zoomEffect.StartZoom(focusPoint, focusRotation, 1.5f, 2f);
-            StartCoroutine(DisableFaceCameraTemporarily(3.5f));
+            zoomEffect.StartZoomUntilKey(focusPoint, focusRotation, 1.5f, KeyCode.E, objetoInteractuable);
+            //StartCoroutine(DisableFaceCameraTemporarily(3.5f));
         }
         else
         {
             Debug.Log("No tienes el objeto necesario (Grifo) para usar esto.");
-            ShowMessage(); //nuevo
+            ShowMessage(); //Mensaje de no tener el objeto necesario
 
         }
     }
 
-    private IEnumerator DisableFaceCameraTemporarily(float duration)
-    {
-        if (faceCameraScript != null)
-            faceCameraScript.enabled = false;
-
-        yield return new WaitForSeconds(duration);
-
-        if (faceCameraScript != null)
-            faceCameraScript.enabled = true;
-    }
-
-    //----- nuevo
+    //Metodo para mostrar el mensaje
     public void ShowMessage()
     {
         uiText.text = message;

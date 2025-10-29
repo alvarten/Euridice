@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,6 +12,9 @@ public class PuzzleManager : MonoBehaviour
     public List<GameObject> puzzlePanels;
     public List<string> panelsExcluidos;
 
+    public bool isPuzzleOpen = false;
+    private GameObject currentActivePanel;
+
     void Start()
     {
         // Se detectan las piezas y se randomizan
@@ -19,7 +23,7 @@ public class PuzzleManager : MonoBehaviour
             RandomizePuzzle();
         }
     }
-
+    
     // Método para comprobar si el puzzle está completado
     public void CheckIfSolved()
     {
@@ -103,6 +107,25 @@ public class PuzzleManager : MonoBehaviour
                 controller.canMove = !panel.activeSelf;
             }
         }
+
+        isPuzzleOpen = panel.activeSelf;
+        currentActivePanel = isPuzzleOpen ? panel : null;
+
+        if (isPuzzleOpen)
+        {
+            CanvasGroup cg = panel.GetComponent<CanvasGroup>();
+            if (cg == null)
+            {
+                cg = panel.AddComponent<CanvasGroup>();
+            }
+
+            cg.alpha = 0f; // Empezamos transparente
+            cg.interactable = true;
+            cg.blocksRaycasts = true;
+
+            StopAllCoroutines();
+            StartCoroutine(FadeCanvasGroup(cg, 1f, 0.6f));
+        }
     }
     public void CerrarPanelesParaAnimacion()
     {
@@ -112,12 +135,51 @@ public class PuzzleManager : MonoBehaviour
             {
                 TogglePuzzlePanel(panel);
             }
+
+            isPuzzleOpen = false;
+            currentActivePanel = null;
         }
     }
+    public void CloseCurrentPuzzle()
+    {
+        if (currentActivePanel != null && currentActivePanel.activeSelf)
+        {
+            // Desactivamos directamente el panel (no usamos Toggle para evitar inconsistencias)
+            currentActivePanel.SetActive(false);
 
+            // Restauramos movimiento del player
+            if (player != null)
+            {
+                var controller = player.GetComponent<PlayerController>();
+                if (controller != null)
+                    controller.canMove = true;
+            }
+
+            // Reseteamos estado interno
+            isPuzzleOpen = false;
+            currentActivePanel = null;
+        }
+    }
     public void ActivarPanelResuelto(GameObject panelAntes, GameObject panelDespues)
     {
         if (panelAntes != null) panelAntes.SetActive(false);
         if (panelDespues != null) panelDespues.SetActive(true);
+    }
+
+
+    // Corrutina para animar el alpha de un CanvasGroup
+    private IEnumerator FadeCanvasGroup(CanvasGroup cg, float targetAlpha, float duration)
+    {
+        float startAlpha = cg.alpha;
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            cg.alpha = Mathf.Lerp(startAlpha, targetAlpha, elapsed / duration);
+            yield return null;
+        }
+
+        cg.alpha = targetAlpha;
     }
 }

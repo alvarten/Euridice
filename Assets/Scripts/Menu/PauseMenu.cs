@@ -4,15 +4,23 @@ public class PauseMenu : MonoBehaviour
 {
     public GameObject pausePanel;
     public GameObject optionsPanel;
-    public GameObject player; 
+    public GameObject player;
+    public PuzzleManager puzzleManager;
 
     private bool isPaused = false;
+    private bool ignoreNextEscape = false;
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (optionsPanel.activeSelf)
+            // Si hay un puzzle abierto, pedimos al PuzzleManager que lo cierre y no abrimos el menú.
+            if (puzzleManager != null && puzzleManager.isPuzzleOpen)
+            {
+                puzzleManager.CloseCurrentPuzzle();
+                return;
+            }
+            else if (optionsPanel.activeSelf)
             {
                 // Si estamos en opciones, volvemos al panel de pausa
                 optionsPanel.SetActive(false);
@@ -20,6 +28,7 @@ public class PauseMenu : MonoBehaviour
             }
             else
             {
+                // En cualquier otro caso abrimos el menu de pausa
                 TogglePause();
             }
         }

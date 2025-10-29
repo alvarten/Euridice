@@ -17,6 +17,8 @@ public class CameraZoomEffect : MonoBehaviour
     private Coroutine zoomCoroutine;
     public bool isZooming = false;
 
+    public GameObject player;
+
     // Mueve la cámara a una posición y rotación específicas con transición suave.
     public void StartZoom(Vector3 targetPosition, Quaternion targetRotation, float transitionDuration, float holdTime)
     {
@@ -24,6 +26,13 @@ public class CameraZoomEffect : MonoBehaviour
             StopCoroutine(zoomCoroutine);
 
         zoomCoroutine = StartCoroutine(ZoomSequence(targetPosition, targetRotation, transitionDuration, holdTime));
+    }
+    public void StartZoomUntilKey(Vector3 targetPosition, Quaternion targetRotation, float transitionDuration, KeyCode exitKey, GameObject objectToDisable = null)
+    {
+        if (zoomCoroutine != null)
+            StopCoroutine(zoomCoroutine);
+
+        zoomCoroutine = StartCoroutine(ZoomUntilKeySequence(targetPosition, targetRotation, transitionDuration, exitKey, objectToDisable));
     }
 
     public void CancelZoom()
@@ -78,6 +87,43 @@ public class CameraZoomEffect : MonoBehaviour
         isZooming = false;
         zoomCoroutine = null;
     }
+    IEnumerator ZoomUntilKeySequence(Vector3 targetPosition, Quaternion targetRotation, float transitionDuration, KeyCode exitKey, GameObject objectToDisable)
+    {
+        isZooming = true;
+
+        originalPosition = transform.position;
+        originalRotation = transform.rotation;
+
+        if (orbitalCamera != null)
+            orbitalCamera.enabled = false;
+        if (objectToDisable != null)
+            objectToDisable.SetActive(false);
+        if (faceCameraScript != null)
+            faceCameraScript.enabled = false;
+        TogglePlayerMovement(false);
+        // Hacer zoom hacia el objetivo
+        yield return StartCoroutine(SmoothTransition(targetPosition, targetRotation, transitionDuration));
+        TogglePlayerMovement(false);
+
+
+        // Esperar hasta que el jugador pulse la tecla indicada
+        while (!Input.GetKeyDown(exitKey))
+        {
+            yield return null;
+        }
+
+        // Regresar suavemente a la posición original
+        yield return StartCoroutine(SmoothTransition(originalPosition, originalRotation, transitionDuration));
+        TogglePlayerMovement(true);
+        if (orbitalCamera != null)
+            orbitalCamera.enabled = true;
+        if (faceCameraScript != null)
+            faceCameraScript.enabled = true;
+        if (objectToDisable != null)
+            objectToDisable.SetActive(true);
+        isZooming = false;
+        zoomCoroutine = null;
+    }
 
     IEnumerator SmoothTransition(Vector3 targetPos, Quaternion targetRot, float duration)
     {
@@ -121,5 +167,18 @@ public class CameraZoomEffect : MonoBehaviour
 
         zoomCoroutine = null;
         isZooming = false;
+    }
+
+    // Parar el movimiento del player
+    private void TogglePlayerMovement(bool canMove)
+    {
+        if (player != null)
+        {
+            var controller = player.GetComponent<PlayerController>();
+            if (controller != null)
+            {
+                controller.canMove = canMove;
+            }
+        }
     }
 }

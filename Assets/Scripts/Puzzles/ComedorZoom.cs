@@ -13,6 +13,9 @@ public class ComedorZoom : MonoBehaviour
     public float zoomDuration = 1.5f;
     public float zoomHoldTime = 2f;
 
+    [Header("Objeto a desactivar durante el zoom")]
+    public GameObject objetoInteractuable;
+
     [Header("Opcional: Restaurar Cámara")]
     public bool restoreAfterDelay = false;
     public float restoreDelay = 3.5f;
@@ -21,13 +24,11 @@ public class ComedorZoom : MonoBehaviour
     {
         Quaternion focusRotation = Quaternion.Euler(eulerRotation);
 
-        if (zoomEffect != null)
-            zoomEffect.StartZoom(focusPoint, focusRotation, zoomDuration, zoomHoldTime);
+        if (zoomEffect != null) 
+        {
+            zoomEffect.StartZoomUntilKey(focusPoint, focusRotation, zoomDuration, KeyCode.E, objetoInteractuable);
+        }
 
-        StartCoroutine(DisableFaceCameraTemporarily((zoomDuration*2) + zoomHoldTime));
-
-        if (restoreAfterDelay)
-            StartCoroutine(RestoreOrbitalAfterDelay(restoreDelay));
     }
 
     private IEnumerator DisableFaceCameraTemporarily(float duration)
