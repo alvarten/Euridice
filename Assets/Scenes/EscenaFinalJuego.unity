@@ -1554,8 +1554,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -12}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -2.2112, y: 0.352}
+  m_SizeDelta: {x: 95.2271, y: 107.5526}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1764812510
 MonoBehaviour:
@@ -1612,6 +1612,7 @@ MonoBehaviour:
   pausePanel: {fileID: 1327014000}
   optionsPanel: {fileID: 1464045081}
   player: {fileID: 0}
+  puzzleManager: {fileID: 0}
 --- !u!114 &2027052829 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2990678128867599383, guid: e915293de885d064f8e0e5c7f3e60a2d, type: 3}
