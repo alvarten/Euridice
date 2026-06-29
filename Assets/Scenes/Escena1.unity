@@ -3362,7 +3362,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.47061992, y: 0.5282131}
   m_AnchorMax: {x: 0.52938014, y: 0.6334229}
-  m_AnchoredPosition: {x: 3.7653, y: 0}
+  m_AnchoredPosition: {x: 3.765297, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &278768352
@@ -22569,7 +22569,7 @@ MonoBehaviour:
   - {fileID: 543484216}
   - {fileID: 462354026}
   - {fileID: 65348033}
-  correctCombination: 08000000060000000900000002000000
+  correctCombination: 06000000080000000900000002000000
   lockPanel: {fileID: 896799170}
   puzzleManager: {fileID: 382934903}
   interactuableAntes: {fileID: 1424079305}
