@@ -2,11 +2,12 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 using System.Collections;
+using System.Collections.Generic;
 
 public class ControladorEventos : MonoBehaviour
 {
     [Header("Configuración del tiempo")]
-    public float duracionPartida = 600f;
+    public float duracionPartida = 492f;
 
     [Header("Panel de final")]
     public GameObject panelFinal;
@@ -15,18 +16,77 @@ public class ControladorEventos : MonoBehaviour
     [Header("Animación del 70%")]
     public Animator animador70;
     public string triggerAnimacion70 = "Start70Animation";
+    private DepthOfField depthOfField;
+    public float dofStartNormal = 50f;
+    public float dofStartAnimacion = 350f;
 
     [Header("Jugador")]
     public GameObject player;
 
+    // ============================================================
+    // POST-PROCESADO (Volume)
+    // ============================================================
     [Header("Post-Procesado")]
     public Volume globalVolume;
-    public Color colorInicial = Color.white;
-    public Color colorFinal = Color.red;
     public float saturacionInicial = 0f;
-    public float saturacionFinal = -100f;
+    public float saturacionFinal = -60f;
     public float vignetteInicial = 0f;
     public float vignetteFinal = 0.4f;
+    [Tooltip("Filtro de color aplicado sobre la imagen. Blanco = neutro, azulado = atmosfera fria/miedo")]
+    public Color colorFiltroInicial = Color.white;
+    public Color colorFiltroFinal = new Color(0.65f, 0.75f, 1f);
+
+    // ============================================================
+    // TRANSICION GENERAL DE ATMOSFERA (luces + post-proceso, sincronizados)
+    // ============================================================
+    [Header("Transición de Atmósfera de Miedo")]
+    [Range(0f, 1f)] public float inicioTransicion = 0.5f; // % de la partida en que empieza a oscurecer
+    [Tooltip("Curva de progreso 0-1. Por defecto ease-in-out para que el cambio no se note brusco al empezar/terminar.")]
+    public AnimationCurve curvaTransicion = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f);
+
+    // ============================================================
+    // LUZ PRINCIPAL (Directional Light)
+    // ============================================================
+    [Header("Luz Principal (Directional)")]
+    public Light luzPrincipal;
+    public float intensidadSolInicial = 1f;
+    public float intensidadSolFinal = 0.05f;
+    public Color colorSolInicial = new Color(1f, 0.95f, 0.8f);   // cálido
+    public Color colorSolFinal = new Color(0.35f, 0.5f, 0.9f);   // azulado frío
+
+    // ============================================================
+    // LUZ AMBIENTE
+    // ============================================================
+    [Header("Luz Ambiente")]
+    [Tooltip("Solo tiene efecto visible si en Lighting Settings > Environment, 'Environment Lighting Source' = Color.")]
+    public Color ambienteColorInicial = new Color(1f, 0.95f, 0.85f);
+    public Color ambienteColorFinal = new Color(0.15f, 0.22f, 0.4f);
+    [Tooltip("Multiplicador de luz ambiente. Tiene efecto tanto si el source es Color como Skybox/Gradient.")]
+    public float ambienteIntensidadInicial = 1f;
+    public float ambienteIntensidadFinal = 0.15f;
+
+    // ============================================================
+    // LUCES DESTACADAS (se mantienen cálidas para resaltar zonas)
+    // ============================================================
+    [System.Serializable]
+    public class LuzDestacada
+    {
+        public Light luz;
+        public Color colorCalido = new Color(1f, 0.75f, 0.3f);
+        public float intensidadBase = 2f;
+        [Tooltip("Multiplicador aplicado a la intensidad al final de la transición. >1 hace que destaque más por contraste con el resto ya oscuro.")]
+        public float multiplicadorIntensidadFinal = 1.3f;
+
+        [Header("Parpadeo (opcional, tipo vela/farol)")]
+        public bool parpadeo = false;
+        [Range(0f, 1f)] public float parpadeoFuerza = 0.15f;
+        public float parpadeoVelocidad = 3f;
+
+        [HideInInspector] public float semillaParpadeo;
+    }
+
+    [Header("Luces Destacadas")]
+    public List<LuzDestacada> lucesDestacadas = new List<LuzDestacada>();
 
     [Header("Sonido")]
     public SFXPlayer sfxPlayer;
@@ -34,8 +94,6 @@ public class ControladorEventos : MonoBehaviour
     public float tiempoTranscurrido = 0f;
     private bool partidaFinalizada = false;
     private bool animacion70Iniciada = false;
-    private bool transicionPostFXHecha = false;
-    private bool transicionColorHecha = false;
     private bool guardianActivado = false;
 
     private ColorAdjustments colorAdjustments;
@@ -69,6 +127,8 @@ public class ControladorEventos : MonoBehaviour
             {
                 colorAdjustments.saturation.overrideState = true;
                 colorAdjustments.saturation.value = saturacionInicial;
+                colorAdjustments.colorFilter.overrideState = true;
+                colorAdjustments.colorFilter.value = colorFiltroInicial;
             }
 
             if (globalVolume.profile.TryGet(out vignette))
@@ -76,6 +136,33 @@ public class ControladorEventos : MonoBehaviour
                 vignette.intensity.overrideState = true;
                 vignette.intensity.value = vignetteInicial;
             }
+
+            if (globalVolume.profile.TryGet(out depthOfField))
+            {
+                depthOfField.gaussianStart.overrideState = true;
+                depthOfField.gaussianEnd.overrideState = true;
+                depthOfField.gaussianStart.value = 50f;
+                depthOfField.gaussianEnd.value = 100f;
+            }
+        }
+
+        if (luzPrincipal != null)
+        {
+            luzPrincipal.intensity = intensidadSolInicial;
+            luzPrincipal.color = colorSolInicial;
+        }
+
+        RenderSettings.ambientLight = ambienteColorInicial;
+        RenderSettings.ambientIntensity = ambienteIntensidadInicial;
+
+        // Inicializar luces destacadas: color cálido fijo + semilla de parpadeo aleatoria
+        // (la semilla evita que todas las luces parpadeen exactamente igual y a la vez)
+        foreach (var ld in lucesDestacadas)
+        {
+            if (ld.luz == null) continue;
+            ld.luz.color = ld.colorCalido;
+            ld.luz.intensity = ld.intensidadBase;
+            ld.semillaParpadeo = Random.Range(0f, 100f);
         }
     }
 
@@ -87,32 +174,76 @@ public class ControladorEventos : MonoBehaviour
 
         float porcentaje = tiempoTranscurrido / duracionPartida;
 
-        // Transición de post-procesado al 50%
-        if (!transicionPostFXHecha && porcentaje >= 0.5f)
-        {
-            transicionPostFXHecha = true;
-            StartCoroutine(TransicionarPostProcesado());
-
-            // Activar guardián
-            ActivarGuardian();
-        }
-
         // Animación al 70%
         if (!animacion70Iniciada && porcentaje >= 0.7f)
         {
             IniciarAnimacion70();
         }
 
+        // Activar guardián al cruzar el inicio de la transición de atmósfera
+        if (!guardianActivado && porcentaje >= inicioTransicion)
+        {
+            ActivarGuardian();
+        }
+
+        // Transición de atmósfera (post-proceso + luces), calculada directamente
+        // sobre tiempoTranscurrido cada frame, sin coroutines ni timers propios.
+        ActualizarAtmosfera(porcentaje);
+
         // Final de partida
         if (tiempoTranscurrido >= duracionPartida)
         {
             FinalizarPartida();
         }
+    }
 
-        if (!transicionColorHecha && porcentaje >= 0.5f)
+    void ActualizarAtmosfera(float porcentaje)
+    {
+        float progresoLineal = 0f;
+        if (porcentaje >= inicioTransicion)
         {
-            transicionColorHecha = true;
-            StartCoroutine(TransicionarColor());
+            progresoLineal = Mathf.Clamp01((porcentaje - inicioTransicion) / (1f - inicioTransicion));
+        }
+
+        float t = curvaTransicion.Evaluate(progresoLineal);
+
+        // --- Post-procesado ---
+        if (colorAdjustments != null)
+        {
+            colorAdjustments.saturation.value = Mathf.Lerp(saturacionInicial, saturacionFinal, t);
+            colorAdjustments.colorFilter.value = Color.Lerp(colorFiltroInicial, colorFiltroFinal, t);
+        }
+        if (vignette != null)
+        {
+            vignette.intensity.value = Mathf.Lerp(vignetteInicial, vignetteFinal, t);
+        }
+
+        // --- Luz principal ---
+        if (luzPrincipal != null)
+        {
+            luzPrincipal.intensity = Mathf.Lerp(intensidadSolInicial, intensidadSolFinal, t);
+            luzPrincipal.color = Color.Lerp(colorSolInicial, colorSolFinal, t);
+        }
+
+        // --- Luz ambiente ---
+        RenderSettings.ambientLight = Color.Lerp(ambienteColorInicial, ambienteColorFinal, t);
+        RenderSettings.ambientIntensity = Mathf.Lerp(ambienteIntensidadInicial, ambienteIntensidadFinal, t);
+
+        // --- Luces destacadas (se mantienen cálidas, opcionalmente se intensifican y/o parpadean) ---
+        foreach (var ld in lucesDestacadas)
+        {
+            if (ld.luz == null) continue;
+
+            float intensidadObjetivo = Mathf.Lerp(ld.intensidadBase, ld.intensidadBase * ld.multiplicadorIntensidadFinal, t);
+
+            if (ld.parpadeo)
+            {
+                float ruido = Mathf.PerlinNoise(Time.time * ld.parpadeoVelocidad + ld.semillaParpadeo, 0f); // 0..1
+                float factorParpadeo = 1f + (ruido - 0.5f) * 2f * ld.parpadeoFuerza;
+                intensidadObjetivo *= factorParpadeo;
+            }
+
+            ld.luz.intensity = intensidadObjetivo;
         }
     }
 
@@ -172,12 +303,24 @@ public class ControladorEventos : MonoBehaviour
             animador70.SetTrigger(triggerAnimacion70);
             Debug.Log("Animación del 70% activada.");
         }
-        
+
         if (zoomEffect != null)
         {
             zoomEffect.StartZoom(puntoZoom, rotacionZoom, duracionZoom, tiempoMantenerZoom);
-        }        
+        }
+
+        StartCoroutine(PicoDepthOfField(duracionZoom + tiempoMantenerZoom));
         StartCoroutine(DisableFaceCameraTemporarily(duracionZoom + tiempoMantenerZoom));
+    }
+    IEnumerator PicoDepthOfField(float duracion)
+    {
+        if (depthOfField == null) yield break;
+
+        depthOfField.gaussianStart.value = dofStartAnimacion;
+
+        yield return new WaitForSeconds(duracion);
+
+        depthOfField.gaussianStart.value = dofStartNormal;
     }
 
     void FinalizarPartida()
@@ -215,51 +358,6 @@ public class ControladorEventos : MonoBehaviour
         canvasGroup.blocksRaycasts = true;
     }
 
-    IEnumerator TransicionarPostProcesado()
-    {
-        float t = 0f;
-        float duracionTransicion = duracionPartida / 2f;
-
-        while (t < duracionTransicion)
-        {
-            t += Time.deltaTime;
-            float progreso = t / duracionTransicion;
-
-            if (colorAdjustments != null)
-                colorAdjustments.saturation.value = Mathf.Lerp(saturacionInicial, saturacionFinal, progreso);
-
-            if (vignette != null)
-                vignette.intensity.value = Mathf.Lerp(vignetteInicial, vignetteFinal, progreso);
-
-            yield return null;
-        }
-
-        if (colorAdjustments != null)
-            colorAdjustments.saturation.value = saturacionFinal;
-
-        if (vignette != null)
-            vignette.intensity.value = vignetteFinal;
-    }
-
-    IEnumerator TransicionarColor()
-    {
-        float t = 0f;
-        float duracionTransicion = duracionPartida / 2f;
-
-        while (t < duracionTransicion)
-        {
-            t += Time.deltaTime;
-            Color nuevoColor = Color.Lerp(colorInicial, colorFinal, t / duracionTransicion);
-
-            if (colorAdjustments != null)
-                colorAdjustments.colorFilter.value = nuevoColor;
-
-            yield return null;
-        }
-
-        if (colorAdjustments != null)
-            colorAdjustments.colorFilter.value = colorFinal;
-    }
     private IEnumerator DisableFaceCameraTemporarily(float duration)
     {
         if (faceCameraScript != null)
