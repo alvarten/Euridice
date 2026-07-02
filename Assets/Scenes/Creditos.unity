@@ -1057,7 +1057,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Pablo\nAle\nJuan\nCristina\nMar\xEDa\n"
+  m_text: "Ale\nJuan\nCristina\nMar\xEDa\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 03d60291725a0ec479a2333879b870fa, type: 2}
   m_sharedMaterial: {fileID: 5269863732144280399, guid: 03d60291725a0ec479a2333879b870fa, type: 2}
@@ -1122,7 +1122,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 531.23236, y: 112.58906, z: 848.9646, w: 600.417}
+  m_margin: {x: 531.23236, y: 112.58906, z: 848.9646, w: 632.876}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using TMPro;
 
 public class ComedorZoom : MonoBehaviour
 {
@@ -20,6 +21,31 @@ public class ComedorZoom : MonoBehaviour
     public bool restoreAfterDelay = false;
     public float restoreDelay = 3.5f;
 
+    [Header("Texto a mostrar")]
+    public TextMeshProUGUI uiText;
+    public string message = "Texto de ejemplo";
+    private CanvasGroup canvasGroup;
+
+    [Header("Duraciones")]
+    public float fadeInDuration = 1f;
+    public float displayDuration = 2f;
+    public float fadeOutDuration = 1f;
+
+    private void Awake() //nuevo
+    {
+        if (uiText == null)
+        {
+            Debug.LogError("No se asignó ningún Text UI.");
+            return;
+        }
+
+        canvasGroup = uiText.GetComponent<CanvasGroup>();
+        if (canvasGroup == null)
+            canvasGroup = uiText.gameObject.AddComponent<CanvasGroup>();
+
+        canvasGroup.alpha = 0f;
+    }
+
     public void ActivarZoom()
     {
         Quaternion focusRotation = Quaternion.Euler(eulerRotation);
@@ -28,6 +54,7 @@ public class ComedorZoom : MonoBehaviour
         {
             zoomEffect.StartZoomUntilKey(focusPoint, focusRotation, zoomDuration, KeyCode.E, objetoInteractuable);
         }
+        ShowMessage();
 
     }
 
@@ -48,5 +75,40 @@ public class ComedorZoom : MonoBehaviour
 
         if (zoomEffect != null)
             zoomEffect.RestoreOrbitalCamera();
+    }
+
+    //Metodo para mostrar el mensaje
+    public void ShowMessage()
+    {
+        uiText.text = message;
+        StartCoroutine(ShowAndActivate());
+    }
+
+    private IEnumerator ShowAndActivate()
+    {
+        // Fade In
+        yield return StartCoroutine(FadeTo(1f, fadeInDuration));
+
+        // Mantener texto visible
+        yield return new WaitForSeconds(displayDuration);
+
+        // Fade Out
+        yield return StartCoroutine(FadeTo(0f, fadeOutDuration));
+
+    }
+
+    private IEnumerator FadeTo(float targetAlpha, float duration)
+    {
+        float startAlpha = canvasGroup.alpha;
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            canvasGroup.alpha = Mathf.Lerp(startAlpha, targetAlpha, elapsed / duration);
+            yield return null;
+        }
+
+        canvasGroup.alpha = targetAlpha;
     }
 }
