@@ -3,7 +3,7 @@ using UnityEngine;
 public class Creditos : MonoBehaviour
 {
     [Header("Velocidad de movimiento hacia arriba")]
-    public float velocidad = 20f;
+    public float velocidad = 15f;
 
     [Header("Retraso antes de comenzar")]
     public float retardoInicio = 3f;

@@ -62,6 +62,7 @@ public class Baniera : MonoBehaviour
         }
         else
         {
+            zoomEffect.StartZoomUntilKey(focusPoint, focusRotation, 1.5f, KeyCode.E, objetoInteractuable);
             Debug.Log("No tienes el objeto necesario (Grifo) para usar esto.");
             ShowMessage(); //Mensaje de no tener el objeto necesario
 
