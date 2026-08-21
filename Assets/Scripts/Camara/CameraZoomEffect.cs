@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 using System.Collections;
 
 public class CameraZoomEffect : MonoBehaviour
@@ -18,6 +19,10 @@ public class CameraZoomEffect : MonoBehaviour
     public bool isZooming = false;
 
     public GameObject player;
+
+    // Se dispara justo en el momento en que el jugador pulsa la tecla de salida
+    // en StartZoomUntilKey (antes de que la cámara empiece a volver a su posición original).
+    public event Action OnZoomEndedByKey;
 
     // Mueve la cámara a una posición y rotación específicas con transición suave.
     public void StartZoom(Vector3 targetPosition, Quaternion targetRotation, float transitionDuration, float holdTime)
@@ -111,6 +116,10 @@ public class CameraZoomEffect : MonoBehaviour
         {
             yield return null;
         }
+
+        // Avisamos a quien esté escuchando (p.ej. para ocultar el indicador de "pulsa E") ANTES de
+        // empezar la transición de vuelta, para que la desaparición sea inmediata al pulsar la tecla.
+        OnZoomEndedByKey?.Invoke();
 
         // Regresar suavemente a la posición original
         yield return StartCoroutine(SmoothTransition(originalPosition, originalRotation, transitionDuration));
