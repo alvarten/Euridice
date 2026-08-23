@@ -322,12 +322,12 @@ MonoBehaviour:
   paginaIzquierda: {fileID: 74571456}
   paginaDerecha: {fileID: 947081201}
   paginaSprites:
-  - {fileID: 1392169309, guid: 0ef68abe873b6334c9fdc0d309810de2, type: 3}
-  - {fileID: 1382995670, guid: 0ef68abe873b6334c9fdc0d309810de2, type: 3}
-  - {fileID: 1002319975, guid: 0ef68abe873b6334c9fdc0d309810de2, type: 3}
-  - {fileID: -1565678537, guid: 0ef68abe873b6334c9fdc0d309810de2, type: 3}
-  - {fileID: 246461253, guid: 0ef68abe873b6334c9fdc0d309810de2, type: 3}
-  - {fileID: -483086108, guid: 0ef68abe873b6334c9fdc0d309810de2, type: 3}
+  - {fileID: 2084885396, guid: 76cd549cfade1154a92882fbdab1d00f, type: 3}
+  - {fileID: -1852345615, guid: 76cd549cfade1154a92882fbdab1d00f, type: 3}
+  - {fileID: -1944518907, guid: 76cd549cfade1154a92882fbdab1d00f, type: 3}
+  - {fileID: 1479717269, guid: 76cd549cfade1154a92882fbdab1d00f, type: 3}
+  - {fileID: 2132204005, guid: 76cd549cfade1154a92882fbdab1d00f, type: 3}
+  - {fileID: -526656779, guid: 76cd549cfade1154a92882fbdab1d00f, type: 3}
   botonSiguiente: {fileID: 808986957}
   botonAnterior: {fileID: 1496035404}
   objetoActivarEnPagina3: {fileID: 1667060525}
@@ -14472,10 +14472,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 623107389}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.1213809, y: 0.8512783}
-  m_AnchorMax: {x: 0.21286923, y: 0.9460108}
-  m_AnchoredPosition: {x: -0.000061035156, y: 0}
-  m_SizeDelta: {x: 0.000038146973, y: 0}
+  m_AnchorMin: {x: 0.12740855, y: 0.8792223}
+  m_AnchorMax: {x: 0.2341192, y: 0.9527357}
+  m_AnchoredPosition: {x: -0.2999878, y: -0.2000122}
+  m_SizeDelta: {x: -0.61279964, y: -1.4496}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &575443835
 MonoBehaviour:
@@ -14497,7 +14497,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: To Exit
+  m_text: to  Exit
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 03d60291725a0ec479a2333879b870fa, type: 2}
   m_sharedMaterial: {fileID: 5269863732144280399, guid: 03d60291725a0ec479a2333879b870fa, type: 2}
@@ -14524,12 +14524,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 25
+  m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMin: 25
+  m_fontSizeMax: 40
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -14562,7 +14562,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -1.4382935, y: 3.0672016, z: -2.541504, w: 2.885275}
+  m_margin: {x: 0.494442, y: 0.5620136, z: -0.5413208, w: 0.27744675}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -25445,7 +25445,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 0d4149e1d7b8cf24eaab29890cea8f0b, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
