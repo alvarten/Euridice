@@ -29,12 +29,22 @@ public class ClockPuzzle : MonoBehaviour
     [Header("Interfaz de usuario")]
     public GameObject panelParaActivar; // Este panel será toggled (activado/desactivado)
 
+    [Header("Feedback de Progreso")]
+    [Tooltip("Un piloto (GameObject) por cada paso intermedio acertado. No hace falta incluir el último paso, ya que al completarlo se activa directamente el panel de puzzle resuelto. Índice 0 = se enciende al acertar el paso 1, índice 1 = al acertar el paso 2, etc. Se apagan todos si fallas y el progreso se reinicia.")]
+    public List<GameObject> pilotosIndicadores;
+
     [Header("Puzzle Manager")]
     public PuzzleManager puzzleManager;
 
+    void Awake()
+    {
+        // Por si en el Editor se quedaron activos por error, arrancamos siempre con todos apagados.
+        ApagarTodosLosPilotos();
+    }
+
     void Update()
     {
-        
+
     }
 
     public void CheckTargetTime()
@@ -57,19 +67,25 @@ public class ClockPuzzle : MonoBehaviour
         {
             Debug.Log("Hora correcta!");
             sfxPlayer?.PlayClick();
+
+            int pasoRecienCompletado = currentStep; // índice 0-based del paso que acabamos de acertar
             currentStep++;
 
             if (currentStep >= targetTimes.Count)
             {
                 Debug.Log("Puzzle completado correctamente.");
-
                 puzzleManager.TogglePuzzlePanel(panelParaActivar);
+
                 // Cambiar interactuables para dar la llave y activar la animacion del reloj abriendose
                 if (interactuableAntes != null)
                     interactuableAntes.SetActive(false);
-
                 if (interactuableDespues != null)
                     interactuableDespues.SetActive(true);
+            }
+            else
+            {
+                // Paso intermedio acertado (no el último): encendemos su piloto correspondiente
+                ActivarPiloto(pasoRecienCompletado);
             }
         }
         else
@@ -77,6 +93,26 @@ public class ClockPuzzle : MonoBehaviour
             sfxPlayer?.PlayError();
             Debug.Log("Hora incorrecta. Reiniciando progreso.");
             currentStep = 0;
+            ApagarTodosLosPilotos();
+        }
+    }
+
+    private void ActivarPiloto(int index)
+    {
+        if (pilotosIndicadores == null) return;
+        if (index >= 0 && index < pilotosIndicadores.Count && pilotosIndicadores[index] != null)
+        {
+            pilotosIndicadores[index].SetActive(true);
+        }
+    }
+
+    private void ApagarTodosLosPilotos()
+    {
+        if (pilotosIndicadores == null) return;
+        foreach (var piloto in pilotosIndicadores)
+        {
+            if (piloto != null)
+                piloto.SetActive(false);
         }
     }
 
