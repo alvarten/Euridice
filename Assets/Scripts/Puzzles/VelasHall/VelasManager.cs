@@ -8,7 +8,6 @@ public class VelasManager : MonoBehaviour
 
     [Header("Objetos que se activan al encender cada vela")]
     public GameObject[] objetosDeVela; // Deberían haber 5 objetos, uno por vela
-
     private int progresoActual = 0;
     private bool puzzleResuelto = false;
 
@@ -20,8 +19,18 @@ public class VelasManager : MonoBehaviour
 
     [Header("Objeto con script OpenDoor")]
     public OpenDoor cuadroFinal;
-
     public SFXPlayer sfxPlayer;
+
+    [Header("Salida automática del zoom al completar")]
+    [Tooltip("El mismo CameraZoomEffect que usa CuadrosPuzzleController para el zoom de este minijuego.")]
+    public CameraZoomEffect zoomEffect;
+
+    [Tooltip("El GameObject de la zona de aproximación (el que tiene el Interactuable que dispara el zoom). Se destruye al completar el puzle para que no se pueda volver a entrar.")]
+    public GameObject zonaInteractuableCuadros;
+
+    [Header("Destrucción de interactuables")]
+    public ObjectDestroyer objectDestroyer;
+
     // Esta función se llama cuando se interactúa con una vela
     public void ActivarVela(int idVela)
     {
@@ -32,6 +41,7 @@ public class VelasManager : MonoBehaviour
         {
             // Sonido de encender
             sfxPlayer?.PlayClick();
+
             // Encender objeto asociado
             if (idVela >= 0 && idVela < objetosDeVela.Length)
             {
@@ -53,7 +63,6 @@ public class VelasManager : MonoBehaviour
             // Error: reiniciar
             Debug.Log("Orden incorrecto. Reiniciando puzle...");
             ReiniciarPuzle();
-
             //SONIDO ERROR
             sfxPlayer.PlayError();
         }
@@ -62,13 +71,13 @@ public class VelasManager : MonoBehaviour
     private void ReiniciarPuzle()
     {
         progresoActual = 0;
-
         // Apagar todos los objetos
         foreach (GameObject obj in objetosDeVela)
         {
             obj.SetActive(false);
         }
     }
+
     private void OnPuzzleCompletado()
     {
         // Desactivar objetos interactuables
@@ -83,12 +92,29 @@ public class VelasManager : MonoBehaviour
         {
             objetosInteractuablesFinal.SetActive(true);
         }
+
         // Activar abrir cuadro
         if (cuadroFinal != null)
         {
             // Sonido de encender
             sfxPlayer?.PlayDoor();
             cuadroFinal.AbrirPuerta();
+        }
+
+        // Destruir la zona que da acceso al minijuego, para que no se pueda volver a entrar
+        if (zonaInteractuableCuadros != null)
+        {
+            if (objectDestroyer != null)
+                objectDestroyer.DestroyObject(zonaInteractuableCuadros);
+            else
+                Debug.LogWarning("VelasManager: no hay ObjectDestroyer asignado, no se pudo destruir zonaInteractuableCuadros.");
+        }
+
+        // Forzar la salida del zoom automáticamente (reutiliza toda la secuencia normal
+        // de salida: restaurar cámara, movimiento del jugador, y el evento OnZoomEndedByKey)
+        if (zoomEffect != null)
+        {
+            zoomEffect.ForzarSalidaZoom();
         }
     }
 }

@@ -24,6 +24,20 @@ public class CameraZoomEffect : MonoBehaviour
     // en StartZoomUntilKey (antes de que la cámara empiece a volver a su posición original).
     public event Action OnZoomEndedByKey;
 
+    private bool forzarSalidaZoom = false;
+
+    // Guarda si orbitalCamera estaba activada justo antes de empezar un zoom, para
+    // restaurar ese mismo estado al terminar (en vez de forzar siempre "activada").
+    // Esto es lo que permite respetar el modo de encuadre fijo de SalaTrigger.
+    private bool orbitalHabilitadoAntesDelZoom = true;
+
+    // Permite terminar StartZoomUntilKey desde fuera (p.ej. al completar un minijuego),
+    // sin esperar a que el jugador pulse físicamente la tecla de salida.
+    public void ForzarSalidaZoom()
+    {
+        forzarSalidaZoom = true;
+    }
+
     // Mueve la cámara a una posición y rotación específicas con transición suave.
     public void StartZoom(Vector3 targetPosition, Quaternion targetRotation, float transitionDuration, float holdTime)
     {
@@ -48,7 +62,7 @@ public class CameraZoomEffect : MonoBehaviour
             zoomCoroutine = StartCoroutine(SmoothTransition(originalPosition, originalRotation, zoomDuration));
 
             if (orbitalCamera != null)
-                orbitalCamera.enabled = true;
+                orbitalCamera.enabled = orbitalHabilitadoAntesDelZoom;
 
             isZooming = false;
         }
@@ -77,6 +91,7 @@ public class CameraZoomEffect : MonoBehaviour
         originalPosition = transform.position;
         originalRotation = transform.rotation;
 
+        orbitalHabilitadoAntesDelZoom = orbitalCamera != null && orbitalCamera.enabled;
         if (orbitalCamera != null)
             orbitalCamera.enabled = false;
 
@@ -87,7 +102,7 @@ public class CameraZoomEffect : MonoBehaviour
         yield return StartCoroutine(SmoothTransition(originalPosition, originalRotation, transitionDuration));
 
         if (orbitalCamera != null)
-            orbitalCamera.enabled = true;
+            orbitalCamera.enabled = orbitalHabilitadoAntesDelZoom;
 
         isZooming = false;
         zoomCoroutine = null;
@@ -95,10 +110,12 @@ public class CameraZoomEffect : MonoBehaviour
     IEnumerator ZoomUntilKeySequence(Vector3 targetPosition, Quaternion targetRotation, float transitionDuration, KeyCode exitKey, GameObject objectToDisable)
     {
         isZooming = true;
+        forzarSalidaZoom = false;
 
         originalPosition = transform.position;
         originalRotation = transform.rotation;
 
+        orbitalHabilitadoAntesDelZoom = orbitalCamera != null && orbitalCamera.enabled;
         if (orbitalCamera != null)
             orbitalCamera.enabled = false;
         if (objectToDisable != null)
@@ -111,8 +128,8 @@ public class CameraZoomEffect : MonoBehaviour
         TogglePlayerMovement(false);
 
 
-        // Esperar hasta que el jugador pulse la tecla indicada
-        while (!Input.GetKeyDown(exitKey))
+        // Esperar hasta que el jugador pulse la tecla indicada, o hasta que se fuerce la salida desde fuera
+        while (!Input.GetKeyDown(exitKey) && !forzarSalidaZoom)
         {
             yield return null;
         }
@@ -125,7 +142,7 @@ public class CameraZoomEffect : MonoBehaviour
         yield return StartCoroutine(SmoothTransition(originalPosition, originalRotation, transitionDuration));
         TogglePlayerMovement(true);
         if (orbitalCamera != null)
-            orbitalCamera.enabled = true;
+            orbitalCamera.enabled = orbitalHabilitadoAntesDelZoom;
         if (faceCameraScript != null)
             faceCameraScript.enabled = true;
         if (objectToDisable != null)
