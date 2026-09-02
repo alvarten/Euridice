@@ -3,8 +3,52 @@
   "WorkspaceRootPath": "C:\\Users\\alvar\\OneDrive\\Escritorio\\Euridice\\EuridiceUnity\\Euridice\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\alvar\\OneDrive\\Escritorio\\Euridice\\EuridiceUnity\\Euridice\\Assets\\Scripts\\FloatingIdle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\FloatingIdle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{49D39247-1521-D1F1-E27F-517C1FB2E0B2}|Assembly-CSharp.csproj|c:\\users\\alvar\\onedrive\\escritorio\\euridice\\euridiceunity\\euridice\\assets\\scripts\\puzzles\\cook\\iingredientrandomizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49D39247-1521-D1F1-E27F-517C1FB2E0B2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\puzzles\\cook\\iingredientrandomizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49D39247-1521-D1F1-E27F-517C1FB2E0B2}|Assembly-CSharp.csproj|C:\\Users\\alvar\\OneDrive\\Escritorio\\Euridice\\EuridiceUnity\\Euridice\\assets\\scripts\\puzzles\\cook\\itemreceivercook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49D39247-1521-D1F1-E27F-517C1FB2E0B2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\puzzles\\cook\\itemreceivercook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49D39247-1521-D1F1-E27F-517C1FB2E0B2}|Assembly-CSharp.csproj|C:\\Users\\alvar\\OneDrive\\Escritorio\\Euridice\\EuridiceUnity\\Euridice\\assets\\scripts\\diario\\diarioitemreceiver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49D39247-1521-D1F1-E27F-517C1FB2E0B2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\diario\\diarioitemreceiver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49D39247-1521-D1F1-E27F-517C1FB2E0B2}|Assembly-CSharp.csproj|c:\\users\\alvar\\onedrive\\escritorio\\euridice\\euridiceunity\\euridice\\assets\\scripts\\puzzles\\cook\\itemreceivercookaleatorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49D39247-1521-D1F1-E27F-517C1FB2E0B2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\puzzles\\cook\\itemreceivercookaleatorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49D39247-1521-D1F1-E27F-517C1FB2E0B2}|Assembly-CSharp.csproj|C:\\Users\\alvar\\OneDrive\\Escritorio\\Euridice\\EuridiceUnity\\Euridice\\assets\\scripts\\inventario\\inventoryadd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49D39247-1521-D1F1-E27F-517C1FB2E0B2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\inventario\\inventoryadd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49D39247-1521-D1F1-E27F-517C1FB2E0B2}|Assembly-CSharp.csproj|C:\\Users\\alvar\\OneDrive\\Escritorio\\Euridice\\EuridiceUnity\\Euridice\\assets\\scripts\\inventario\\itemreceiver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49D39247-1521-D1F1-E27F-517C1FB2E0B2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\inventario\\itemreceiver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49D39247-1521-D1F1-E27F-517C1FB2E0B2}|Assembly-CSharp.csproj|C:\\Users\\alvar\\OneDrive\\Escritorio\\Euridice\\EuridiceUnity\\Euridice\\assets\\scripts\\inventario\\inventorymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49D39247-1521-D1F1-E27F-517C1FB2E0B2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\inventario\\inventorymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49D39247-1521-D1F1-E27F-517C1FB2E0B2}|Assembly-CSharp.csproj|C:\\Users\\alvar\\OneDrive\\Escritorio\\Euridice\\EuridiceUnity\\Euridice\\assets\\scripts\\inventario\\inventoryitemui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49D39247-1521-D1F1-E27F-517C1FB2E0B2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\inventario\\inventoryitemui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49D39247-1521-D1F1-E27F-517C1FB2E0B2}|Assembly-CSharp.csproj|C:\\Users\\alvar\\OneDrive\\Escritorio\\Euridice\\EuridiceUnity\\Euridice\\assets\\scripts\\puzzles\\cook\\ollareciever.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49D39247-1521-D1F1-E27F-517C1FB2E0B2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\puzzles\\cook\\ollareciever.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49D39247-1521-D1F1-E27F-517C1FB2E0B2}|Assembly-CSharp.csproj|C:\\Users\\alvar\\OneDrive\\Escritorio\\Euridice\\EuridiceUnity\\Euridice\\assets\\scripts\\puzzles\\cook\\cooktracker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49D39247-1521-D1F1-E27F-517C1FB2E0B2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\puzzles\\cook\\cooktracker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49D39247-1521-D1F1-E27F-517C1FB2E0B2}|Assembly-CSharp.csproj|C:\\Users\\alvar\\OneDrive\\Escritorio\\Euridice\\EuridiceUnity\\Euridice\\assets\\scripts\\floatingidle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49D39247-1521-D1F1-E27F-517C1FB2E0B2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\floatingidle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49D39247-1521-D1F1-E27F-517C1FB2E0B2}|Assembly-CSharp.csproj|C:\\Users\\alvar\\OneDrive\\Escritorio\\Euridice\\EuridiceUnity\\Euridice\\Assets\\Scripts\\Diario\\LibroDiario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49D39247-1521-D1F1-E27F-517C1FB2E0B2}|Assembly-CSharp.csproj|solutionrelative:Assets\\Scripts\\Diario\\LibroDiario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,11 +58,135 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ItemReceiverCookAleatorio.cs",
+              "DocumentMoniker": "C:\\Users\\alvar\\OneDrive\\Escritorio\\Euridice\\EuridiceUnity\\Euridice\\Assets\\Scripts\\Puzzles\\Cook\\ItemReceiverCookAleatorio.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Puzzles\\Cook\\ItemReceiverCookAleatorio.cs",
+              "ToolTip": "C:\\Users\\alvar\\OneDrive\\Escritorio\\Euridice\\EuridiceUnity\\Euridice\\Assets\\Scripts\\Puzzles\\Cook\\ItemReceiverCookAleatorio.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Puzzles\\Cook\\ItemReceiverCookAleatorio.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAA1wCAAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-02T18:26:09.447Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "IIngredientRandomizer.cs",
+              "DocumentMoniker": "C:\\Users\\alvar\\OneDrive\\Escritorio\\Euridice\\EuridiceUnity\\Euridice\\Assets\\Scripts\\Puzzles\\Cook\\IIngredientRandomizer.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Puzzles\\Cook\\IIngredientRandomizer.cs",
+              "ToolTip": "C:\\Users\\alvar\\OneDrive\\Escritorio\\Euridice\\EuridiceUnity\\Euridice\\Assets\\Scripts\\Puzzles\\Cook\\IIngredientRandomizer.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Puzzles\\Cook\\IIngredientRandomizer.cs",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAiwF8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-02T18:26:09.153Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "InventoryAdd.cs",
+              "DocumentMoniker": "C:\\Users\\alvar\\OneDrive\\Escritorio\\Euridice\\EuridiceUnity\\Euridice\\Assets\\Scripts\\Inventario\\InventoryAdd.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Inventario\\InventoryAdd.cs",
+              "ToolTip": "C:\\Users\\alvar\\OneDrive\\Escritorio\\Euridice\\EuridiceUnity\\Euridice\\Assets\\Scripts\\Inventario\\InventoryAdd.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Inventario\\InventoryAdd.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-02T18:26:09.158Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ItemReceiver.cs",
+              "DocumentMoniker": "C:\\Users\\alvar\\OneDrive\\Escritorio\\Euridice\\EuridiceUnity\\Euridice\\Assets\\Scripts\\Inventario\\ItemReceiver.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Inventario\\ItemReceiver.cs",
+              "ToolTip": "C:\\Users\\alvar\\OneDrive\\Escritorio\\Euridice\\EuridiceUnity\\Euridice\\Assets\\Scripts\\Inventario\\ItemReceiver.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Inventario\\ItemReceiver.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAowCAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-02T18:26:09.16Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "InventoryManager.cs",
+              "DocumentMoniker": "C:\\Users\\alvar\\OneDrive\\Escritorio\\Euridice\\EuridiceUnity\\Euridice\\Assets\\Scripts\\Inventario\\InventoryManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Inventario\\InventoryManager.cs",
+              "ToolTip": "C:\\Users\\alvar\\OneDrive\\Escritorio\\Euridice\\EuridiceUnity\\Euridice\\Assets\\Scripts\\Inventario\\InventoryManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Inventario\\InventoryManager.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAIwC8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-02T18:26:09.162Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "InventoryItemUI.cs",
+              "DocumentMoniker": "C:\\Users\\alvar\\OneDrive\\Escritorio\\Euridice\\EuridiceUnity\\Euridice\\Assets\\Scripts\\Inventario\\InventoryItemUI.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Inventario\\InventoryItemUI.cs",
+              "ToolTip": "C:\\Users\\alvar\\OneDrive\\Escritorio\\Euridice\\EuridiceUnity\\Euridice\\Assets\\Scripts\\Inventario\\InventoryItemUI.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Inventario\\InventoryItemUI.cs",
+              "ViewState": "AgIAAGoAAAAAAAAAAAAwwI8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-02T18:26:09.162Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DiarioItemReceiver.cs",
+              "DocumentMoniker": "C:\\Users\\alvar\\OneDrive\\Escritorio\\Euridice\\EuridiceUnity\\Euridice\\Assets\\Scripts\\Diario\\DiarioItemReceiver.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Diario\\DiarioItemReceiver.cs",
+              "ToolTip": "C:\\Users\\alvar\\OneDrive\\Escritorio\\Euridice\\EuridiceUnity\\Euridice\\Assets\\Scripts\\Diario\\DiarioItemReceiver.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Diario\\DiarioItemReceiver.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-02T18:26:09.163Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Ollareciever.cs",
+              "DocumentMoniker": "C:\\Users\\alvar\\OneDrive\\Escritorio\\Euridice\\EuridiceUnity\\Euridice\\Assets\\Scripts\\Puzzles\\Cook\\Ollareciever.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Puzzles\\Cook\\Ollareciever.cs",
+              "ToolTip": "C:\\Users\\alvar\\OneDrive\\Escritorio\\Euridice\\EuridiceUnity\\Euridice\\Assets\\Scripts\\Puzzles\\Cook\\Ollareciever.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Puzzles\\Cook\\Ollareciever.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAmwDUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-02T18:26:09.163Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ItemReceiverCook.cs",
+              "DocumentMoniker": "C:\\Users\\alvar\\OneDrive\\Escritorio\\Euridice\\EuridiceUnity\\Euridice\\Assets\\Scripts\\Puzzles\\Cook\\ItemReceiverCook.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Puzzles\\Cook\\ItemReceiverCook.cs",
+              "ToolTip": "C:\\Users\\alvar\\OneDrive\\Escritorio\\Euridice\\EuridiceUnity\\Euridice\\Assets\\Scripts\\Puzzles\\Cook\\ItemReceiverCook.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Puzzles\\Cook\\ItemReceiverCook.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAkwCEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-02T18:26:09.166Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CookTracker.cs",
+              "DocumentMoniker": "C:\\Users\\alvar\\OneDrive\\Escritorio\\Euridice\\EuridiceUnity\\Euridice\\Assets\\Scripts\\Puzzles\\Cook\\CookTracker.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Puzzles\\Cook\\CookTracker.cs",
+              "ToolTip": "C:\\Users\\alvar\\OneDrive\\Escritorio\\Euridice\\EuridiceUnity\\Euridice\\Assets\\Scripts\\Puzzles\\Cook\\CookTracker.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Puzzles\\Cook\\CookTracker.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAA3wCoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-02T18:26:09.166Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "FloatingIdle.cs",
               "DocumentMoniker": "C:\\Users\\alvar\\OneDrive\\Escritorio\\Euridice\\EuridiceUnity\\Euridice\\Assets\\Scripts\\FloatingIdle.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\FloatingIdle.cs",
@@ -26,8 +194,19 @@
               "RelativeToolTip": "Assets\\Scripts\\FloatingIdle.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAAAwCMAAABRAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-15T18:35:59.373Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-02T18:26:09.166Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "LibroDiario.cs",
+              "DocumentMoniker": "C:\\Users\\alvar\\OneDrive\\Escritorio\\Euridice\\EuridiceUnity\\Euridice\\Assets\\Scripts\\Diario\\LibroDiario.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Diario\\LibroDiario.cs",
+              "ToolTip": "C:\\Users\\alvar\\OneDrive\\Escritorio\\Euridice\\EuridiceUnity\\Euridice\\Assets\\Scripts\\Diario\\LibroDiario.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Diario\\LibroDiario.cs",
+              "ViewState": "AgIAAHcAAAAAAAAAAAA+wJsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-02T18:26:09.168Z"
             }
           ]
         }
