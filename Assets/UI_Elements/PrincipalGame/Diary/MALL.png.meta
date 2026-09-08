@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 12236ab03b64b534a85f0ecd928b023e
+guid: 76cd549cfade1154a92882fbdab1d00f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -71,7 +71,7 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 4096
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -83,6 +83,32 @@ TextureImporter:
   - serializedVersion: 4
     buildTarget: Standalone
     maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -105,15 +131,15 @@ TextureImporter:
         width: 608
         height: 845
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a198383244eae9c4491907b58100bf18
-      internalID: -1384227302
+      spriteID: b3cd0ef3232056242829c7b7a7110acb
+      internalID: 593272597
       vertices: []
       indices: 
       edges: []
@@ -127,15 +153,15 @@ TextureImporter:
         width: 608
         height: 845
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5997999aa4d009c4598ff1b18aa129c1
-      internalID: 144231082
+      spriteID: 5b426ddb0b6fd874c8c3ac5d150806f7
+      internalID: 343254236
       vertices: []
       indices: 
       edges: []
@@ -149,15 +175,15 @@ TextureImporter:
         width: 608
         height: 845
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 568188e40c43b944da50e0bee1da2176
-      internalID: 1117236702
+      spriteID: 88d847a332f5ad64b82510980e6ca69b
+      internalID: 2084885396
       vertices: []
       indices: 
       edges: []
@@ -171,15 +197,15 @@ TextureImporter:
         width: 608
         height: 845
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b76ce5a792e9c134c8e6ce1a764365e0
-      internalID: -2055253107
+      spriteID: aaff106ca67133a47b74efc226c72dbb
+      internalID: -1852345615
       vertices: []
       indices: 
       edges: []
@@ -193,15 +219,15 @@ TextureImporter:
         width: 608
         height: 845
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cfa51c82860489b45882e250451130d9
-      internalID: 1618942793
+      spriteID: 4758d293dd381814ba033b8f37981f5e
+      internalID: -1944518907
       vertices: []
       indices: 
       edges: []
@@ -215,15 +241,15 @@ TextureImporter:
         width: 608
         height: 845
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bab9b7517d881414ab414905fd04d762
-      internalID: -1235298203
+      spriteID: ae26a4619bd21124ba852a1f1b85ef85
+      internalID: 1479717269
       vertices: []
       indices: 
       edges: []
@@ -237,15 +263,15 @@ TextureImporter:
         width: 608
         height: 845
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c5590a1bc6cfcd43b957db926856368
-      internalID: 884946597
+      spriteID: 14647b9587402c54cb7ea6a4cc88668d
+      internalID: 2132204005
       vertices: []
       indices: 
       edges: []
@@ -259,15 +285,15 @@ TextureImporter:
         width: 608
         height: 845
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c1bf1b235be8594c93b7856ea11cd37
-      internalID: -504329098
+      spriteID: e6d27e7fed82c254b806e7f92b692680
+      internalID: -526656779
       vertices: []
       indices: 
       edges: []
@@ -276,64 +302,20 @@ TextureImporter:
       name: UIF_Diary_8
       rect:
         serializedVersion: 2
-        x: 4864
+        x: 4869
         y: 0
-        width: 608
+        width: 603
         height: 845
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 2, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2df34d88e0efb114ea752341a723645c
-      internalID: -162639672
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UIF_Diary_9
-      rect:
-        serializedVersion: 2
-        x: 5472
-        y: 0
-        width: 608
-        height: 845
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b985c258c7b57d8458139761300dc395
-      internalID: -2109888295
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UIF_Diary_10
-      rect:
-        serializedVersion: 2
-        x: 6080
-        y: 0
-        width: 608
-        height: 845
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d79ce1388e8d8bf4e9ce40fb0db99297
-      internalID: 1084168535
+      spriteID: 971ccf59fd92db4449a292d5b96f6a32
+      internalID: 1401239541
       vertices: []
       indices: 
       edges: []
@@ -342,7 +324,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 47363edaf3c1d2d43b7e970e0ba3bddd
+    spriteID: 14adf0d9919027d4abb8d80f4d8876e5
     internalID: 0
     vertices: []
     indices: 
@@ -352,17 +334,15 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      UIF_Diary_0: -1384227302
-      UIF_Diary_1: 144231082
-      UIF_Diary_10: 1084168535
-      UIF_Diary_2: 1117236702
-      UIF_Diary_3: -2055253107
-      UIF_Diary_4: 1618942793
-      UIF_Diary_5: -1235298203
-      UIF_Diary_6: 884946597
-      UIF_Diary_7: -504329098
-      UIF_Diary_8: -162639672
-      UIF_Diary_9: -2109888295
+      UIF_Diary_0: 593272597
+      UIF_Diary_1: 343254236
+      UIF_Diary_2: 2084885396
+      UIF_Diary_3: -1852345615
+      UIF_Diary_4: -1944518907
+      UIF_Diary_5: 1479717269
+      UIF_Diary_6: 2132204005
+      UIF_Diary_7: -526656779
+      UIF_Diary_8: 1401239541
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
