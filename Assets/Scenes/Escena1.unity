@@ -409,12 +409,12 @@ MonoBehaviour:
   paginaIzquierda: {fileID: 74571456}
   paginaDerecha: {fileID: 947081201}
   paginaSprites:
-  - {fileID: 2084885396, guid: 76cd549cfade1154a92882fbdab1d00f, type: 3}
-  - {fileID: -1852345615, guid: 76cd549cfade1154a92882fbdab1d00f, type: 3}
-  - {fileID: -1944518907, guid: 76cd549cfade1154a92882fbdab1d00f, type: 3}
-  - {fileID: 1479717269, guid: 76cd549cfade1154a92882fbdab1d00f, type: 3}
-  - {fileID: 2132204005, guid: 76cd549cfade1154a92882fbdab1d00f, type: 3}
-  - {fileID: -526656779, guid: 76cd549cfade1154a92882fbdab1d00f, type: 3}
+  - {fileID: 1117236702, guid: 12236ab03b64b534a85f0ecd928b023e, type: 3}
+  - {fileID: -2055253107, guid: 12236ab03b64b534a85f0ecd928b023e, type: 3}
+  - {fileID: 1618942793, guid: 12236ab03b64b534a85f0ecd928b023e, type: 3}
+  - {fileID: -1235298203, guid: 12236ab03b64b534a85f0ecd928b023e, type: 3}
+  - {fileID: 884946597, guid: 12236ab03b64b534a85f0ecd928b023e, type: 3}
+  - {fileID: -504329098, guid: 12236ab03b64b534a85f0ecd928b023e, type: 3}
   botonSiguiente: {fileID: 808986957}
   botonAnterior: {fileID: 1496035404}
   objetoActivarEnPagina3: {fileID: 1667060525}
@@ -1194,7 +1194,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e58f226608ee04c42914d2e25a02f53e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 981e2f81a3527f947b5537fe4e9637a4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -30072,19 +30072,19 @@ MonoBehaviour:
   - nombreDebug: Garlic
     ingredienteItemId: Garlic
     pistaItemId: GarlicClue
-    paginaCompletaSprite: {fileID: -993561700, guid: 9c5776f0c601e9b45bbe2c06a160ed46, type: 3}
+    paginaCompletaSprite: {fileID: -162639672, guid: 12236ab03b64b534a85f0ecd928b023e, type: 3}
     panelDespues: {fileID: 1791572684}
     coleccionableEnEscena: {fileID: 1982413595}
   - nombreDebug: Cheese
     ingredienteItemId: Cheese
     pistaItemId: CheeseClue
-    paginaCompletaSprite: {fileID: 2132204005, guid: 76cd549cfade1154a92882fbdab1d00f, type: 3}
+    paginaCompletaSprite: {fileID: 1084168535, guid: 12236ab03b64b534a85f0ecd928b023e, type: 3}
     panelDespues: {fileID: 1593182828}
     coleccionableEnEscena: {fileID: 1883369781}
   - nombreDebug: Pear
     ingredienteItemId: Pear
     pistaItemId: PearClue
-    paginaCompletaSprite: {fileID: -526656779, guid: 76cd549cfade1154a92882fbdab1d00f, type: 3}
+    paginaCompletaSprite: {fileID: -2109888295, guid: 12236ab03b64b534a85f0ecd928b023e, type: 3}
     panelDespues: {fileID: 165106111}
     coleccionableEnEscena: {fileID: 1305403150}
   ranuraIngredienteVariable: {fileID: 1978409112}
@@ -34478,7 +34478,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e58f226608ee04c42914d2e25a02f53e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 981e2f81a3527f947b5537fe4e9637a4, type: 3}
   m_Color: {r: 0.7264151, g: 0.7264151, b: 0.7264151, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -46898,7 +46898,7 @@ PrefabInstance:
       objectReference: {fileID: 1641372922}
     - target: {fileID: 2409857723212712327, guid: b58643e1dec56b849853ed80e1226bc6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.5000305
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4315001638944277148, guid: b58643e1dec56b849853ed80e1226bc6, type: 3}
       propertyPath: m_AnchoredPosition.y
