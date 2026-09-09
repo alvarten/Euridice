@@ -290,7 +290,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.09077253, y: -0.7729192, z: -0.6176179, w: 0.1135975}
   m_LocalPosition: {x: 0.33475778, y: -1.0236388, z: 0.8990847}
-  m_LocalScale: {x: 0.01667037, y: 0.01667037, z: 0.016670374}
+  m_LocalScale: {x: 0.03364414, y: 0.03364414, z: 0.033644147}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1305403151}
@@ -339,7 +339,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 59768829fc16da04ab18c49cdeca4ab9, type: 3}
+  m_Sprite: {fileID: 3085832, guid: 6cd7ee6dd56371e48a0eb700941524ce, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -409,12 +409,12 @@ MonoBehaviour:
   paginaIzquierda: {fileID: 74571456}
   paginaDerecha: {fileID: 947081201}
   paginaSprites:
-  - {fileID: 1117236702, guid: 12236ab03b64b534a85f0ecd928b023e, type: 3}
-  - {fileID: -2055253107, guid: 12236ab03b64b534a85f0ecd928b023e, type: 3}
-  - {fileID: 1618942793, guid: 12236ab03b64b534a85f0ecd928b023e, type: 3}
-  - {fileID: -1235298203, guid: 12236ab03b64b534a85f0ecd928b023e, type: 3}
-  - {fileID: 884946597, guid: 12236ab03b64b534a85f0ecd928b023e, type: 3}
-  - {fileID: -504329098, guid: 12236ab03b64b534a85f0ecd928b023e, type: 3}
+  - {fileID: 1244102845, guid: 44608c7d59292ed4098c758aadd7173a, type: 3}
+  - {fileID: 57029704, guid: 44608c7d59292ed4098c758aadd7173a, type: 3}
+  - {fileID: 1982764675, guid: 44608c7d59292ed4098c758aadd7173a, type: 3}
+  - {fileID: 419626007, guid: 44608c7d59292ed4098c758aadd7173a, type: 3}
+  - {fileID: 1598885296, guid: 44608c7d59292ed4098c758aadd7173a, type: 3}
+  - {fileID: -1950915591, guid: 44608c7d59292ed4098c758aadd7173a, type: 3}
   botonSiguiente: {fileID: 808986957}
   botonAnterior: {fileID: 1496035404}
   objetoActivarEnPagina3: {fileID: 1667060525}
@@ -9382,7 +9382,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &348737925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28773,7 +28773,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.09077253, y: -0.7729192, z: -0.6176179, w: 0.1135975}
   m_LocalPosition: {x: 0.33475778, y: -1.0236388, z: 0.8990847}
-  m_LocalScale: {x: 0.01667037, y: 0.01667037, z: 0.016670374}
+  m_LocalScale: {x: 0.031640362, y: 0.031640362, z: 0.03164037}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1883369782}
@@ -28822,7 +28822,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9bdd7183b8eeda4428e39aec04948f67, type: 3}
+  m_Sprite: {fileID: 402192617, guid: 6cd7ee6dd56371e48a0eb700941524ce, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -30072,26 +30072,26 @@ MonoBehaviour:
   - nombreDebug: Garlic
     ingredienteItemId: Garlic
     pistaItemId: GarlicClue
-    paginaCompletaSprite: {fileID: -162639672, guid: 12236ab03b64b534a85f0ecd928b023e, type: 3}
+    paginaCompletaSprite: {fileID: -1689424240, guid: 44608c7d59292ed4098c758aadd7173a, type: 3}
     panelDespues: {fileID: 1791572684}
     coleccionableEnEscena: {fileID: 1982413595}
   - nombreDebug: Cheese
     ingredienteItemId: Cheese
     pistaItemId: CheeseClue
-    paginaCompletaSprite: {fileID: 1084168535, guid: 12236ab03b64b534a85f0ecd928b023e, type: 3}
+    paginaCompletaSprite: {fileID: 2104183407, guid: 44608c7d59292ed4098c758aadd7173a, type: 3}
     panelDespues: {fileID: 1593182828}
     coleccionableEnEscena: {fileID: 1883369781}
   - nombreDebug: Pear
     ingredienteItemId: Pear
     pistaItemId: PearClue
-    paginaCompletaSprite: {fileID: -2109888295, guid: 12236ab03b64b534a85f0ecd928b023e, type: 3}
+    paginaCompletaSprite: {fileID: -1831763315, guid: 44608c7d59292ed4098c758aadd7173a, type: 3}
     panelDespues: {fileID: 165106111}
     coleccionableEnEscena: {fileID: 1305403150}
   ranuraIngredienteVariable: {fileID: 1978409112}
   ollaReceiver: {fileID: 387891658}
   indiceEnOlla: 0
   diarioItemReceiver: {fileID: 1667060526}
-  forzarIndice: -1
+  forzarIndice: 1
 --- !u!4 &1062527989
 Transform:
   m_ObjectHideFlags: 0
@@ -35820,7 +35820,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemId: PearClue
-  itemIcon: {fileID: 21300000, guid: 59768829fc16da04ab18c49cdeca4ab9, type: 3}
+  itemIcon: {fileID: 3085832, guid: 6cd7ee6dd56371e48a0eb700941524ce, type: 3}
   destroyAfterAdd: 1
 --- !u!1 &1306091360
 GameObject:
@@ -51141,7 +51141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemId: CheeseClue
-  itemIcon: {fileID: 21300000, guid: 9bdd7183b8eeda4428e39aec04948f67, type: 3}
+  itemIcon: {fileID: 402192617, guid: 6cd7ee6dd56371e48a0eb700941524ce, type: 3}
   destroyAfterAdd: 1
 --- !u!1 &1886430395
 GameObject:
@@ -52863,7 +52863,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bcb06c29365f3dd48927a74c068dab96, type: 3}
+  m_Sprite: {fileID: -737957460, guid: 6cd7ee6dd56371e48a0eb700941524ce, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -52884,7 +52884,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.09077253, y: -0.7729192, z: -0.6176179, w: 0.1135975}
   m_LocalPosition: {x: 0.33475778, y: -1.0236388, z: 0.8990847}
-  m_LocalScale: {x: 0.01667037, y: 0.01667037, z: 0.016670374}
+  m_LocalScale: {x: 0.03317237, y: 0.03317237, z: 0.033172376}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1982413596}
@@ -54658,7 +54658,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemId: GarlicClue
-  itemIcon: {fileID: 21300000, guid: bcb06c29365f3dd48927a74c068dab96, type: 3}
+  itemIcon: {fileID: -737957460, guid: 6cd7ee6dd56371e48a0eb700941524ce, type: 3}
   destroyAfterAdd: 1
 --- !u!1 &1985248959
 GameObject:
