@@ -9382,7 +9382,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &348737925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30091,7 +30091,7 @@ MonoBehaviour:
   ollaReceiver: {fileID: 387891658}
   indiceEnOlla: 0
   diarioItemReceiver: {fileID: 1667060526}
-  forzarIndice: 1
+  forzarIndice: -1
 --- !u!4 &1062527989
 Transform:
   m_ObjectHideFlags: 0
