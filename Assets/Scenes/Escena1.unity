@@ -30072,19 +30072,19 @@ MonoBehaviour:
   - nombreDebug: Garlic
     ingredienteItemId: Garlic
     pistaItemId: GarlicClue
-    paginaCompletaSprite: {fileID: -1689424240, guid: 44608c7d59292ed4098c758aadd7173a, type: 3}
+    paginaCompletaSprite: {fileID: 796276050, guid: fe91e8516ca579849b08979d311ddce5, type: 3}
     panelDespues: {fileID: 1791572684}
     coleccionableEnEscena: {fileID: 1982413595}
   - nombreDebug: Cheese
     ingredienteItemId: Cheese
     pistaItemId: CheeseClue
-    paginaCompletaSprite: {fileID: 2104183407, guid: 44608c7d59292ed4098c758aadd7173a, type: 3}
+    paginaCompletaSprite: {fileID: 1105806338, guid: fe91e8516ca579849b08979d311ddce5, type: 3}
     panelDespues: {fileID: 1593182828}
     coleccionableEnEscena: {fileID: 1883369781}
   - nombreDebug: Pear
     ingredienteItemId: Pear
     pistaItemId: PearClue
-    paginaCompletaSprite: {fileID: -1831763315, guid: 44608c7d59292ed4098c758aadd7173a, type: 3}
+    paginaCompletaSprite: {fileID: -1435349642, guid: fe91e8516ca579849b08979d311ddce5, type: 3}
     panelDespues: {fileID: 165106111}
     coleccionableEnEscena: {fileID: 1305403150}
   ranuraIngredienteVariable: {fileID: 1978409112}
