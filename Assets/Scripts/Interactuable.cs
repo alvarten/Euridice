@@ -33,7 +33,11 @@ public class Interactuable : MonoBehaviour
             }
         }
 
-        if (isPlayerInside && Input.GetKeyDown(KeyCode.E))
+        // Solo bloqueamos la E durante el zoom "prioritario" del evento del 70%.
+        // A propósito NO usamos canMove aquí: canMove también está en false durante
+        // los puzles (donde la E se usa para salir) y durante otras interacciones,
+        // y bloquear por canMove rompería esos flujos.
+        if (isPlayerInside && !CameraZoomEffect.EventoActivo && Input.GetKeyDown(KeyCode.E))
         {
             Interact();
         }

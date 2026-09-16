@@ -108,7 +108,10 @@ public class ControladorEventos : MonoBehaviour
     public FaceCamera faceCameraScript;
     public PuzzleManager puzzleManager;
 
-
+    [Header("Optimización")]
+    [Tooltip("Cada cuántos segundos se recalculan la atmósfera y las comprobaciones de evento. 0.2s suele ser un buen equilibrio entre rendimiento y suavidad visual.")]
+    public float intervaloActualizacion = 0.2f;
+    private float temporizadorActualizacion = 0f;
     void Start()
     {
         if (panelFinal != null)
@@ -171,6 +174,10 @@ public class ControladorEventos : MonoBehaviour
         if (partidaFinalizada) return;
 
         tiempoTranscurrido += Time.deltaTime;
+        temporizadorActualizacion += Time.deltaTime;
+
+        if (temporizadorActualizacion < intervaloActualizacion) return;
+        temporizadorActualizacion -= intervaloActualizacion; // evita deriva acumulada
 
         float porcentaje = tiempoTranscurrido / duracionPartida;
 
@@ -186,8 +193,7 @@ public class ControladorEventos : MonoBehaviour
             ActivarGuardian();
         }
 
-        // Transición de atmósfera (post-proceso + luces), calculada directamente
-        // sobre tiempoTranscurrido cada frame, sin coroutines ni timers propios.
+        // Transición de atmósfera (post-proceso + luces)
         ActualizarAtmosfera(porcentaje);
 
         // Final de partida

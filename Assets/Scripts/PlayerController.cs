@@ -5,6 +5,7 @@ public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public float gravity = -9.81f;
+    private bool aplicarGravedad = true;
     public SFXPlayer sfxPlayer;
     private bool isWalkingSoundPlaying = false;
     private float verticalVelocity = 0f;
@@ -58,7 +59,7 @@ public class PlayerController : MonoBehaviour
         {
             verticalVelocity = -1f;
         }
-        else
+        else if (aplicarGravedad)
         {
             verticalVelocity += gravity * Time.deltaTime;
         }
@@ -90,4 +91,19 @@ public class PlayerController : MonoBehaviour
         // animaciones
         animator.SetBool("isMoving", isMoving && controller.isGrounded);
     }
+
+    public void SetGravedadActiva(bool activa)
+    {
+        aplicarGravedad = activa;
+
+        // Si tu gravedad se acumula en una variable de velocidad vertical
+        // (típico con CharacterController), conviene resetearla a 0 al
+        // desactivar, para que no "recuerde" caída acumulada al reactivarla:
+        // velocidadVertical = 0f;
+    }
+
+    // Y en tu lógica de movimiento, donde ahora sumes la gravedad siempre,
+    // envuélvelo en el chequeo:
+    //
+    
 }
